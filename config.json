@@ -1,0 +1,13 @@
+{
+	"env": "dev",
+	"tabs": [
+		{ "label":"A la Une", "icon":"book" },
+		{ "label":"City Breaks", "icon":"city" },
+		{ "label":"France", "icon":"tower" },
+		{ "label":"Plage", "icon":"thongs" }
+	],
+	"items": [
+		{ "title":"Découvres Illes Cyclades", "category":"destination", "image":"image.jpg", "size":"standard" },
+		{ "title":"Découvrez Les Promenades d’Aurelia a Paris!", "category":"guide", "image":"image.jpg", "size":"standard" }
+	]
+}

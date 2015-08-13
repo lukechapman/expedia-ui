@@ -1,0 +1,20 @@
+/* external header and footer overrides */
+#global-header{
+	.site-header{
+		width: 100%;
+		.site-navigation.all-in{
+			width: 100%;
+		}
+	}
+}
+
+#global-footer{
+	background: $white;
+	#footer{
+		padding: 20px;
+		width: 100% !important;
+		.footer-links, .footer-separator, #footer-corporate-links .footer-list{
+			width: 100%;
+		}
+	}
+}

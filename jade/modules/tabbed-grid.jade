@@ -1,0 +1,15 @@
+section.grid
+	div.inner
+		nav.tab-nav
+			ul
+				each tab in tabs
+					li.tab
+						a(href='#')
+							span(class="icon icon-#{tab.icon}")
+							span.label #{tab.label}
+		div.items.group
+			each item in items
+				a(href="#", class="item #{item.size}")
+					div.bg(style="background-image:url(#{item.image})")
+					span(class="category category-#{item.category}") #{item.category}
+					strong #{item.title}

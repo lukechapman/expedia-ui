@@ -1,0 +1,329 @@
+@import 'reset';
+@import 'colours';
+@import 'queries';
+@import 'expedia';
+@import 'typography';
+@import 'buttons';
+@import 'forms';
+@import 'icons';
+
+body{
+	font-family: $sans-stack;
+	font-size: 16px;
+	line-height: 24px;
+	background: $grey-extra-light;
+}
+
+.inner{
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.group:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/* modules */
+
+.main-header{
+	background: $blue-extra-dark;
+	position: relative;
+	z-index: 10;
+	@media screen and (max-width: $main-nav-max){
+		text-align: center;	
+	}
+	.top-nav{
+		@media screen and (min-width: $main-nav-min){
+			float: left;	
+		}
+		li{
+			display: inline-block;
+			@media screen and (max-width: $main-nav-max){
+				float: left;
+			}
+			a{
+				font-size: 16px;
+				line-height: 16px;
+				padding: 15px;
+			}
+			&.home-link{
+				@media screen and (max-width: $main-nav-max){
+					width: 65%;
+					border-bottom: 1px solid transparent;
+					.show-main-nav &{
+						border-bottom: 1px solid darken($blue-medium, 10%);
+					}
+				}
+				.icon{
+					position: relative;
+					padding-right: 8px;
+					top: 1px;
+				}
+				border-right: 1px solid darken($blue-medium, 10%);
+				a{
+					font-weight: 600;
+					font-size: 18px;
+					line-height: 18px;
+					padding-top: 13px;
+				}
+			}
+			&.menu-link{
+				border-bottom: 1px solid transparent;
+				width: 35%;
+				@media screen and (min-width: $main-nav-min){
+					display: none;
+				}
+				@media screen and (max-width: $main-nav-max){
+					.show-main-nav &{
+						border-bottom: 1px solid $blue-extra-extra-dark;
+						a{
+							background: $blue-extra-extra-dark;
+						}
+					}
+				}
+			}
+		}
+	}
+	.main-nav{
+		float: left;
+		@media screen and (max-width: $main-nav-max){
+			position: absolute;
+			top: 100%;
+			left: 0;
+			width: 100%;
+			display: none;
+			background: $blue-extra-extra-dark;
+			padding: 10px 0px;
+			border-bottom: 1px solid darken($blue-medium, 10%);
+			.show-main-nav &{
+				display: block;	
+			}
+		}
+		li{
+			display: inline-block;
+			@media screen and (min-width: $main-nav-min){
+				border-right: 1px solid darken($blue-medium, 10%);
+			}
+			@media screen and (max-width: $main-nav-max){
+				display: block;
+				text-align: center;
+			}
+			a{
+				font-size: 14px;
+				line-height: 14px;
+				padding: 15px;
+				.count{
+					display: inline-block;
+					border-radius: 4px;
+					background: $blue-medium;
+					padding: 2px 3px 3px 3px;
+					text-align: center;
+					margin-left: 5px;
+				}
+			}
+		}	
+	}
+	a{
+		color: $white;
+		display: inline-block;
+		@media screen and (max-width: $main-nav-max){
+			display: block;
+		}
+	}
+}
+
+.search-module{
+	padding: 25px 10px;
+	background: $blue-extra-dark;
+	@media screen and (min-width: 480px){
+		text-align: center;
+		padding: 35px 10px;
+		.search-inner{
+			max-width: 480px;
+			margin: 0 auto;
+		}
+	}
+	h3{
+		color: $white;
+		font-size: 21px;
+		line-height: 21px;
+		margin-bottom: 15px;
+		font-weight: 600;
+		display: block;
+		@media screen and (min-width: 480px){
+			font-size: 32px;
+			line-height: 32px;
+			margin-bottom: 25px;
+		}
+	}
+}
+
+.hero-module{
+	width: 100%;
+	position: relative;
+	height: 190px;
+	@media screen and (min-width: $main-nav-min){
+		height: 260px;
+	}
+	.bg{
+		width: 100%;
+		height: 100%;
+		position: relative;
+		z-index: 1;
+		background-color: $blue-extra-extra-dark;
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+		background-size: cover;
+	}
+	.overlay{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		z-index: 2;
+		top: 0;
+		left: 0;
+		background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0.4) 100%);
+		mix-blend-mode: multiply;
+	}
+	.text{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 3;
+		color: $white;
+		.text-inner{
+			max-width: 550px;
+			margin: 0 auto;
+			padding: 30px 10px;
+			@media screen and (min-width: $main-nav-min){
+				text-align: center;
+				padding: 50px 20px;
+			}
+			h2{
+				margin-bottom: 10px;
+			}
+		}
+	}
+	.image-caption{
+		position: absolute;
+		bottom: 10px;
+		left: 10px;
+		color: $white;
+		font-size: 12px;
+		line-height: 12px;
+		@media screen and (min-width: $main-nav-min){
+			bottom: auto;
+			left: auto;
+			top: 10px;
+			right: 10px;
+		}
+	}
+}
+
+
+.booking-module{
+	background: $grey-light;
+	padding: 20px 5px;
+	@media screen and (min-width: $main-nav-min){
+		padding: 30px;
+	}
+	.items{
+		margin: 0px;
+		@media screen and (min-width: $main-nav-min){
+			margin: 0px -10px;
+		}
+	}
+	.item{
+		display: block;
+		float: left;
+		width: 50%;
+		padding: 5px;
+		@media screen and (min-width: $main-nav-min){
+			width: 25%;	
+			padding: 10px;
+		}
+		.item-wrap{
+			width: 100%;
+			display: block;
+			text-align: center;
+			border-radius: 4px;
+			padding: 20px;
+			.icon{
+				color: $white;
+				opacity: 0.6;
+				display: block;
+				text-align: center;
+				font-size: 32px;
+				line-height: 32px;
+				padding-bottom: 5px;
+			}
+			.label{
+				font-size: 15px;
+				line-height: 15px;
+				color: $white;
+			}
+			&.grey{
+				background: $grey-dark;
+			}
+			&.green{
+				background: $green;
+			}
+			&.dark-blue{
+				background: $blue-dark-b;
+			}
+			&.light-blue{
+				background: $blue-light;
+			}
+		}
+	}
+}
+
+.booking-bar{
+	background: $blue-medium;
+	ul{
+		display: table;
+		width: 100%;
+	}
+	li{
+		display: table-cell;
+		text-align: center;
+		width: 20%;
+		color: $white;
+		border-right: 1px solid darken($blue-medium, 5%);
+		font-size: 14px;
+		line-height: 14px;
+		&.title{
+			font-weight: 600;
+			font-size: 16px;
+			line-height: 16px;
+			background: darken($blue-medium, 5%);
+			display: none;
+			@media screen and (min-width: $main-nav-min){
+				display: table-cell;	
+			}
+		}
+		a{
+			color: $white;
+			padding: 16px;
+			display: block;
+		}
+		.icon{
+			font-size: 20px;
+			line-height: 20px;
+			@media screen and (min-width: $main-nav-min){
+				font-size: 15px;
+				line-height: 15px;
+				padding-right: 8px;
+			}
+		}
+		.label{
+			@media screen and (max-width: $main-nav-max){
+				display: none;
+			}
+		}
+	}
+}

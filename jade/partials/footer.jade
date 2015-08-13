@@ -1,0 +1,13 @@
+include ../modules/search.jade
+
+include ../modules/booking.jade
+
+footer.global-footer#global-footer
+	include ../external/footer.html
+
+script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
+script window.jQuery || document.write('<script src="js/jquery-1.11.3.min.js"><\/script>')
+script(src='js/plugins.js')
+script(src='js/init.js')
+if env == 'dev'
+	script(src='//localhost:35729/livereload.js')
