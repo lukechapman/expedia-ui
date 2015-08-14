@@ -1,5 +1,6 @@
 {
 	"env": "dev",
+	"site_url": "http://localhost/expedia-ui/export",
 	"tabs": [
 		{ "label":"A la Une", "icon":"book" },
 		{ "label":"City Breaks", "icon":"city" },
@@ -7,7 +8,65 @@
 		{ "label":"Plage", "icon":"thongs" }
 	],
 	"items": [
-		{ "title":"Découvres Illes Cyclades", "category":"destination", "image":"image.jpg", "size":"standard" },
-		{ "title":"Découvrez Les Promenades d’Aurelia a Paris!", "category":"guide", "image":"image.jpg", "size":"standard" }
+		{ "title":"Découvres Illes Cyclades", "category":"destination", "image":"test1.jpg", "size":"standard" },
+		{ "title":"Découvrez Les Promenades d’Aurelia a Paris!", "category":"guide", "image":"test2.jpg", "size":"standard" },
+		{ "title":"5 endroits où faire une belle photo à Stockholm", "category":"top 5", "image":"test3.jpg", "content":"This is some content right here. It is for SEO purposes only.", "size":"standard text" },
+		{ "title":"Découvres Illes Cyclades", "category":"destination", "image":"test1.jpg", "size":"thin" },
+		{ "title":"Découvrez Les Promenades d’Aurelia a Paris!", "category":"guide", "image":"test2.jpg", "size":"wide" },
+		{ "title":"5 endroits où faire une belle photo à Stockholm", "category":"top 5", "image":"test3.jpg", "size":"thin" },
+		{ "title":"Découvres Illes Cyclades", "category":"destination", "image":"test1.jpg", "size":"extra-wide" },
+		{ "title":"Découvrez Les Promenades d’Aurelia a Paris!", "category":"guide", "image":"test2.jpg", "size":"extra-wide" }
+	],
+	"themes": [
+		{ "title":"Musique" },
+		{ "title":"Sport and Nature"},
+		{ "title":"Art"},
+		{ "title":"Gastronomie"},
+		{ "title":"Sport and Nature"},
+		{ "title":"Underground"},
+		{ "title":"En Lovers"},
+		{ "title":"En Family"},
+		{ "title":"Immanquables"},
+		{ "title":"Gay Friendly"},
+		{ "title":"On the trail of"},
+		{ "title":"Histoire"},
+		{ "title":"Petit Budget "},
+		{ "title":"Printemps "},
+		{ "title":"Summer"},
+		{ "title":"Automne"},
+		{ "title":"Day"},
+		{ "title":"On the road"},
+		{ "title":"Infos practices"},
+		{ "title":"Relaxation"}, 
+		{ "title":"Hiver"},
+		{ "title":"Promenades and Co"},
+		{ "title":"Sports Alternative"},
+		{ "title":"Agenda"},
+		{ "title":"Carnavals"},
+		{ "title":"The Aurélia Walks"},
+		{ "title":"Quartier"}
+		
+	],
+	"destinations": [
+		{ "title":"Belgium" },
+		{ "title":"Croatia"},
+		{ "title":"France"},
+		{ "title":"Germany"},
+		{ "title":"Greece"},
+		{ "title":"Hungary"},
+		{ "title":"Holland"},
+		{ "title":"Italy"},
+		{ "title":"Ireland"},
+		{ "title":"The Netherlands"},
+		{ "title":"Morocco"},
+		{ "title":"Portugal"},
+		{ "title":"Spain"},
+		{ "title":"Sweden"},
+		{ "title":"Thailand"},
+		{ "title":"Tunisia"},
+		{ "title":"Turkey"},
+		{ "title":"Russia"},
+		{ "title":"United Kingdom"},
+		{ "title":"United States"}
 	]
 }

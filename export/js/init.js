@@ -12,6 +12,18 @@ var site = {
 			e.preventDefault();
 			return false;
 		});
+		
+		// input focus
+		$('input').on('focusin', function(){
+			$(this).parents('.field-wrap').addClass('focused');
+		}).on('focusout', function(){
+			$(this).parents('.field-wrap').removeClass('focused');
+		});
+		
+		// dropdown toggle
+		$('.js-dropdown').on('click', function(){
+			$(this).parents('.js-dropdown-parent').toggleClass('show');
+		});
 			
 	},
 	
