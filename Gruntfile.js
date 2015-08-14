@@ -9,7 +9,7 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 		watch: {
 			all: {
-			    files: [ 'scss/*.scss', 'export/js/init.js', 'jade/*.jade', 'jade/*/*.jade' ],
+			    files: [ 'scss/*.scss', 'export/js/init.js', 'jade/*.jade', 'jade/*/*.jade', 'config.json' ],
 			    tasks: [ 'sass:dev', 'autoprefixer', 'csscomb', 'jade', 'jshint' ],
 			    options: {
 					livereload: true,

@@ -47,6 +47,7 @@ body{
 				font-size: 16px;
 				line-height: 16px;
 				padding: 15px;
+				transition: color .2s ease, background .2s ease;
 			}
 			&.home-link{
 				@media screen and (max-width: $main-nav-max){
@@ -67,6 +68,14 @@ body{
 					font-size: 18px;
 					line-height: 18px;
 					padding-top: 13px;
+				}
+				&:hover{
+					.desktop &{
+						a{
+							color: $yellow;
+							background: $blue-extra-extra-dark;
+						}
+					}
 				}
 			}
 			&.menu-link{
@@ -102,18 +111,20 @@ body{
 			}
 		}
 		li{
-			display: inline-block;
+			display: block;
+			text-align: center;
+			
 			@media screen and (min-width: $main-nav-min){
+				display: inline-block;
+				text-align: left;
 				border-right: 1px solid darken($blue-medium, 10%);
-			}
-			@media screen and (max-width: $main-nav-max){
-				display: block;
-				text-align: center;
+				float: left;
 			}
 			a{
 				font-size: 14px;
 				line-height: 14px;
 				padding: 15px;
+				transition: background .2s ease;
 				.count{
 					display: inline-block;
 					border-radius: 4px;
@@ -121,7 +132,19 @@ body{
 					padding: 2px 3px 3px 3px;
 					text-align: center;
 					margin-left: 5px;
+					transition: background .2s ease;
 				}
+			}
+			&:hover{
+				.desktop &{
+					a{
+						background: lighten($blue-extra-dark,5%);
+						.count{
+							background: lighten($blue-medium, 10%);
+						}
+					}
+				}
+				
 			}
 		}	
 	}
@@ -252,6 +275,8 @@ body{
 			text-align: center;
 			border-radius: 4px;
 			padding: 20px;
+			background: $blue-light;
+			transition: background .2s ease;
 			.icon{
 				color: $white;
 				opacity: 0.6;
@@ -260,6 +285,8 @@ body{
 				font-size: 32px;
 				line-height: 32px;
 				padding-bottom: 5px;
+				transform: translateY(0);
+				transition: transform .2s ease;
 			}
 			.label{
 				font-size: 15px;
@@ -279,6 +306,25 @@ body{
 				background: $blue-light;
 			}
 		}
+		&:hover{
+			.desktop &{
+				.icon{
+					transform: translateY(-3px);
+				}
+				.grey{
+					background: lighten($grey-dark, 5%);
+				}
+				.green{
+					background: lighten($green, 5%);
+				}
+				.dark-blue{
+					background: lighten($blue-dark-b, 5%);
+				}
+				.light-blue{
+					background: lighten($blue-light, 5%);
+				}
+			}
+		}
 	}
 }
 
@@ -296,12 +342,14 @@ body{
 		border-right: 1px solid darken($blue-medium, 5%);
 		font-size: 14px;
 		line-height: 14px;
+		transition: background .2s ease;
 		&.title{
 			font-weight: 600;
 			font-size: 16px;
 			line-height: 16px;
 			background: darken($blue-medium, 5%);
 			display: none;
+			cursor: default;
 			@media screen and (min-width: $main-nav-min){
 				display: table-cell;	
 			}
@@ -324,6 +372,411 @@ body{
 			@media screen and (max-width: $main-nav-max){
 				display: none;
 			}
+		}
+		&:hover:not(.title){
+			.desktop &{
+				background: lighten($blue-medium,5%);
+			}
+		}
+	}
+}
+
+.grid{
+	padding: 10px;
+	position: relative;
+	@media screen and (min-width: $main-nav-min){
+		padding: 30px 20px;
+	}
+	.items{
+		margin: 0px -5px;
+		@media screen and (min-width: $main-nav-min){
+			background: $white;
+			border-radius: 4px;
+			border-top-left-radius: 0;
+			box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.3);
+			transform: translateZ(0);
+			border-top: 1px solid $grey-medium;
+			margin: -1px 0px 0px 0px;
+			padding: 10px;
+		}
+		.item{
+			width: 100%;
+			float: left;
+			padding: 5px;
+			position: relative;
+			@media screen and (min-width: 980px){
+				padding: 10px;
+			}
+			.item-inner{
+				position: relative;
+				padding-top: 100%;
+				border-radius: 4px;
+				overflow: hidden;
+				box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.5);
+				padding-top: 56.25%;
+			}
+			&.standard{
+				@media screen and (min-width: 700px){
+					width: 50%;
+				}
+				@media screen and (min-width: 980px){
+					width: 33.333%;
+				}
+				
+			}
+			&.thin{
+				@media screen and (min-width: 700px){
+					width: 50%;
+					.item-inner{
+						padding-top: 56.25%;	
+					}
+				}
+				@media screen and (min-width: 980px){
+					width: 30%;
+					.item-inner{
+						padding-top: 67.5%;	
+					}
+				}
+			}
+			&.wide{
+				@media screen and (min-width: 700px){
+					width: 50%;
+					.item-inner{
+						padding-top: 56.25%;	
+					}
+				}
+				@media screen and (min-width: 980px){
+					width: 40%;
+					.item-inner{
+						padding-top: 50%;	
+					}
+				}
+			}
+			&.extra-wide{
+				@media screen and (min-width: 700px){
+					width: 50%;
+					.item-inner{
+						padding-top: 56.25%;	
+					}
+				}
+				@media screen and (min-width: 980px){
+					width: 50%;
+					.item-inner{
+						padding-top: 39.5%;	
+					}
+				}
+			}
+			.bg{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: $blue-dark-b;
+				background-repeat: none;
+				background-position: 50% 50%;
+				background-size: cover;
+				z-index: 1;
+			}
+			.overlay{
+				position: absolute;
+				top:0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 2;
+				opacity: 1;
+				background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 40%,rgba(0,0,0,0.8) 100%);
+			}
+			.underlay{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 2;
+				background: rgba($blue-extra-extra-dark,0);
+				transition: background .2s ease;
+			}
+			.text{
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				z-index: 3;
+				color: $white;
+				padding: 30px 20px 20px 20px;
+				transform: translateY(0);
+				transition: transform .2s ease;
+				.category{
+					position: absolute;
+					top: 0;
+					left: 20px;
+					font-size: 14px;
+					line-height: 14px;
+					font-weight: 600;
+					border-radius: 4px;
+					padding: 3px 5px;
+					background: $blue-medium;
+					text-transform: capitalize;
+					&.category-destination{
+						background: $green-light;
+					}
+					&.category-guide{
+						background: $red;
+					}
+					&.category-top-5{
+						background: $orange;
+					}
+				}
+				strong{
+					font-size: 21px;
+					line-height: 24px;
+					font-weight: 600;
+				}
+			}
+			
+			&.text-only{
+				.underlay{
+					background: rgba(darken($blue-extra-extra-dark,5%),0.9);
+				}
+				.text{
+					top: 0;
+					bottom: auto;
+					font-weight: 600;
+				}
+			}
+			
+			&:hover:not(.text-only){
+				.desktop &{
+					.text{
+						transform: translateY(-5px);
+					}
+					.underlay{
+						background: rgba($blue-extra-extra-dark,0.4);
+					}
+				}
+			}
+			
+		}
+	}
+}
+
+.tab-nav{
+	position: relative;
+	z-index: 2;
+	.current-btn{
+		background: $blue-extra-dark;
+		border-radius: 4px;
+		color: $white;
+		cursor: pointer;
+		font-size: 18px;
+		line-height: 18px;
+		font-weight: 600;
+		padding: 13px 15px;
+		margin-bottom: 5px;
+		position: relative;
+		@media screen and (min-width: $main-nav-min){
+			display: none;	
+		}
+		&:after{
+			content: "\f107";
+			@extend %icon-style;
+			position: absolute;
+			top: 9px;
+			right: 15px;
+			color: $white;
+			font-size: 26px;
+		}
+	}
+	ul{
+		display: none;
+		@media screen and (min-width: $main-nav-min){
+			display: block;
+		}
+	}
+	&.show{
+		@media screen and (max-width: $main-nav-max){
+			ul{
+				display: block;
+				width: 100%;
+				margin-top: -5px;
+				margin-bottom: 5px;
+				border-bottom-left-radius: 4px;
+				border-bottom-right-radius: 4px;
+				overflow: hidden;
+				box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.3);
+			}
+		}
+		.current-btn{
+			&:after{
+				content: "\f106";
+				top: 7px;
+			}
+		}
+	}
+	li{
+		display: block;
+		background: $white;
+		@media screen and (min-width: $main-nav-min){
+			display: inline-block;
+			border-top-left-radius: 4px;
+			border-top-right-radius: 4px;
+			border: 1px solid $grey-medium;
+			overflow: hidden;
+			transition: background .2s ease;
+			float: left;
+			margin-right: 4px;
+		}
+		a{
+			padding: 10px 20px;
+			font-size: 18px;
+			line-height: 20px;
+			color: $blue-medium;
+			font-weight: 600;
+			display: block;
+			transition: color .2s ease;
+		}
+		&.active{
+			a{
+				color: $blue-extra-dark;
+			}
+			@media screen and (min-width: $main-nav-min){
+				background: $blue-extra-dark;
+				border-color: $blue-extra-dark;
+				a{
+					color: $white;
+				}
+			}
+		}
+		&:hover{
+			@media screen and (min-width: $main-nav-min){
+				.desktop &{
+					background: darken($white,5%);
+					a{
+						color: $blue-dark;
+					}
+					&.active{
+						background: darken($blue-extra-dark,5%);
+						a{
+							color: $white;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.sitemap-module{
+	@media screen and (min-width: $main-nav-min){
+		padding: 40px 30px;
+	}
+	.module-title{
+		&:after{
+			content: "\f107";
+			@extend %icon-style;
+			position: absolute;
+			top: 13px;
+			right: 15px;
+			color: $blue-medium;
+			font-size: 26px;
+			display: none;
+		}
+		@media screen and (max-width: $main-nav-max){
+			font-size: 14px;
+			line-height: 14px;
+			background: $white;
+			border-bottom: 1px solid $grey-medium;
+			display: block;
+			color: $blue-medium;
+			margin-bottom: 0;
+			padding: 20px 10px;
+			font-weight: 400;
+			cursor: pointer;
+			position: relative;
+			&:after{
+				display: block;
+			}
+		}
+		&:hover{
+			.desktop &{
+				color: $blue-extra-dark;
+			}
+		}
+	}
+	.list-section{
+		@media screen and (min-width: $main-nav-min){
+			&:not(:last-of-type){
+				margin-bottom: 40px;
+			}
+		}
+	}
+	ul{
+		display: none;
+		@media screen and (min-width: $main-nav-min){
+			columns: 4;
+			column-gap: 40px;
+			display: block;
+		}
+		li{
+			display: block;
+			@media screen and (min-width: $main-nav-min){
+				display: inline-block;
+				width: 100%;
+			}
+		}
+	}
+	.show{
+		@media screen and (max-width: $main-nav-max){
+			ul{
+				display: block;
+				background: darken($white,2%);
+				padding: 10px;
+				li{
+					padding: 5px 0px;
+				}
+			}
+			.module-title{
+				&:after{
+					content: "\f106";
+					top: 11px;
+				}
+			}
+		}
+	}
+	a{
+		color: $blue-medium;
+		transition: color .2s ease;
+		&:hover{
+			.desktop &{
+				color: $blue-extra-dark;
+			}
+		}
+	}
+}
+
+.socials-module{
+	margin-bottom: 10px;
+	@media screen and (min-width: $main-nav-min){
+		position: absolute;
+		top: 35px;
+		right: 30px;
+		z-index: 3;
+	}
+	a{
+		display: block;
+		width: 30px;
+		height: 30px;
+		background: $blue-extra-dark;
+		border-radius: 50%;
+		float: left;
+		margin-right: 10px;
+		&:last-of-type{
+			margin-right: 0;
+		}
+		@media screen and (min-width: $main-nav-min){
+			width: 25px;
+			height: 25px;	
 		}
 	}
 }

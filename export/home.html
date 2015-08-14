@@ -9,6 +9,16 @@
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600">
     <link rel="stylesheet" href="main.css">
     <script src="js/vendors.js"></script>
+    <script>
+      (function (window, Modernizr) {
+      	'use strict';
+      	Modernizr.addTest({
+      		mobile: !!is.mobile(),
+      		tablet: !!is.tablet(),
+      		desktop: !!is.desktop()
+      	});
+      })(window, Modernizr);
+    </script>
   </head>
   <body class="home">
     <header id="global-header" class="global-header">
@@ -563,16 +573,16 @@
       <div class="inner group">
         <nav class="top-nav">
           <ul class="group">
-            <li class="home-link"><a href="/"><span class="icon icon-earth"></span><span>Découvertes Expedia</span></a></li>
+            <li class="home-link"><a href="./"><span class="icon icon-earth"></span><span>Découvertes Expedia</span></a></li>
             <li class="menu-link"><a href="#" class="js-toggle-main-nav">Menu</a></li>
           </ul>
         </nav>
         <nav class="main-nav">
           <ul class="group">
-            <li><a href="#">Themed Guides<span class="count">158</span></a></li>
-            <li><a href="#">Destinations<span class="count">40</span></a></li>
-            <li><a href="#">Contributeurs<span class="count">18</span></a></li>
-            <li><a href="#">Top 5<span class="count">21</span></a></li>
+            <li class="js-hover"><a href="#">Themed Guides<span class="count">158</span></a></li>
+            <li class="js-hover"><a href="#">Destinations<span class="count">40</span></a></li>
+            <li class="js-hover"><a href="#">Contributeurs<span class="count">18</span></a></li>
+            <li class="js-hover"><a href="#">Top 5<span class="count">21</span></a></li>
           </ul>
         </nav>
       </div>
@@ -594,7 +604,7 @@
         <div class="image-caption"><span>Photo par Amphithoe sous licence CC BY-ND 2.0</span></div>
       </div>
     </section>
-    <section class="booking-bar">
+    <nav class="booking-bar">
       <ul>
         <li class="title"> <span>Réservez un voyage:</span></li>
         <li><a href="#"><span class="icon icon-office"></span><span class="label">Hôtels</span></a></li>
@@ -602,26 +612,84 @@
         <li><a href="#"><span class="icon icon-suitcase"></span><span class="label">Vols + Hôtels</span></a></li>
         <li><a href="#"><span class="icon icon-automobile"></span><span class="label">Voiture</span></a></li>
       </ul>
-    </section>
+    </nav>
     <section class="grid">
       <div class="inner">
-        <nav class="tab-nav">
-          <ul>
-            <li class="tab"><a href="#"><span class="icon icon-book"></span><span class="label">A la Une</span></a></li>
+        <div class="socials-module group"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost/expedia-ui/export" target="_blank" class="social js-social"><span class="icon icon-facebook"></span></a><a href="https://twitter.com/intent/tweet?text=&amp;url=http://localhost/expedia-ui/export" target="_blank" class="social js-social"><span class="icon icon-twitter"></span></a><a href="https://plus.google.com/share?url=http://localhost/expedia-ui/export" target="_blank" class="social js-social"><span class="icon icon-google-plus"></span></a></div>
+        <nav class="tab-nav js-dropdown-parent">
+          <div class="current-btn js-dropdown">A la Une</div>
+          <ul class="group">
+            <li class="active tab"><a href="#"><span class="icon icon-book"></span><span class="label">A la Une</span></a></li>
             <li class="tab"><a href="#"><span class="icon icon-city"></span><span class="label">City Breaks</span></a></li>
             <li class="tab"><a href="#"><span class="icon icon-tower"></span><span class="label">France</span></a></li>
             <li class="tab"><a href="#"><span class="icon icon-thongs"></span><span class="label">Plage</span></a></li>
           </ul>
         </nav>
         <div class="items group"><a href="#" class="item standard">
-            <div style="background-image:url(image.jpg)" class="bg"></div><span class="category category-destination">destination</span><strong>Découvres Illes Cyclades</strong></a><a href="#" class="item standard">
-            <div style="background-image:url(image.jpg)" class="bg"></div><span class="category category-guide">guide</span><strong>Découvrez Les Promenades d’Aurelia a Paris!</strong></a>
+            <div class="item-inner">
+              <div style="background-image:url(images/test1.jpg)" class="bg"></div>
+              <div class="overlay"></div>
+              <div class="underlay"></div>
+              <div class="text">		<strong>Découvres Illes Cyclades</strong><span class="category category-destination">destination</span>
+              </div>
+            </div></a><a href="#" class="item standard">
+            <div class="item-inner">
+              <div style="background-image:url(images/test2.jpg)" class="bg"></div>
+              <div class="overlay"></div>
+              <div class="underlay"></div>
+              <div class="text">		<strong>Découvrez Les Promenades d’Aurelia a Paris!</strong><span class="category category-guide">guide</span>
+              </div>
+            </div></a>
+          <div class="item text-only standard text">
+            <div class="item-inner">
+              <div style="background-image:url(images/test3.jpg)" class="bg"></div>
+              <div class="underlay"></div>
+              <div class="text">
+                <p>This is some content right here. It is for SEO purposes only.</p>
+              </div>
+            </div>
+          </div><a href="#" class="item thin">
+            <div class="item-inner">
+              <div style="background-image:url(images/test1.jpg)" class="bg"></div>
+              <div class="overlay"></div>
+              <div class="underlay"></div>
+              <div class="text">		<strong>Découvres Illes Cyclades</strong><span class="category category-destination">destination</span>
+              </div>
+            </div></a><a href="#" class="item wide">
+            <div class="item-inner">
+              <div style="background-image:url(images/test2.jpg)" class="bg"></div>
+              <div class="overlay"></div>
+              <div class="underlay"></div>
+              <div class="text">		<strong>Découvrez Les Promenades d’Aurelia a Paris!</strong><span class="category category-guide">guide</span>
+              </div>
+            </div></a><a href="#" class="item thin">
+            <div class="item-inner">
+              <div style="background-image:url(images/test3.jpg)" class="bg"></div>
+              <div class="overlay"></div>
+              <div class="underlay"></div>
+              <div class="text">		<strong>5 endroits où faire une belle photo à Stockholm</strong><span class="category category-top-5">top 5</span>
+              </div>
+            </div></a><a href="#" class="item extra-wide">
+            <div class="item-inner">
+              <div style="background-image:url(images/test1.jpg)" class="bg"></div>
+              <div class="overlay"></div>
+              <div class="underlay"></div>
+              <div class="text">		<strong>Découvres Illes Cyclades</strong><span class="category category-destination">destination</span>
+              </div>
+            </div></a><a href="#" class="item extra-wide">
+            <div class="item-inner">
+              <div style="background-image:url(images/test2.jpg)" class="bg"></div>
+              <div class="overlay"></div>
+              <div class="underlay"></div>
+              <div class="text">		<strong>Découvrez Les Promenades d’Aurelia a Paris!</strong><span class="category category-guide">guide</span>
+              </div>
+            </div></a>
         </div>
       </div>
     </section>
     <section class="search-module">
       <div class="search-inner">
-        <h3>Search for a city of theme</h3>
+        <h3>Search for a city or theme</h3>
         <form class="form">
           <div class="field-wrap group"><span class="icon-search input-icon"></span>
             <input type="search" placeholder="Recherche par ville ou le thème">
@@ -634,6 +702,67 @@
       <div class="inner">
         <h4 class="module-title">Réservez vos vacances</h4>
         <div class="group items"><a href="#" class="item"><span class="item-wrap green"><span class="icon icon-office"></span><span class="label">Hôtels</span></span></a><a href="#" class="item"><span class="item-wrap dark-blue"><span class="icon icon-airplane"></span><span class="label">Vols</span></span></a><a href="#" class="item"><span class="item-wrap light-blue"><span class="icon icon-suitcase"></span><span class="label">Vols + Hôtels</span></span></a><a href="#" class="item"><span class="item-wrap grey"><span class="icon icon-automobile"></span><span class="label">Voiture</span></span></a></div>
+      </div>
+    </section>
+    <section class="sitemap-module">
+      <div class="inner">
+        <div class="js-dropdown-parent list-section">
+          <h4 class="module-title js-dropdown">Tous les thèmes</h4>
+          <ul>
+            <li><a href="#">Musique</a></li>
+            <li><a href="#">Sport and Nature</a></li>
+            <li><a href="#">Art</a></li>
+            <li><a href="#">Gastronomie</a></li>
+            <li><a href="#">Sport and Nature</a></li>
+            <li><a href="#">Underground</a></li>
+            <li><a href="#">En Lovers</a></li>
+            <li><a href="#">En Family</a></li>
+            <li><a href="#">Immanquables</a></li>
+            <li><a href="#">Gay Friendly</a></li>
+            <li><a href="#">On the trail of</a></li>
+            <li><a href="#">Histoire</a></li>
+            <li><a href="#">Petit Budget </a></li>
+            <li><a href="#">Printemps </a></li>
+            <li><a href="#">Summer</a></li>
+            <li><a href="#">Automne</a></li>
+            <li><a href="#">Day</a></li>
+            <li><a href="#">On the road</a></li>
+            <li><a href="#">Infos practices</a></li>
+            <li><a href="#">Relaxation</a></li>
+            <li><a href="#">Hiver</a></li>
+            <li><a href="#">Promenades and Co</a></li>
+            <li><a href="#">Sports Alternative</a></li>
+            <li><a href="#">Agenda</a></li>
+            <li><a href="#">Carnavals</a></li>
+            <li><a href="#">The Aurélia Walks</a></li>
+            <li><a href="#">Quartier</a></li>
+          </ul>
+        </div>
+        <div class="js-dropdown-parent list-section">
+          <h4 class="module-title js-dropdown">Toutes les destinations</h4>
+          <ul>
+            <li><a href="#">Belgium</a></li>
+            <li><a href="#">Croatia</a></li>
+            <li><a href="#">France</a></li>
+            <li><a href="#">Germany</a></li>
+            <li><a href="#">Greece</a></li>
+            <li><a href="#">Hungary</a></li>
+            <li><a href="#">Holland</a></li>
+            <li><a href="#">Italy</a></li>
+            <li><a href="#">Ireland</a></li>
+            <li><a href="#">The Netherlands</a></li>
+            <li><a href="#">Morocco</a></li>
+            <li><a href="#">Portugal</a></li>
+            <li><a href="#">Spain</a></li>
+            <li><a href="#">Sweden</a></li>
+            <li><a href="#">Thailand</a></li>
+            <li><a href="#">Tunisia</a></li>
+            <li><a href="#">Turkey</a></li>
+            <li><a href="#">Russia</a></li>
+            <li><a href="#">United Kingdom</a></li>
+            <li><a href="#">United States</a></li>
+          </ul>
+        </div>
       </div>
     </section>
     <footer id="global-footer" class="global-footer">
