@@ -1,11 +1,20 @@
 {
 	"env": "dev",
 	"site_url": "http://localhost/expedia-ui/export",
-	"tabs": [
+	"home_tabs": [
 		{ "label":"A la Une", "icon":"book" },
 		{ "label":"City Breaks", "icon":"city" },
 		{ "label":"France", "icon":"tower" },
 		{ "label":"Plage", "icon":"thongs" }
+	],
+	"country_tabs": [
+		{ "label":"Regions", "icon":"book" },
+		{ "label":"Skiing", "icon":"city" }
+	],
+	"destination_tabs": [
+		{ "label":"Themes", "icon":"book" },
+		{ "label":"Seasons", "icon":"city" },
+		{ "label":"Top 5", "icon":"top" }
 	],
 	"items": [
 		{ "title":"Découvres Illes Cyclades", "category":"destination", "image":"test1.jpg", "size":"standard" },
@@ -17,7 +26,7 @@
 		{ "title":"Découvres Illes Cyclades", "category":"destination", "image":"test1.jpg", "size":"extra-wide" },
 		{ "title":"Découvrez Les Promenades d’Aurelia a Paris!", "category":"guide", "image":"test2.jpg", "size":"extra-wide" }
 	],
-	"themes": [
+	"themes_list": [
 		{ "title":"Musique" },
 		{ "title":"Sport and Nature"},
 		{ "title":"Art"},
@@ -47,7 +56,7 @@
 		{ "title":"Quartier"}
 		
 	],
-	"destinations": [
+	"destinations_list": [
 		{ "title":"Belgium" },
 		{ "title":"Croatia"},
 		{ "title":"France"},
@@ -68,5 +77,46 @@
 		{ "title":"Russia"},
 		{ "title":"United Kingdom"},
 		{ "title":"United States"}
+	],
+	"regions": [
+		{ "title":"Paris", "image":"test4.jpg" },
+		{ "title":"Bretagne", "image":"test5.jpg" },
+		{ "title":"Aquataine", "image":"test6.jpg" },
+		{ "title":"Normandie", "image":"test7.jpg" },
+		{ "title":"Paca", "image":"test8.jpg" },
+		{ "title":"Alsace-Lorraine",  "image":"test9.jpg" },
+		{ "title":"Auvergne", "image":"test10.jpg" },
+		{ "title":"Val de Loire", "image":"test11.jpg" },
+		{ "title":"Languedoc-Roussillon", "image":"test12.jpg" },
+		{ "title":"Auvergne", "image":"test10.jpg" },
+		{ "title":"Val de Loire", "image":"test11.jpg" },
+		{ "title":"Languedoc-Roussillon", "image":"test12.jpg" }
+	],
+	"destinations": [
+		{ "title":"Paris", "image":"test4.jpg", "icon":"" },
+		{ "title":"Bretagne", "image":"test5.jpg", "icon":"" },
+		{ "title":"Aquataine", "image":"test6.jpg", "icon":"" },
+		{ "title":"Normandie", "image":"test7.jpg", "icon":"" },
+		{ "title":"Paca", "image":"test8.jpg", "icon":"" },
+		{ "title":"Alsace-Lorraine",  "image":"test9.jpg", "icon":"" },
+		{ "title":"Auvergne", "image":"test10.jpg", "icon":"" },
+		{ "title":"Val de Loire", "image":"test11.jpg", "icon":"" },
+		{ "title":"Languedoc-Roussillon", "image":"test12.jpg", "icon":"" },
+		{ "title":"Auvergne", "image":"test10.jpg", "icon":"" },
+		{ "title":"Val de Loire", "image":"test11.jpg", "icon":"" },
+		{ "title":"Languedoc-Roussillon", "image":"test12.jpg", "icon":"" }
+	],
+	"carousel_guides": [
+		{ "heading":"History", "icon":"history", "image":"test13.jpg", "title":"Autour de Notre-Dame et de l'Ile de la Cité", "content":"Deux parisiens vous présentent leur ville. Chaque mois, Aurélia et Brice vous emmènent découvrir en vidéo un Paris bucolique, caché & discret." },
+		{ "heading":"Sport et Nature", "icon":"sport", "image":"test14.jpg", "title":"Les charmes de Lyon au printemps", "content":"Lyon dévoile ses trésors historiques toute l’année. Mais au printemps, les paysages urbains et naturels se conjuguent aux évènements cultur." },
+		{ "heading":"History", "icon":"history", "image":"test13.jpg", "title":"Autour de Notre-Dame et de l'Ile de la Cité", "content":"Deux parisiens vous présentent leur ville. Chaque mois, Aurélia et Brice vous emmènent découvrir en vidéo un Paris bucolique, caché & discret." },
+		{ "heading":"Sport et Nature", "icon":"sport", "image":"test14.jpg", "title":"Les charmes de Lyon au printemps", "content":"Lyon dévoile ses trésors historiques toute l’année. Mais au printemps, les paysages urbains et naturels se conjuguent aux évènements cultur." },
+		{ "heading":"History", "icon":"history", "image":"test13.jpg", "title":"Autour de Notre-Dame et de l'Ile de la Cité", "content":"Deux parisiens vous présentent leur ville. Chaque mois, Aurélia et Brice vous emmènent découvrir en vidéo un Paris bucolique, caché & discret." },
+		{ "heading":"Sport et Nature", "icon":"sport", "image":"test14.jpg", "title":"Les charmes de Lyon au printemps", "content":"Lyon dévoile ses trésors historiques toute l’année. Mais au printemps, les paysages urbains et naturels se conjuguent aux évènements cultur." }
+	],
+	"inspiration": [
+		{ "title":"Découvres Illes Cyclades", "category":"destination", "image":"test6.jpg" },
+		{ "title":"Découvrez Les Promenades d’Aurelia a Paris!", "category":"guide", "image":"test7.jpg"},
+		{ "title":"Découvres Maroc", "category":"destination", "image":"test8.jpg" }
 	]
 }
