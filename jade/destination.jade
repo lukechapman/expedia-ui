@@ -18,11 +18,21 @@ html.no-js
 			div.inner.group
 				include ./partials/sidebar.jade
 				div.main-content
+					div.content-header
+						include ./modules/breadcrumbs.jade
+						include ./modules/socials.jade
+					h2 Que faire à Berlin?
 					include ./modules/destination-grid.jade
+					include ./modules/column-content.jade
+					
+					- var carousel = 'guides-content'
+					- var carousel_title = 'Guides récents'
+					- var carousel_items = carousel_guides
+					include ./modules/carousel.jade		
 		
-		- var carousel = 'guides'
-		- var carousel_title = 'Guides récents'
-		- var carousel_items = carousel_guides
+		- carousel = 'guides'
+		- carousel_title = 'Guides récents a travers le monde'
+		- carousel_items = carousel_guides
 		include ./modules/carousel.jade
 		
 		include ./modules/inspiration.jade

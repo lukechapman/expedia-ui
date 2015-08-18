@@ -25,6 +25,14 @@ body{
 	clear: both;
 }
 
+.separator{
+	border: 0;
+	width: 100%;
+	height: 1px;
+	background: $grey-medium;
+	margin-bottom: 30px;
+}
+
 /* global */
 
 .main-header{
@@ -175,7 +183,37 @@ body{
 .sidebar{
 	width: 25%;
 	float: left;
-	padding: 20px;
+	padding: 30px;
+	font-size: 15px;
+	line-height: 26px;
+	.icon{
+		color: $blue-dark;
+		font-size: 20px;
+		line-height: 20px;
+	}
+	h3{
+		color: $blue-extra-dark;
+		font-weight: 700;
+	}
+	a{
+		color: $blue-medium;
+	}
+	li{
+		position: relative;
+	}
+	.has-children{
+		&:before{
+			content: "+";
+			position: absolute;
+			color: $blue-medium;
+			left: -10px;
+			top: 0px;
+		}
+		.children{
+			display: none;
+		}
+	}
+	
 }
 
 .main-content{
@@ -210,6 +248,8 @@ body{
 		}
 	}
 }
+
+
 
 .hero-module{
 	width: 100%;
@@ -309,6 +349,37 @@ body{
 			color: $white;
 			font-weight: 600;
 		}
+	}
+}
+
+
+.breadcrumbs-secondary{
+	line-height: 13px;
+	li{
+		color: $grey-dark;
+		font-size: 13px;
+		line-height: 13px;
+		display: inline-block;
+		padding-left: 10px;
+		position: relative;
+		&:before{
+			content: "•";
+			position: absolute;
+			left: 1px;
+			top: 0px;
+			display: block;
+		}
+		&:first-of-type{
+			&:before{
+				display: none;
+			}
+			padding-left: 0;
+		}
+	}
+	a{
+		font-size: 13px;
+		line-height: 13px;
+		color: $grey-dark;
 	}
 }
 
@@ -609,6 +680,10 @@ body{
 	@media screen and (min-width: $main-nav-min){
 		padding: 40px 30px;
 	}
+	.page-content &{
+		background: transparent;
+		padding: 0;
+	}
 	.owl-carousel{
 		padding-bottom: 10px;
 		border-bottom: 1px solid $grey-medium;
@@ -692,6 +767,14 @@ body{
 	}
 	p{
 		margin-bottom: 24px;
+	}
+}
+
+.columns{
+	columns: 2;
+	column-gap: 40px;
+	p{
+		display: inline-block;
 	}
 }
 
@@ -1032,6 +1115,14 @@ body{
 				}
 			}
 		}
+	}
+}
+
+.content-header{
+	position: relative;
+	padding: 25px 0px;
+	.socials{
+		top: 20px;
 	}
 }
 
