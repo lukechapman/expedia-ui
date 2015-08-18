@@ -63,7 +63,20 @@
 }
 .icon-airplane:before {
 	content: "\e602";
+	transform: scaleX(-1);
 }
 .icon-earth:before {
 	content: "\e603";
+}
+.icon-share2:before {
+	content: "\e607";
+}
+.icon-google-plus:before {
+	content: "\e604";
+}
+.icon-facebook:before {
+	content: "\e605";
+}
+.icon-twitter:before {
+	content: "\e606";
 }

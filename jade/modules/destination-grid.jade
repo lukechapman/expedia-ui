@@ -1,0 +1,24 @@
+section.grid.destination-grid
+	div.inner
+		include socials.jade
+		nav.tab-nav.js-dropdown-parent
+			div.current-btn.js-dropdown Themes
+			ul.group
+				each tab, index in destination_tabs
+					- var tab_class = (index === 0 ? "active tab" : "tab")
+					li(class=tab_class)
+						a(href='#')
+							span(class="icon icon-#{tab.icon}")
+							span.label #{tab.label}
+		div.items.group
+				
+			each destination in destinations
+					a(href="#").item.standard.split
+						div.item-inner
+							div.bg(style="background-image:url(images/#{destination.image})")
+							div.overlay
+							div.underlay
+							div.text
+								span(class="icon icon-#{destination.icon}")
+								strong #{destination.title}
+							

@@ -1,0 +1,30 @@
+section.grid.country-grid
+	div.inner
+		include socials.jade
+		nav.tab-nav.js-dropdown-parent
+			div.current-btn.js-dropdown Regions
+			ul.group
+				each tab, index in country_tabs
+					- var tab_class = (index === 0 ? "active tab" : "tab")
+					li(class=tab_class)
+						a(href='#')
+							span(class="icon icon-#{tab.icon}")
+							span.label #{tab.label}
+		div.items.group
+		
+			div.entry-content.content-item
+				h1 (Re)Découvrez la France!
+				p Venez vivre des vacances personnalisées en France ! Naviguez par région ou par thème et créez un séjour idéal qui reflète vos envies.
+				p En couple ou avec vos enfants, autour de la gastronomie, de la nature, de l’histoire et bien plus encore, venez expérimenter des parcours originaux dans l’Hexagone!
+				p Aventures gourmandes au Pays Basque, itinéraires sportifs en Corse, leçon d’histoire sur les plages du Débarquement ou encore promenades sur les traces de Merlin l’enchanteur en Bretagne, partez visiter ce que vous aimez où vous voulez.
+				p Vous êtes à la recherche d’inspiration pour vos prochaines excursions en France? Découvrez nos guides de voyages et imaginez des vacances qui vous ressemblent!
+				
+			each region in regions
+					a(href="#").item.standard.split
+						div.item-inner
+							div.bg(style="background-image:url(images/#{region.image})")
+							div.overlay
+							div.underlay
+							div.text		
+								strong #{region.title}
+							

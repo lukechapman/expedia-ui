@@ -2,9 +2,18 @@ section.hero-module
 	div.bg(style='background-image:url(images/hero-placeholder.jpg)')
 	div.overlay
 	div.text
-		div.text-inner
-			h1 Trouvez l'inspiration
-			h2 pour votre prochaine aventure
-			include ./search-form.jade
+		if page == 'home'
+			div.text-inner.has-search
+				h1 Trouvez l'inspiration
+				h2 pour votre prochaine aventure
+				include ./search-form.jade
+		else
+			div.text-inner
+				ul.breadcrumbs-primary
+					each breadcrumb in breadcrumbs
+						li
+							a(href="#").breadcrumb #{breadcrumb.title}
+				h1 #{page_title}
+				
 		div.image-caption
 			span Photo par Amphithoe sous licence CC BY-ND 2.0

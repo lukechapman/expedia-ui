@@ -1,0 +1,16 @@
+section.carousel-module
+	div.inner
+		h4.module-title Guides récents
+		div.owl-carousel.owl-theme(class="carousel-#{carousel}")
+			each carousel_item in carousel_items
+				div.carousel-item
+					div.carousel-header(style="background-image:url(images/#{carousel_item.image})")
+						div.overlay
+						h4
+							span.icon(class="icon-#{carousel_item.icon}")
+							span #{carousel_item.heading}
+					div.carousel-body
+						h3 #{carousel_item.title}
+						p #{carousel_item.content}
+						a(href="#") Read more
+				

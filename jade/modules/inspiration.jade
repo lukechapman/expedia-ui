@@ -1,0 +1,16 @@
+section.inspiration-module.grid
+	div.inner
+		h4.module-title Soyez Inspiré
+		div.group.items
+			each item in inspiration
+				a(href="#", class="item standard")
+					div.item-inner
+						div.bg(style="background-image:url(images/#{item.image})")
+						div.overlay
+						div.underlay
+						div.text		
+							strong #{item.title}
+							- var cat = item.category.replace(' ','-')
+							span(class="category category-#{cat}") #{item.category}
+
+				

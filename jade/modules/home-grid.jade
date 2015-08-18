@@ -1,10 +1,10 @@
-section.grid
+section.grid.home-grid
 	div.inner
 		include socials.jade
 		nav.tab-nav.js-dropdown-parent
 			div.current-btn.js-dropdown A la Une
 			ul.group
-				each tab, index in tabs
+				each tab, index in home_tabs
 					- var tab_class = (index === 0 ? "active tab" : "tab")
 					li(class=tab_class)
 						a(href='#')

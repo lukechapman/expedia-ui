@@ -1,0 +1,30 @@
+doctype
+html.no-js
+	head
+		include ./partials/head.jade
+	body.home
+		header.global-header#global-header
+			include ./external/header.html
+		include ./modules/header.jade
+		
+		- var page = 'destination'
+		- var page_title = 'Berlin'
+		- var breadcrumbs = [{"title":"Guides de Voyage"},{"title":"Germany"}]
+		include ./modules/hero.jade
+		
+		include ./modules/booking-bar.jade
+		
+		section.page-content
+			div.inner.group
+				include ./partials/sidebar.jade
+				div.main-content
+					include ./modules/destination-grid.jade
+		
+		- var carousel = 'guides'
+		- var carousel_title = 'Guides récents'
+		- var carousel_items = carousel_guides
+		include ./modules/carousel.jade
+		
+		include ./modules/inspiration.jade
+		
+		include ./partials/footer.jade

@@ -3,12 +3,12 @@ section.sitemap-module
 		div.js-dropdown-parent.list-section
 			h4.module-title.js-dropdown Tous les thèmes
 			ul
-				each theme, index in themes
+				each theme, index in themes_list
 					li
 						a(href="#") #{theme.title}
 		div.js-dropdown-parent.list-section
 			h4.module-title.js-dropdown Toutes les destinations
 			ul
-				each destination, index in destinations
+				each destination, index in destinations_list
 					li
 						a(href="#") #{destination.title}
