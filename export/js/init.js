@@ -71,27 +71,53 @@ var site = {
 	
 	carousels: function(){
 		
-		$('.carousel-guides').owlCarousel({
-			margin:20,
-			nav:true,
-			navText: ['<span class="icon icon-angle-left"></span>','<span class="icon icon-angle-right"></span>'],
-			responsive: {
-				0: {
-					items: 1,
-					dots: false,
-					stagePadding: 40
-				},
-				480: {
-					items: 2
-				},
-				720: {
-					items: 3
-				},
-				1020: {
-					items: 4
+		if( $('.carousel-guides').length ){
+			$('.carousel-guides').owlCarousel({
+				margin:20,
+				nav:true,
+				navText: ['<span class="icon icon-angle-left"></span>','<span class="icon icon-angle-right"></span>'],
+				responsive: {
+					0: {
+						items: 1,
+						dots: false,
+						stagePadding: 40
+					},
+					480: {
+						items: 2
+					},
+					720: {
+						items: 3
+					},
+					1020: {
+						items: 4
+					}
 				}
-			}
-		});
+			});
+		}
+		
+		if( $('.carousel-guides-content').length ){
+			$('.carousel-guides-content').owlCarousel({
+				margin:20,
+				nav:true,
+				navText: ['<span class="icon icon-angle-left"></span>','<span class="icon icon-angle-right"></span>'],
+				responsive: {
+					0: {
+						items: 1,
+						dots: false,
+						stagePadding: 40
+					},
+					480: {
+						items: 2
+					},
+					720: {
+						items: 2
+					},
+					1020: {
+						items: 3
+					}
+				}
+			});
+		}
 			
 	},
 	
