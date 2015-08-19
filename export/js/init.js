@@ -37,16 +37,42 @@ var site = {
 	docker: {
 		
 		ready: false,
-		offset: 0,
-		
+		side_offset: 0,
+		bar_offset: 0,
+		nav_offset: 0,
+		content_offset: 0,
+		side_fit: false,
+		biggest_child: 0,
 		setup: function(){
 			
-			var el = $('.booking-bar');
-			site.docker.offset = el.position().top;
-			
+			// booking bar dock
+			var bar = $('.booking-bar');
+			site.docker.bar_offset = bar.position().top;
 			var buffer = $('<div class="buffer" />');
-			buffer.height(el.outerHeight());
-			buffer.insertAfter(el);
+			buffer.height(bar.outerHeight());
+			buffer.insertAfter(bar);
+			
+			// side nav dock
+			var wh = $(window).height();
+			var side = $('.side-nav');
+			site.docker.side_offset = side.position().top;
+			
+			var content = $('.main-content');
+			site.docker.content_offset = ( content.offset().top + content.outerHeight() );
+			
+			$('.side-nav .children').each(function(){
+				if($(this).outerHeight() > site.docker.biggest_child){
+					site.docker.biggest_child = $(this).outerHeight();
+				}
+			});
+			$('body').addClass('side-ready');
+			
+			site.docker.nav_offset = bar.outerHeight() + $('.sidebar').outerHeight();
+
+			
+			if( (site.docker.biggest_child + $('.sidebar').outerHeight()) < wh){
+				site.docker.side_fit = true;
+			}
 			
 			site.docker.ready = true;
 			
@@ -54,16 +80,35 @@ var site = {
 		
 		init: function(st){
 			
-			var el = $('.booking-bar');
-			
-			if(typeof el !== 'undefined' && el.length && site.docker.ready){
+			// booking bar dock
+			var bar = $('.booking-bar');
+			if(typeof bar !== 'undefined' && bar.length && site.docker.ready){
 				
-				if(st >= site.docker.offset){
+				if(st >= site.docker.bar_offset){
 					$('body').addClass('dock-bar');
 				}else{
 					$('body').removeClass('dock-bar');
 				}
 			
+			}
+			
+			var side = $('.side-nav');
+			
+			
+			if(typeof side !== 'undefined' && side.length && site.docker.ready && site.docker.side_fit){
+				
+				if(st >= site.docker.bar_offset){
+					$('body').addClass('dock-side');
+				}else{
+					$('body').removeClass('dock-side');
+				}
+
+				var at_bottom = (site.docker.content_offset - (site.docker.nav_offset + site.docker.biggest_child));
+				if( st >= at_bottom ){
+					side.css({ 'position':'absolute','top':(at_bottom + bar.outerHeight() + parseInt($('.sidebar').css('padding-top'),10)) });
+				}else{
+					side.removeAttr('style');
+				}
 			}
 		}
 		
@@ -121,6 +166,23 @@ var site = {
 			
 	},
 	
+	accordion: function(){
+		
+		$('.has-children > a').on('click', function(e){
+			
+			if($(this).siblings('.children').hasClass('show-children')){
+				$(this).siblings('.children').removeClass('show-children');
+			}else{
+				$('.show-children').removeClass('show-children');
+				$(this).siblings('.children').addClass('show-children');
+			}
+			
+			e.preventDefault();
+			return false;
+		});
+		
+	},
+	
 	init: function(){
 		$(function(){
 			
@@ -135,6 +197,9 @@ var site = {
 			
 			// setup
 			site.setup();
+			
+			//nav accordion
+			site.accordion();
 			
 		});
 		
