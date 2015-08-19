@@ -486,9 +486,9 @@ body {
 }
 
 .sidebar {
-  width: 25%;
+  width: 20%;
   float: left;
-  padding: 30px;
+  padding: 30px 25px;
   font-size: 15px;
   line-height: 26px;
 }
@@ -514,13 +514,28 @@ body {
   left: -10px;
   top: 0px;
 }
-.sidebar .has-children .children {
+.side-ready .sidebar .has-children .children {
   display: none;
+}
+.sidebar .has-children .children.show-children {
+  display: block;
+}
+.dock-side .sidebar .side-nav {
+  position: fixed;
+  top: 78px;
+  left: 25px;
+}
+@media screen and (min-width: 1200px) {
+  .dock-side .sidebar .side-nav {
+    left: 50%;
+    margin-left: -575px;
+  }
 }
 
 .main-content {
   float: left;
-  width: 75%;
+  width: 80%;
+  padding: 30px 25px 30px 0px;
 }
 
 /* modules */
@@ -698,7 +713,7 @@ body {
 }
 @media screen and (min-width: 760px) {
   .booking-module {
-    padding: 30px;
+    padding: 30px 25px;
   }
 }
 .booking-module .items {
@@ -854,7 +869,7 @@ body {
 
 @media screen and (min-width: 760px) {
   .sitemap-module {
-    padding: 40px 30px;
+    padding: 40px 25px;
   }
 }
 .sitemap-module .module-title:after {
@@ -1313,7 +1328,7 @@ body {
 }
 @media screen and (min-width: 760px) {
   .carousel-module {
-    padding: 40px 30px;
+    padding: 40px 25px;
   }
 }
 .page-content .carousel-module {
@@ -1330,6 +1345,7 @@ body {
   box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   margin-bottom: 10px;
+  display: block;
 }
 .carousel-module .carousel-item .carousel-header {
   width: 100%;
@@ -1366,6 +1382,8 @@ body {
   line-height: 20px;
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px;
+  -webkit-transition: background .2s ease;
+          transition: background .2s ease;
 }
 .carousel-module .carousel-item .carousel-body h3 {
   color: #0065b8;
@@ -1373,8 +1391,11 @@ body {
   line-height: 20px;
   margin-bottom: 10px;
 }
-.carousel-module .carousel-item .carousel-body a {
+.carousel-module .carousel-item .carousel-body strong {
   color: #0065b8;
+}
+.desktop .carousel-module .carousel-item:hover .carousel-body {
+  background: #d1eaff;
 }
 @media screen and (max-width: 479px) {
   .carousel-module .module-title {
@@ -1383,7 +1404,7 @@ body {
 }
 
 .inspiration-module {
-  padding: 40px 20px;
+  padding: 40px 25px;
 }
 
 /* content */
@@ -1415,13 +1436,7 @@ body {
 }
 
 .grid {
-  padding: 10px;
   position: relative;
-}
-@media screen and (min-width: 760px) {
-  .grid {
-    padding: 30px 20px;
-  }
 }
 .grid .inner {
   position: relative;
@@ -1648,6 +1663,9 @@ body {
       -ms-transform: translateY(-5px);
           transform: translateY(-5px);
 }
+.grid.country-grid {
+  padding: 30px 25px;
+}
 @media screen and (max-width: 699px) {
   .grid.country-grid .items {
     display: -webkit-box;
@@ -1687,6 +1705,12 @@ body {
         -ms-flex: 0 0 100%;
             flex: 0 0 100%;
   }
+}
+.grid.home-grid {
+  padding: 30px 25px;
+}
+.grid.destination-grid {
+  padding: 30px 0px;
 }
 
 .tab-nav {
@@ -1798,7 +1822,7 @@ body {
 
 .content-header {
   position: relative;
-  padding: 25px 0px;
+  padding: 0px 0px 25px 0px;
 }
 .content-header .socials {
   top: 20px;

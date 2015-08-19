@@ -3,7 +3,7 @@ section.carousel-module
 		h4.module-title #{carousel_title}
 		div.owl-carousel.owl-theme(class="carousel-#{carousel}")
 			each carousel_item in carousel_items
-				div.carousel-item
+				a.carousel-item(href="#")
 					div.carousel-header(style="background-image:url(images/#{carousel_item.image})")
 						div.overlay
 						h4
@@ -12,5 +12,5 @@ section.carousel-module
 					div.carousel-body
 						h3 #{carousel_item.title}
 						p #{carousel_item.content}
-						a(href="#") Read more
+						strong Read more
 				

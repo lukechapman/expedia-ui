@@ -15,7 +15,7 @@ body{
 }
 
 .inner{
-	max-width: 1200px;
+	max-width: $inner-width;
 	margin: 0 auto;
 }
 
@@ -181,9 +181,9 @@ body{
 }
 
 .sidebar{
-	width: 25%;
+	width: 20%;
 	float: left;
-	padding: 30px;
+	padding: 30px 25px;
 	font-size: 15px;
 	line-height: 26px;
 	.icon{
@@ -210,7 +210,23 @@ body{
 			top: 0px;
 		}
 		.children{
-			display: none;
+			.side-ready &{
+				display: none;
+			}
+			&.show-children{
+				display: block;
+			}
+		}
+	}
+	.side-nav{
+		.dock-side &{
+			position: fixed;
+			top: 78px;
+			left: 25px;
+			@media screen and (min-width: $inner-width){
+				left: 50%;
+				margin-left: -(($inner-width/2) - 25);	
+			}
 		}
 	}
 	
@@ -218,7 +234,8 @@ body{
 
 .main-content{
 	float: left;
-	width: 75%;
+	width: 80%;
+	padding: 30px 25px 30px 0px;
 }
 
 /* modules */
@@ -388,7 +405,7 @@ body{
 	background: $grey-light;
 	padding: 20px 5px;
 	@media screen and (min-width: $main-nav-min){
-		padding: 30px;
+		padding: 30px 25px;
 	}
 	.items{
 		margin: 0px;
@@ -535,7 +552,7 @@ body{
 
 .sitemap-module{
 	@media screen and (min-width: $main-nav-min){
-		padding: 40px 30px;
+		padding: 40px 25px;
 	}
 	.module-title{
 		&:after{
@@ -678,7 +695,7 @@ body{
 	background: $grey-light;
 	padding: 20px 0px;
 	@media screen and (min-width: $main-nav-min){
-		padding: 40px 30px;
+		padding: 40px 25px;
 	}
 	.page-content &{
 		background: transparent;
@@ -695,6 +712,7 @@ body{
 		box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.3);
 		overflow: hidden;
 		margin-bottom: 10px;
+		display: block;
 		.carousel-header{
 			width: 100%;
 			position: relative;
@@ -728,14 +746,22 @@ body{
 			line-height: 20px;
 			border-bottom-right-radius: 4px;
 			border-bottom-left-radius: 4px;
+			transition: background .2s ease;
 			h3{
 				color: $blue-medium;
 				font-size: 17px;
 				line-height: 20px;
 				margin-bottom: 10px;
 			}
-			a{
+			strong{
 				color: $blue-medium;
+			}
+		}
+		&:hover{
+			.desktop &{
+				.carousel-body{
+					background: $blue-extra-light;
+				}
 			}
 		}
 	}
@@ -749,7 +775,7 @@ body{
 }
 
 .inspiration-module{
-	padding: 40px 20px;
+	padding: 40px 25px;
 }
 
 
@@ -779,11 +805,7 @@ body{
 }
 
 .grid{
-	padding: 10px;
 	position: relative;
-	@media screen and (min-width: $main-nav-min){
-		padding: 30px 20px;
-	}
 	.inner{
 		position: relative;
 	}
@@ -990,6 +1012,7 @@ body{
 		}
 	}
 	&.country-grid{
+		padding: 30px 25px;
 		@media screen and (max-width: 699px){
 			.items{
 				display: flex;
@@ -1009,6 +1032,12 @@ body{
 				}
 			}
 		}
+	}
+	&.home-grid{
+		padding: 30px 25px;
+	}
+	&.destination-grid{
+		padding: 30px 0px;
 	}
 }
 
@@ -1120,7 +1149,7 @@ body{
 
 .content-header{
 	position: relative;
-	padding: 25px 0px;
+	padding: 0px 0px 25px 0px;
 	.socials{
 		top: 20px;
 	}
