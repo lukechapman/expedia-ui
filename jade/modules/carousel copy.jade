@@ -4,8 +4,10 @@ section.carousel-module
 		div.owl-carousel.owl-theme(class="carousel-#{carousel}")
 			each carousel_item in carousel_items
 				a.carousel-item(href="#")
-					div.carousel-header(style="background-image:url(images/#{carousel_item.image})")
+					div.carousel-header
+						div.bg(style="background-image:url(images/#{carousel_item.image})")
 						div.overlay
+						div.underlay
 						h4
 							span.icon(class="icon-#{carousel_item.icon}")
 							span #{carousel_item.heading}

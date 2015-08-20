@@ -6,9 +6,6 @@ var site = {
 	
 	setup: function(){
 		
-		// setup docking
-		site.docker.setup();
-		
 	},
 	
 	input_events: function(){
@@ -43,6 +40,7 @@ var site = {
 		content_offset: 0,
 		side_fit: false,
 		biggest_child: 0,
+		mq: 760,
 		setup: function(){
 			
 			// booking bar dock
@@ -93,7 +91,7 @@ var site = {
 			}
 			
 			var side = $('.side-nav');
-			
+			var ww = $(window).width();
 			
 			if(typeof side !== 'undefined' && side.length && site.docker.ready && site.docker.side_fit){
 				
@@ -104,7 +102,7 @@ var site = {
 				}
 
 				var at_bottom = (site.docker.content_offset - (site.docker.nav_offset + site.docker.biggest_child));
-				if( st >= at_bottom ){
+				if( st >= at_bottom && ww > site.docker.mq ){
 					side.css({ 'position':'absolute','top':(at_bottom + bar.outerHeight() + parseInt($('.sidebar').css('padding-top'),10)) });
 				}else{
 					side.removeAttr('style');
@@ -116,8 +114,8 @@ var site = {
 	
 	carousels: function(){
 		
-		if( $('.carousel-guides').length ){
-			$('.carousel-guides').owlCarousel({
+		if( $('.carousel-is-module').length ){
+			$('.carousel-is-module').owlCarousel({
 				margin:20,
 				nav:true,
 				navText: ['<span class="icon icon-angle-left"></span>','<span class="icon icon-angle-right"></span>'],
@@ -140,8 +138,8 @@ var site = {
 			});
 		}
 		
-		if( $('.carousel-guides-content').length ){
-			$('.carousel-guides-content').owlCarousel({
+		if( $('.carousel-in-content').length ){
+			$('.carousel-in-content').owlCarousel({
 				margin:20,
 				nav:true,
 				navText: ['<span class="icon icon-angle-left"></span>','<span class="icon icon-angle-right"></span>'],
@@ -183,11 +181,47 @@ var site = {
 		
 	},
 	
+	sliders: function(){
+		
+		$('.gallery-module').each(function(){
+			
+			var slider = $(this).find('.image-gallery');
+			var thumbs = $(this).find('.image-gallery-thumbs');
+		
+			thumbs.flexslider({
+				animation: 'slide',
+			    controlNav: false,
+			    animationLoop: false,
+			    slideshow: false,
+			    itemWidth: 165,
+			    itemMargin: 0,
+			    asNavFor: slider[0],
+			    nextText: '<span class="icon-angle-right"></span>',
+			    prevText: '<span class="icon-angle-left"></span>'
+			});
+			
+			slider.flexslider({
+			    animation: 'slide',
+			    controlNav: false,
+			    directionNav: false,
+			    animationLoop: false,
+			    slideshow: false,
+			    sync: thumbs[0]
+			});
+		
+		});
+		
+	},
+	
 	init: function(){
+		
 		$(function(){
 			
 			// removes click delay on touch devices
 			FastClick.attach(document.body);
+			
+			// setup
+			site.setup();
 			
 			// input events like clicks and mouseovers
 			site.input_events();
@@ -195,11 +229,11 @@ var site = {
 			// carousels
 			site.carousels();
 			
-			// setup
-			site.setup();
-			
 			//nav accordion
 			site.accordion();
+			
+			// image sliders
+			site.sliders();
 			
 		});
 		
@@ -212,6 +246,11 @@ var site = {
 				site.docker.init(st);
 			}
 			
+		});
+		
+		$(window).on('load', function(){
+			// setup docking
+			site.docker.setup();
 		});
 	}
 	

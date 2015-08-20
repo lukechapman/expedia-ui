@@ -1,5 +1,6 @@
 section.grid.country-grid
 	div.inner
+		- var social_class = 'float'
 		include socials.jade
 		nav.tab-nav.js-dropdown-parent
 			div.current-btn.js-dropdown Regions
@@ -25,6 +26,6 @@ section.grid.country-grid
 							div.bg(style="background-image:url(images/#{region.image})")
 							div.overlay
 							div.underlay
-							div.text		
+							div.text-wrap
 								strong #{region.title}
 							
