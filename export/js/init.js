@@ -2,6 +2,8 @@
 
 'use strict';
 
+var delay;
+
 var site = {
 	
 	setup: function(){
@@ -28,87 +30,198 @@ var site = {
 		$('.js-dropdown').on('click', function(){
 			$(this).parents('.js-dropdown-parent').toggleClass('show');
 		});
+		
+		// booking form toggle
+		$('.js-toggle-form').on('click', function(e){
+			
+			
+			var form = $(this).attr('data-form');
+			
+			if($(this).parent('li').hasClass('active')){
+				$('.booking-form-wrap').removeClass('active');
+				$(this).parent('li').removeClass('active');
+			}else{
+				$('.js-toggle-form').parent('li').removeClass('active');
+				$(this).parent('li').addClass('active');
+				$('.booking-form-wrap').addClass('active');
+				$('.booking-form .form').removeClass('active');
+				$(form).addClass('active');
+			}
+			
+			e.preventDefault();
+			return false;
+		});
+		
+		// close booking form
+		$('.js-close-booking').on('click', function(e){
+			$('.booking-form-wrap').removeClass('active');
+			$('.js-toggle-form').parent('li').removeClass('active');
+			e.preventDefault();
+			return false;
+		});
+		
+		// show/hide return date field
+		$('.js-one-way').on('change', function(){
+			console.log('changed');
+			if($(this).is(':selected')){
+				$('.js-return-date').hide();
+			}else{
+				$('.js-return-date').show();
+			}
+		});
 			
 	},
 	
-	docker: {
-		
+	side_nav_dock: {
 		ready: false,
-		side_offset: 0,
-		bar_offset: 0,
-		nav_offset: 0,
-		content_offset: 0,
-		side_fit: false,
-		biggest_child: 0,
-		mq: 760,
+		offset_top: 0,
+		offset_bottom: 0,
+		sticky_position: 0,
+		el: '',
+		reset: function(){
+			if(this.el !== ''){
+				this.el.removeAttr('style');
+			}
+			$('body').removeClass('side-ready dock-side');
+			this.ready = false;
+		},
 		setup: function(){
 			
-			// booking bar dock
-			var bar = $('.booking-bar');
-			site.docker.bar_offset = bar.position().top;
-			var buffer = $('<div class="buffer" />');
-			buffer.height(bar.outerHeight());
-			buffer.insertAfter(bar);
+			this.reset();
 			
-			// side nav dock
-			var wh = $(window).height();
-			var side = $('.side-nav');
-			site.docker.side_offset = side.position().top;
+			// side nav
+			var side_nav = $('.side-nav');
+			this.el = side_nav;
 			
-			var content = $('.main-content');
-			site.docker.content_offset = ( content.offset().top + content.outerHeight() );
+			if(typeof side_nav !== 'undefined' && side_nav.length){
 			
-			$('.side-nav .children').each(function(){
-				if($(this).outerHeight() > site.docker.biggest_child){
-					site.docker.biggest_child = $(this).outerHeight();
+				var window_height = $(window).height();
+				var window_width = $(window).width();
+				var content_wrap = $('.main-content');
+				var bar_height = $('.booking-bar').outerHeight();
+				var parent_padding = parseInt(side_nav.parent().css('padding-top'),10);
+				
+				// set top offset
+				var offset_top = side_nav.position().top - bar_height - parent_padding;
+				this.offset_top = offset_top;
+				
+				// get biggest child menu height
+				var biggest_child = 0;
+				side_nav.find('.children').each(function(){
+					if($(this).outerHeight() > biggest_child){
+						biggest_child = $(this).outerHeight();
+					}
+				});
+				
+				// collapse children and get parent collapsed height
+				$('body').addClass('side-ready');
+				var parent_height = side_nav.parent().outerHeight();
+				
+				// content offset
+				var content_offset = content_wrap.offset().top + content_wrap.outerHeight();
+				
+				// set bottom offset
+				var offset_bottom = (content_offset - (bar_height + parent_height + biggest_child) );
+				this.offset_bottom = offset_bottom;
+				
+				// set sticky position
+				var sticky_position = (offset_bottom + bar_height + parent_padding);
+				this.sticky_position = sticky_position;
+				
+				// check if sidebar exists and will fit docked within the viewport
+				if( window_width > 760 && (biggest_child + parent_height) < window_height ){
+					this.ready = true;
+				}else{
+					this.ready = false;
 				}
-			});
-			$('body').addClass('side-ready');
-			
-			site.docker.nav_offset = bar.outerHeight() + $('.sidebar').outerHeight();
-
-			
-			if( (site.docker.biggest_child + $('.sidebar').outerHeight()) < wh){
-				site.docker.side_fit = true;
+				
+			}else{
+				this.ready = false;
 			}
-			
-			site.docker.ready = true;
 			
 		},
-		
-		init: function(st){
+		run: function(scroll_top){
 			
-			// booking bar dock
-			var bar = $('.booking-bar');
-			if(typeof bar !== 'undefined' && bar.length && site.docker.ready){
-				
-				if(st >= site.docker.bar_offset){
-					$('body').addClass('dock-bar');
-				}else{
-					$('body').removeClass('dock-bar');
-				}
+			// check if ready
+			if(this.ready){
 			
-			}
-			
-			var side = $('.side-nav');
-			var ww = $(window).width();
-			
-			if(typeof side !== 'undefined' && side.length && site.docker.ready && site.docker.side_fit){
-				
-				if(st >= site.docker.bar_offset){
+				// dock / undock
+				if( scroll_top >= this.offset_top ){
 					$('body').addClass('dock-side');
 				}else{
 					$('body').removeClass('dock-side');
 				}
-
-				var at_bottom = (site.docker.content_offset - (site.docker.nav_offset + site.docker.biggest_child));
-				if( st >= at_bottom && ww > site.docker.mq ){
-					side.css({ 'position':'absolute','top':(at_bottom + bar.outerHeight() + parseInt($('.sidebar').css('padding-top'),10)) });
+				
+				// stick / unstick
+				if( scroll_top >= this.offset_bottom ){
+					this.el.css({ 'position':'absolute','top': this.sticky_position });
 				}else{
-					side.removeAttr('style');
+					this.el.removeAttr('style');
 				}
+
+			}
+			
+		}
+	},
+	
+	bar_dock: {
+		
+		ready: false,
+		offset_top: 0,
+		reset: function(){
+			$('body').removeClass('dock-bar');
+			$('.js-buffer').remove();
+			this.ready = false;
+		},
+		setup: function(){
+			
+			this.reset();
+			
+			var bar = $('.booking-bar');
+			
+			if(typeof bar !== 'undefined' && bar.length){
+			
+				var window_width = $(window).width();
+				this.offset_top = bar.position().top;
+				// create buffer the same size to prevent content jump
+				var buffer = $('<div class="js-buffer" />');
+				buffer.height(bar.outerHeight());
+				buffer.insertAfter(bar);
+				buffer.hide();
+				
+				if(window_width > 760){
+					this.ready = true;
+				}else{
+					this.ready = false;
+				}
+				
+			}else{
+				this.ready = false;
+			}
+			
+		},
+		run: function(scroll_top){
+			
+			// check if ready
+			if(this.ready){
+				
+				// dock / undock
+				if(scroll_top >= this.offset_top){
+					$('body').addClass('dock-bar');
+					$('.js-buffer').show();
+				}else{
+					$('body').removeClass('dock-bar');
+					$('.js-buffer').hide();
+				}
+			
 			}
 		}
+		
+	},
+	
+	dropdowns: function(){
+		
+		$('select').selectOrDie();
 		
 	},
 	
@@ -215,6 +328,7 @@ var site = {
 	
 	init: function(){
 		
+		// jquery loaded
 		$(function(){
 			
 			// removes click delay on touch devices
@@ -235,22 +349,43 @@ var site = {
 			// image sliders
 			site.sliders();
 			
+			// custom select dropdowns
+			site.dropdowns();
+			
 		});
 		
+		// window events
 		$(window).on('scroll', function(){
 			
 			var st = $(window).scrollTop();
 			
-			// dock booking bar
+			// dock booking bar and side nav for desktop only (possibly tablet too)
 			if( is.desktop() ){
-				site.docker.init(st);
+				site.bar_dock.run(st);
+				site.side_nav_dock.run(st);
 			}
 			
 		});
 		
 		$(window).on('load', function(){
+			
 			// setup docking
-			site.docker.setup();
+			site.bar_dock.setup();
+			// timeout to allow for flexslider to load
+			setTimeout(function(){
+				site.side_nav_dock.setup();
+			},100);
+		
+		});
+		
+		$(window).on('resize', function(){
+	
+			clearTimeout(delay);
+			delay = setTimeout(function(){
+				site.bar_dock.setup();
+				site.side_nav_dock.setup();
+			},100);
+				
 		});
 	}
 	

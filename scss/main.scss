@@ -548,6 +548,8 @@ body{
 
 .booking-bar{
 	background: $blue-medium;
+	position: relative;
+	z-index: 50;
 	ul{
 		display: table;
 		width: 100%;
@@ -596,24 +598,60 @@ body{
 				background: lighten($blue-medium,5%);
 			}
 		}
+		&.active{
+			background: $blue-extra-dark;
+			&:hover{
+				.desktop &{
+					background: $blue-extra-dark;
+				}
+			}
+		}
 	}
 	.dock-bar &{
 		position: fixed;
 		top: 0;
 		left: 0;
 		width: 100%;
-		z-index: 10;
 		backface-visibility: hidden;
 	}
-}
-
-.buffer{
-	display: none;
-	.dock-bar &{
-		display: block;
+	.booking-form-wrap{
+		background: $white;
+		display: none;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		box-shadow: 0px 0px 3px 0px rgba($blue-extra-extra-dark,0.4);
+		h3{
+			font-size: 19px;
+			line-height: 19px;
+			margin-bottom: 20px;
+			color: $blue-extra-dark;
+			font-weight: 600;
+		}
+		.booking-form{
+			max-width: 760px;
+			margin: 0 auto;
+			padding: 40px 20px;
+			position: relative;
+			.form{
+				display: none;
+				&.active{
+					display: block;
+				}
+			}
+		}
+		&.active{
+			display: block;
+		}
+		.close-btn{
+			position: absolute;
+			top: 40px;
+			right: 20px;
+			color: $blue-medium;
+		}
 	}
 }
-
 
 .sitemap-module{
 	@media screen and (min-width: $main-nav-min){
@@ -758,7 +796,7 @@ body{
 	}
 }
 
-@import 'owl.carousel';
+@import 'plugins/owl.carousel';
 
 .carousel-module{
 	background: $grey-light;
@@ -970,7 +1008,7 @@ figure{
 	}
 }
 
-@import 'flexslider';
+@import 'plugins/flexslider';
 
 .gallery-module{
 	width: 100%;

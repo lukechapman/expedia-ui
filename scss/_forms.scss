@@ -1,57 +1,142 @@
+@import 'plugins/selectordie';
+
+%label{
+	font-family: $sans-stack;
+	font-weight: 600;
+	font-size: 15px;
+	line-height: 15px;
+	color: $grey-dark;
+}
+
 .form{
 	.field-wrap{
 		position: relative;
-		.input-icon{
-			position: absolute;
-			left: 11px;
-			top: 16px;
-			color: lighten($grey-dark,10%);
-			display: none;
-			@media screen and (min-width: 480px){
-				display: block;
-			}
+		margin-bottom: 20px;
+		&:last-of-type{
+			margin-bottom: 0;
 		}
 	}
-	input{
+	.input-group{
+		position: relative;
+	}
+	label{
+		@extend %label;
+		display: block;
+		padding-bottom: 10px;
+	}
+	.split{
+		width: 50%;
+		float: left;
+		&:first-of-type{
+			padding-right: 5px;
+		}
+		&:last-of-type{
+			padding-left: 5px;
+		}
+	}
+	input[type="text"],input[type="search"],input[type="email"],input[type="tel"]{
 		border-radius: 4px;
-		border: 1px solid $grey-medium;
+		border: 2px solid $grey-medium;
 		font-family: $sans-stack;
 		background: $white;
 		font-size: 15px;
 		line-height: 15px;
-		padding: 15px;
-		float: left;
-		width: calc(100% - 60px);
+		padding: 10px;
+		width: 100%;
 		color: $grey-dark;
 		transition: box-shadow .2s ease;
 		@media screen and (min-width: 480px){
-			width: calc(100% - 110px);
 			font-size: 15px;
 			line-height: 15px;
-			padding-left: 30px;
+			padding-left: 40px;
 		}
-		&:focus{
-			.desktop &{
-				box-shadow: 0px 0px 15px 0px rgba($blue-extra-extra-dark, 0.6);
+	}
+	select{
+		width: 100%;
+	}
+	.input-icon{
+		position: absolute;
+		left: 13px;
+		top: 12px;
+		color: lighten($grey-dark,10%);
+		display: none;
+		@media screen and (min-width: 480px){
+			display: block;
+		}
+	}
+	.has-check{
+		display: inline-block;
+		padding-right: 15px;
+		@extend %label;
+		span{
+			display: inline-block;
+			padding-left: 5px;
+		}
+		&:last-of-type{
+			padding-right: 0;
+		}
+	}
+	.vertical{
+		.has-check{
+			display: block;
+			padding-right: 0;
+		}
+	}
+	&.search-form{
+		.btn{
+			width: 50px;
+			min-width: 0;
+			float: left;
+			margin-left: 10px;
+			.btn-label{
+				display: none;
+			}
+			@media screen and (min-width: 480px){
+				width: 100px;
+				.btn-label{
+					display: block;
+				}
+				.icon{
+					display: none;
+				}	
+			}
+		}
+		.field-wrap{
+			.input-icon{
+				left: 11px;
+				top: 16px;
+			}
+			.input-group{
+				float: left;
+				width: calc(100% - 60px);
+				@media screen and (min-width: 480px){
+					width: calc(100% - 110px);
+				}
+				input{
+					padding: 15px;
+					border: 0;
+					&:focus{
+						box-shadow: 0px 0px 15px 0px rgba($blue-extra-extra-dark, 0.6);
+					}
+					@media screen and (min-width: 480px){
+						padding-left: 30px;	
+					}
+				}
+			}
+			&.focused{
+				
 			}
 		}
 	}
-	.btn{
-		width: 50px;
-		height: 50px;
-		float: left;
-		margin-left: 10px;
-		.label{
-			display: none;
-		}
-		@media screen and (min-width: 480px){
-			width: 100px;
-			.label{
-				display: block;
+	.booking-form &{
+		.focused{
+			input[type="text"],input[type="search"],input[type="email"],input[type="tel"]{
+				border: 2px solid $blue-extra-extra-dark;
+				color: $blue-medium;
 			}
-			.icon{
-				display: none;
-			}	
+			.input-icon{
+				color: $blue-extra-extra-dark;
+			}
 		}
 	}
 }

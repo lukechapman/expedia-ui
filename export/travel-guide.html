@@ -58,11 +58,99 @@
     <nav class="booking-bar">
       <ul>
         <li class="title"> <span>Réservez un voyage:</span></li>
-        <li><a href="#"><span class="icon icon-office"></span><span class="label">Hôtels</span></a></li>
-        <li><a href="#"><span class="icon icon-airplane"></span><span class="label">Vols</span></a></li>
-        <li><a href="#"><span class="icon icon-suitcase"></span><span class="label">Vols + Hôtels</span></a></li>
-        <li><a href="#"><span class="icon icon-automobile"></span><span class="label">Voiture</span></a></li>
+        <li><a href="#" data-form="#hotels" class="js-toggle-form"><span class="icon icon-office"></span><span class="label">Hôtels</span></a></li>
+        <li><a href="#" data-form="#flights" class="js-toggle-form"><span class="icon icon-airplane"></span><span class="label">Vols</span></a></li>
+        <li><a href="#" data-form="#flights-and-hotels" class="js-toggle-form"><span class="icon icon-suitcase"></span><span class="label">Vols + Hôtels</span></a></li>
+        <li><a href="#" data-form="#cars" class="js-toggle-form"><span class="icon icon-automobile"></span><span class="label">Voiture</span></a></li>
       </ul>
+      <section class="booking-form-wrap">
+        <div class="booking-form"><a href="#" class="js-close-booking close-btn">Close</a>
+          <form id="flights" class="form">
+            <h3>Find Flights</h3>
+            <div class="field-wrap">
+              <label class="has-check">
+                <input type="radio" name="destination" checked><span>Round trip</span>
+              </label>
+              <label class="has-check js-one-way">
+                <input type="radio" name="destination"><span>One way ticket</span>
+              </label>
+              <label class="has-check">
+                <input type="radio" name="destination"><span>Several destinations</span>
+              </label>
+            </div>
+            <div class="group">
+              <div class="field-wrap split">
+                <label>Vol au départ de</label>
+                <div class="input-group"><span class="icon-location-pin input-icon"></span>
+                  <input type="text" placeholder="e.g Londres">
+                </div>
+              </div>
+              <div class="field-wrap split">
+                <label>Vol à destination de</label>
+                <div class="input-group"><span class="icon-location-pin input-icon"></span>
+                  <input type="text" placeholder="e.g Berlin">
+                </div>
+              </div>
+            </div>
+            <div class="group">
+              <div class="group split">
+                <div class="field-wrap split">
+                  <label>Départ le</label>
+                  <div class="input-group"><span class="icon-calendar input-icon"></span>
+                    <input type="text" placeholder="JJ/MM/AAAA">
+                  </div>
+                </div>
+                <div class="field-wrap split js-return-date">
+                  <label>Retour le</label>
+                  <div class="input-group"><span class="icon-calendar input-icon"></span>
+                    <input type="text" placeholder="JJ/MM/AAAA">
+                  </div>
+                </div>
+              </div>
+              <div class="group split">
+                <div class="field-wrap split">
+                  <label>Adultes (18 and over)</label>
+                  <select>
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7+	</option>
+                  </select>
+                </div>
+                <div class="field-wrap split">
+                  <label>Enfants (0-17 years)</label>
+                  <select>
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7+</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="field-wrap">
+              <button type="submit" class="btn btn-primary">Rechercher</button>
+            </div>
+          </form>
+          <form id="hotels" class="form">
+            <h3>Find Hotels</h3>
+          </form>
+          <form id="flights-and-hotels" class="form">
+            <h3>Find Flights + Hotels</h3>
+          </form>
+          <form id="cars" class="form">
+            <h3>Find Cars</h3>
+          </form>
+        </div>
+      </section>
     </nav>
     <section class="page-content">
       <div class="inner group">
@@ -300,10 +388,12 @@
     <section class="search-module">
       <div class="search-inner">
         <h3>Search for a city or theme</h3>
-        <form class="form">
-          <div class="field-wrap group"><span class="icon-search input-icon"></span>
-            <input type="search" placeholder="Recherche par ville ou le thème">
-            <button type="submit" class="btn btn-primary"> <span class="label">Resercher</span><span class="icon-search icon"></span></button>
+        <form class="form search-form">
+          <div class="field-wrap group">
+            <div class="input-group"><span class="icon-search input-icon"></span>
+              <input type="search" placeholder="Recherche par ville ou le thème">
+            </div>
+            <button type="submit" class="btn btn-primary"> <span class="btn-label">Rechercher</span><span class="icon-search icon"></span></button>
           </div>
         </form>
       </div>
@@ -377,6 +467,11 @@
     </section>
     <footer id="global-footer" class="global-footer">
     </footer>
+    <script>
+      var globals = {
+      	site_url: ''	
+      };
+    </script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery-1.11.3.min.js"><\/script>')</script>
     <script src="js/plugins.js"></script>

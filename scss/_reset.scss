@@ -77,3 +77,5 @@ a{
 	box-sizing:border-box;
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
+
+::-webkit-input-placeholder { line-height: normal; }

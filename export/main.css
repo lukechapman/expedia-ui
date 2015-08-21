@@ -78,6 +78,10 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
+::-webkit-input-placeholder {
+  line-height: normal;
+}
+
 /* external header and footer overrides */
 #global-header .site-header {
   width: 100%;
@@ -142,73 +146,390 @@ h4.module-title {
   font-size: 16px;
   line-height: 24px;
   font-family: "Source Sans Pro", sans-serif;
+  display: block;
 }
 .btn.btn-primary {
   background: -webkit-linear-gradient(bottom, #ffbe00 0%, #ffcb00 100%);
   background: linear-gradient(bottom, #ffbe00 0%, #ffcb00 100%);
   border-color: #d4a900 #aa8700 #aa8700;
   color: #3d3100;
+  height: 50px;
+  min-width: 100px;
+}
+.desktop .btn.btn-primary:hover {
+  background: #ffcb00;
+}
+
+/* ===========================================================
+ *
+ *  Name:          selectordie_dev.css
+ *  Updated:       2014-10-10
+ *  Created by:    Per V @ Vst.mn
+ *  What?:         Base CSS for Select or Die
+ *
+ *  Copyright (c) 2014 Per Vestman
+ *  Dual licensed under the MIT and GPL licenses.
+ *
+ *  No, I don't usually comment my CSS, but in this
+ *  case it might "help" someone.
+ *
+ *  Oddny | Cogs 'n Kegs
+ * =========================================================== */
+.sod_select,
+.sod_select * {
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The SoD - Please keep this first three lines intact, otherwise all hell will break looooooose */
+.sod_select {
+  display: inline-block;
+  position: relative;
+  line-height: 1;
+  font-family: "Source Sans Pro", sans-serif;
+  width: 100%;
+  border: 2px solid #c7c7c7;
+  background: #ffffff;
+  color: #4d5559;
+  font-size: 15px;
+  line-height: 19px;
+  padding: 10px;
+  outline: 0;
+  outline-offset: -2px;
+  /* Opera */
+  cursor: default;
+  border-radius: 4px;
+}
+
+/* Up/Down arrows */
+.sod_select:before,
+.sod_select:after {
+  content: "\25B2";
+  position: absolute;
+  right: 10px;
+  top: 12px;
+  font-size: 7px;
+}
+
+/* Down arrow */
+.sod_select:after {
+  content: "\25BC";
+  top: auto;
+  bottom: 12px;
+}
+
+/* Change the border color on hover, focus and when open */
+.sod_select.open,
+.sod_select.focus {
+  border-color: #002847;
+}
+
+/* When the entire SoD is disabled, go crazy! */
+.sod_select.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* The "label", or whatever we should call it. Keep the first three lines for truncating. */
+.sod_select .sod_label {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding-right: 15px;
+}
+
+.sod_select .sod_prefix {
+  /* Use this if you're using a prefix and want to style it */
+}
+
+.sod_select .sod_placeholder {
+  /* Use this if you're using a placeholder and want to style it */
+}
+
+/* Options list wrapper */
+.sod_select .sod_list_wrapper {
+  position: absolute;
+  top: 100%;
+  left: -2px;
+  right: -2px;
+  display: none;
+  height: auto;
+  background: #ffffff;
+  border: 2px solid #002847;
+  border-top: none;
+  color: #0065b8;
+  font-weight: 300;
+  z-index: 1;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+/* Shows the option list (don't edit) */
+.sod_select.open .sod_list_wrapper {
+  display: block;
+}
+
+/* Don't display the options when  */
+.sod_select.disabled.open .sod_list_wrapper {
+  display: none;
+}
+
+/* When the option list is displayed above the SoD */
+.sod_select.above .sod_list_wrapper {
+  top: auto;
+  bottom: 100%;
+  border-top: 2px solid #002847;
+  border-bottom: none;
+  border-radius: 0;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+/* Options list container */
+.sod_select .sod_list {
+  display: block;
+  overflow-y: auto;
+  padding: 0;
+  margin: 0;
+}
+
+/* All the options. Keep the first three lines for truncating... */
+.sod_select .sod_option {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  position: relative;
+  padding: 10px 10px;
+  list-style-type: none;
+}
+
+/* Optgroups */
+.sod_select .sod_option.optgroup,
+.sod_select .sod_option.optgroup.disabled {
+  background: inherit;
+  color: #939393;
+  font-size: 10px;
+  font-style: italic;
+}
+
+/* Children of an optgroup */
+.sod_select .sod_option.groupchild {
+  padding-left: 20px;
+}
+
+/* Used together with placeholderOption / data-placeholder-option */
+.sod_select .sod_option.is-placeholder {
+  display: none;
+}
+
+/* Disabled option */
+.sod_select .sod_option.disabled {
+  background: inherit;
+  color: #cccccc;
+}
+
+/* Hover state for options, also used when a user uses his/hers up/down keys */
+.sod_select .sod_option.active {
+  background: #f7f7f7;
+  color: #333333;
+}
+
+/*Make room for the check mark */
+.sod_select .sod_option.selected {
+  font-weight: 700;
+  padding-right: 25px;
+}
+
+/* Displays a check mark for the selected option */
+.sod_select .sod_option.selected:before {
+  content: "";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  display: inline-block;
+  color: #808080;
+  height: 9px;
+  width: 10px;
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgMTAgOSIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTAgOSIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8Zz4NCgk8cGF0aCBmaWxsPSIjRDlEOUQ4IiBkPSJNNCw2LjdDMy42LDYuMywzLjUsNi4xLDMuMSw1LjdDMi42LDUuMiwyLDQuNiwxLjUsNC4xYy0wLjgtMC44LTIsMC40LTEuMiwxLjJjMC45LDAuOSwxLjksMS45LDIuOCwyLjgNCgkJYzAuNywwLjcsMS4zLDEsMiwwQzYuNyw2LDguMywzLjcsOS44LDEuNUMxMC41LDAuNSw5LTAuMyw4LjMsMC42bDAsMEM2LjcsMi45LDUuNyw0LjQsNCw2LjciLz4NCjwvZz4NCjwvc3ZnPg0K);
+}
+
+/* Add a .no_highlight class to you SoD to hide the check mark and don't bold the option */
+.sod_select.no_highlight .sod_option.selected {
+  font-weight: 300;
+}
+
+.sod_select.no_highlight .sod_option.selected:before {
+  display: none;
+}
+
+.sod_select .sod_option.link {
+  /* If data-link is set on a specific option */
+}
+
+.sod_select .sod_option.linkexternal {
+  /* If data-link-external is set on a specific option */
+}
+
+/* Hide native select */
+.sod_select select {
+  display: none !important;
+}
+
+/* The native select in touch mode. Keep this first line. Sorry, keep everything. */
+.sod_select.touch select {
+  -webkit-appearance: menulist-button;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block !important;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  z-index: 1;
+}
+
+.form label, .form .has-check {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 15px;
+  color: #4d5559;
 }
 
 .form .field-wrap {
   position: relative;
+  margin-bottom: 20px;
 }
-.form .field-wrap .input-icon {
-  position: absolute;
-  left: 11px;
-  top: 16px;
-  color: #656f74;
-  display: none;
+.form .field-wrap:last-of-type {
+  margin-bottom: 0;
 }
-@media screen and (min-width: 480px) {
-  .form .field-wrap .input-icon {
-    display: block;
-  }
+.form .input-group {
+  position: relative;
 }
-.form input {
+.form label {
+  display: block;
+  padding-bottom: 10px;
+}
+.form .split {
+  width: 50%;
+  float: left;
+}
+.form .split:first-of-type {
+  padding-right: 5px;
+}
+.form .split:last-of-type {
+  padding-left: 5px;
+}
+.form input[type="text"], .form input[type="search"], .form input[type="email"], .form input[type="tel"] {
   border-radius: 4px;
-  border: 1px solid #c7c7c7;
+  border: 2px solid #c7c7c7;
   font-family: "Source Sans Pro", sans-serif;
   background: #ffffff;
   font-size: 15px;
   line-height: 15px;
-  padding: 15px;
-  float: left;
-  width: calc(100% - 60px);
+  padding: 10px;
+  width: 100%;
   color: #4d5559;
   -webkit-transition: box-shadow .2s ease;
           transition: box-shadow .2s ease;
 }
 @media screen and (min-width: 480px) {
-  .form input {
-    width: calc(100% - 110px);
+  .form input[type="text"], .form input[type="search"], .form input[type="email"], .form input[type="tel"] {
     font-size: 15px;
     line-height: 15px;
-    padding-left: 30px;
+    padding-left: 40px;
   }
 }
-.desktop .form input:focus {
-  box-shadow: 0px 0px 15px 0px rgba(0, 40, 71, 0.6);
+.form select {
+  width: 100%;
 }
-.form .btn {
-  width: 50px;
-  height: 50px;
-  float: left;
-  margin-left: 10px;
-}
-.form .btn .label {
+.form .input-icon {
+  position: absolute;
+  left: 13px;
+  top: 12px;
+  color: #656f74;
   display: none;
 }
 @media screen and (min-width: 480px) {
-  .form .btn {
-    width: 100px;
-  }
-  .form .btn .label {
+  .form .input-icon {
     display: block;
   }
-  .form .btn .icon {
+}
+.form .has-check {
+  display: inline-block;
+  padding-right: 15px;
+}
+.form .has-check span {
+  display: inline-block;
+  padding-left: 5px;
+}
+.form .has-check:last-of-type {
+  padding-right: 0;
+}
+.form .vertical .has-check {
+  display: block;
+  padding-right: 0;
+}
+.form.search-form .btn {
+  width: 50px;
+  min-width: 0;
+  float: left;
+  margin-left: 10px;
+}
+.form.search-form .btn .btn-label {
+  display: none;
+}
+@media screen and (min-width: 480px) {
+  .form.search-form .btn {
+    width: 100px;
+  }
+  .form.search-form .btn .btn-label {
+    display: block;
+  }
+  .form.search-form .btn .icon {
     display: none;
   }
+}
+.form.search-form .field-wrap .input-icon {
+  left: 11px;
+  top: 16px;
+}
+.form.search-form .field-wrap .input-group {
+  float: left;
+  width: calc(100% - 60px);
+}
+@media screen and (min-width: 480px) {
+  .form.search-form .field-wrap .input-group {
+    width: calc(100% - 110px);
+  }
+}
+.form.search-form .field-wrap .input-group input {
+  padding: 15px;
+  border: 0;
+}
+.form.search-form .field-wrap .input-group input:focus {
+  box-shadow: 0px 0px 15px 0px rgba(0, 40, 71, 0.6);
+}
+@media screen and (min-width: 480px) {
+  .form.search-form .field-wrap .input-group input {
+    padding-left: 30px;
+  }
+}
+.booking-form .form .focused input[type="text"], .booking-form .form .focused input[type="search"], .booking-form .form .focused input[type="email"], .booking-form .form .focused input[type="tel"] {
+  border: 2px solid #002847;
+  color: #0065b8;
+}
+.booking-form .form .focused .input-icon {
+  color: #002847;
 }
 
 @font-face {
@@ -268,6 +589,14 @@ h4.module-title {
 
 .icon-automobile:before {
   content: "\f1b9";
+}
+
+.icon-calendar:before {
+  content: "\e60b";
+}
+
+.icon-location-pin:before {
+  content: "\e60c";
 }
 
 .icon-suitcase:before {
@@ -886,6 +1215,8 @@ body {
 
 .booking-bar {
   background: #0065b8;
+  position: relative;
+  z-index: 50;
 }
 .booking-bar ul {
   display: table;
@@ -939,21 +1270,56 @@ body {
 .desktop .booking-bar li:hover:not(.title) {
   background: #0073d2;
 }
+.booking-bar li.active {
+  background: #00355f;
+}
+.desktop .booking-bar li.active:hover {
+  background: #00355f;
+}
 .dock-bar .booking-bar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
 }
-
-.buffer {
+.booking-bar .booking-form-wrap {
+  background: #ffffff;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  box-shadow: 0px 0px 3px 0px rgba(0, 40, 71, 0.4);
+}
+.booking-bar .booking-form-wrap h3 {
+  font-size: 19px;
+  line-height: 19px;
+  margin-bottom: 20px;
+  color: #00355f;
+  font-weight: 600;
+}
+.booking-bar .booking-form-wrap .booking-form {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  position: relative;
+}
+.booking-bar .booking-form-wrap .booking-form .form {
   display: none;
 }
-.dock-bar .buffer {
+.booking-bar .booking-form-wrap .booking-form .form.active {
   display: block;
+}
+.booking-bar .booking-form-wrap.active {
+  display: block;
+}
+.booking-bar .booking-form-wrap .close-btn {
+  position: absolute;
+  top: 40px;
+  right: 20px;
+  color: #0065b8;
 }
 
 @media screen and (min-width: 760px) {
