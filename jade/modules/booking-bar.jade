@@ -3,18 +3,120 @@ nav.booking-bar
 		li.title 
 			span Réservez un voyage:
 		li
-			a(href='#')
+			a(href='#', data-form='#hotels').js-toggle-form
 				span.icon.icon-office
 				span.label Hôtels
 		li
-			a(href='#')
+			a(href='#', data-form='#flights').js-toggle-form
 				span.icon.icon-airplane
 				span.label Vols
 		li
-			a(href='#')
+			a(href='#', data-form='#flights-and-hotels').js-toggle-form
 				span.icon.icon-suitcase
 				span.label Vols + Hôtels
 		li
-			a(href='#')
+			a(href='#', data-form='#cars').js-toggle-form
 				span.icon.icon-automobile
 				span.label Voiture
+				
+	section.booking-form-wrap
+		div.booking-form
+			a(href='#').js-close-booking.close-btn Close
+			form.form#flights
+				h3 Find Flights
+				div.field-wrap
+					label.has-check
+						input(type='radio', name='destination', checked)
+						span Round trip
+					label.has-check.js-one-way
+						input(type='radio', name='destination')
+						span One way ticket
+					label.has-check
+						input(type='radio', name='destination')
+						span Several destinations
+				div.group
+					div.field-wrap.split
+						label Vol au départ de
+						div.input-group
+							span.icon-location-pin.input-icon
+							input(type='text' placeholder='e.g Londres')
+					div.field-wrap.split
+						label Vol à destination de
+						div.input-group
+							span.icon-location-pin.input-icon
+							input(type='text' placeholder='e.g Berlin')
+				div.group
+					div.group.split
+						div.field-wrap.split
+							label Départ le
+							div.input-group
+								span.icon-calendar.input-icon
+								input(type='text' placeholder='JJ/MM/AAAA')
+						div.field-wrap.split.js-return-date
+							label Retour le
+							div.input-group
+								span.icon-calendar.input-icon
+								input(type='text' placeholder='JJ/MM/AAAA')
+					div.group.split
+						div.field-wrap.split
+							label Adultes (18 and over)
+							select
+								option 0
+								option 1
+								option 2
+								option 3
+								option 4
+								option 5
+								option 6
+								option 7+	
+						div.field-wrap.split
+							label Enfants (0-17 years)
+							select
+								option 0
+								option 1
+								option 2
+								option 3
+								option 4
+								option 5
+								option 6
+								option 7+
+				
+				a(href='#').js-options-toggle.advanced-options-btn Options avancées
+					span.icon.icon-angle-double-down
+					span.icon.icon-angle-double-up
+				div.js-options.advanced-options
+					div.field-wrap
+						label.has-check
+							input(type='checkbox', name='flight-option')
+							span Direct
+						label.has-check.js-one-way
+							input(type='checkbox', name='flight-option')
+							span Vol remboursable
+					div.group
+						div.field-wrap.split
+							label Compagnie aérienne préférée
+							select
+								option No preference
+								option British Airways
+								option Ryan Air
+						div.group.split
+							div.field-wrap.split
+								label Classe souhaitée
+								select
+									option No preference
+									option Economy
+									option First Class
+							
+								
+				
+				div.field-wrap
+					button.btn.btn-primary(type='submit') Rechercher
+				
+			form.form#hotels
+				h3 Find Hotels
+				
+			form.form#flights-and-hotels
+				h3 Find Flights + Hotels
+				
+			form.form#cars
+				h3 Find Cars

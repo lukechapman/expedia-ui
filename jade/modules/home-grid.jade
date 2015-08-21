@@ -1,5 +1,6 @@
 section.grid.home-grid
 	div.inner
+		- var social_class = 'float'
 		include socials.jade
 		nav.tab-nav.js-dropdown-parent
 			div.current-btn.js-dropdown A la Une
@@ -17,7 +18,7 @@ section.grid.home-grid
 						div.item-inner
 							div.bg(style="background-image:url(images/#{item.image})")
 							div.underlay
-							div.text
+							div.text-wrap
 								p #{item.content}
 				else
 					a(href="#", class="item #{item.size}")
@@ -25,7 +26,7 @@ section.grid.home-grid
 							div.bg(style="background-image:url(images/#{item.image})")
 							div.overlay
 							div.underlay
-							div.text		
+							div.text-wrap
 								strong #{item.title}
 								- var cat = item.category.replace(' ','-')
 								span(class="category category-#{cat}") #{item.category}

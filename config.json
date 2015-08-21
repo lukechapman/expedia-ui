@@ -114,9 +114,21 @@
 		{ "heading":"History", "icon":"history", "image":"test13.jpg", "title":"Autour de Notre-Dame et de l'Ile de la Cité", "content":"Deux parisiens vous présentent leur ville. Chaque mois, Aurélia et Brice vous emmènent découvrir en vidéo un Paris bucolique, caché & discret." },
 		{ "heading":"Sport et Nature", "icon":"sport", "image":"test14.jpg", "title":"Les charmes de Lyon au printemps", "content":"Lyon dévoile ses trésors historiques toute l’année. Mais au printemps, les paysages urbains et naturels se conjuguent aux évènements cultur." }
 	],
+	"carousel_hotels": [
+		{ "image":"test13.jpg", "title":"Radisson Blu Hotel, Berlin", "content":"Visualise par 16 autres personnes en ce moment", "rating":"3", "price":"139", "currency":"€" },
+		{ "image":"test13.jpg", "title":"Pullman Berlin Schweizerhof", "content":"Vu par 22 autres en ce moment", "rating":"5", "price":"113", "currency":"€" },
+		{ "image":"test13.jpg", "title":"Andel’s Hotel Berlin", "content":"Vu par 43 autres en ce moment", "rating":"4 half", "price":"119", "currency":"€" }
+	],
 	"inspiration": [
 		{ "title":"Découvres Illes Cyclades", "category":"destination", "image":"test6.jpg" },
 		{ "title":"Découvrez Les Promenades d’Aurelia a Paris!", "category":"guide", "image":"test7.jpg"},
 		{ "title":"Découvres Maroc", "category":"destination", "image":"test8.jpg" }
+	],
+	"user_gallery": [
+		{ "image":"test13.jpg" },
+		{ "image":"test13.jpg" },
+		{ "image":"test13.jpg" },
+		{ "image":"test13.jpg" },
+		{ "image":"test13.jpg" }
 	]
 }

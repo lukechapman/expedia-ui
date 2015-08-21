@@ -1,0 +1,125 @@
+doctype
+html.no-js
+	head
+		include ./partials/head.jade
+	body.home
+		header.global-header#global-header
+			- //include ./external/header.html
+		include ./modules/header.jade
+		
+		- var page = 'destination'
+		- var page_title = 'Berlin'
+		- var breadcrumbs = [{"title":"Guides de Voyage"},{"title":"Germany"}]
+		include ./modules/hero.jade
+		
+		include ./modules/booking-bar.jade
+		
+		section.page-content
+			div.inner.group
+				include ./partials/sidebar.jade
+				div.main-content.entry-content
+					div.content-header
+						- var social_class = 'float'
+						include ./modules/socials.jade
+						include ./modules/breadcrumbs.jade
+						
+					div.intro-text
+						h1 Berlin et l'histoire du XXe siècle
+						blockquote En route to a historic trip in the Berlin of the twentieth century: Berlin horrified divided Berlin, and Berlin reunited!
+							
+						p Berlin has an unusual history. The city torn by two world wars , the center of Nazi power and then divided for 30 years, now bears the marks with humility of his past. Prepare for an intense visit to emotions, places of memory of the Holocaust to the remains of the famous wall
+	
+					hr.separator
+					
+					div
+						h2 Day 1
+						h3 Berlin, a city with a past steeped
+					div.columns
+						p To start your weekend in Berlin, put yourself into the bath museum Story Of Berlin. His type of interactive exhibit allows young and old to discover the main periods in the history of the city. These are grouped chronologically and by theme. Playful performances even complete the visit.
+						p At midday feast on Asian dishes at Saigon and more. You will enjoy Vietnamese dishes for adding more than correct considering the amount of servings. Taste the soup Pho Bo (with rice noodles, beef and star anise) and let your senses travel...
+					
+					include ./modules/image-slider.jade
+					
+					div
+						h2 Day 2
+						h3 Berlin, a city with a past steeped
+					div.columns
+						p To start your weekend in Berlin, put yourself into the bath museum Story Of Berlin. His type of interactive exhibit allows young and old to discover the main periods in the history of the city. These are grouped chronologically and by theme. Playful performances even complete the visit.
+						p At midday feast on Asian dishes at Saigon and more. You will enjoy Vietnamese dishes for adding more than correct considering the amount of servings. Taste the soup Pho Bo (with rice noodles, beef and star anise) and let your senses travel...
+					
+					figure
+						img(src="images/test2.jpg")
+						figcaption Testing
+					
+					div
+						h2 Berlin in brief
+					
+					div.columns
+					
+						div.panel
+							div.panel-header
+								h4
+									span.icon.icon-location-pin
+									span When to go?
+							div.panel-body.entry-content
+								p The historical exhibits and museums in Berlin are open all year!
+							div.panel-footer
+								a(href='#') Find flights
+								
+						div.panel
+							div.panel-header
+								h4
+									span.icon.icon-location-pin
+									span Where to stay?
+							div.panel-body.entry-content
+								p Opt for a hotel located in a historic area of the city as <a href="#">Kreuzberg</a>. Book a comfortable hotel by example on the street Stresemannstrasse or street Zimmerstrasse.
+							div.panel-footer
+								a(href='#') Find flights
+								
+						div.panel
+							div.panel-header
+								h4
+									span.icon.icon-location-pin
+									span When to go?
+							div.panel-body.entry-content
+								p The historical exhibits and museums in Berlin are open all year!
+							div.panel-footer
+								a(href='#') Find flights
+								
+						div.panel
+							div.panel-header
+								h4
+									span.icon.icon-location-pin
+									span Where to stay?
+							div.panel-body.entry-content
+								p Opt for a hotel located in a historic area of the city as <a href="#">Kreuzberg</a>. Book a comfortable hotel by example on the street Stresemannstrasse or street Zimmerstrasse.
+							div.panel-footer
+								a(href='#') Find flights
+							
+					
+					- var social_title = 'Partagez cette destination'
+					- social_class = ''
+					include ./modules/socials.jade
+					
+					hr.separator
+					
+					- var carousel_type = 'standard'
+					- var carousel_class = 'in-content'
+					- var carousel_title = 'Guides récents'
+					- var carousel_items = carousel_guides
+					include ./modules/carousel.jade
+					
+					hr.separator
+					
+					- carousel_type = 'sell'
+					- carousel_class = 'in-content'
+					- carousel_title = 'Meilleures offres d\'hôtels'
+					- carousel_items = carousel_hotels
+					include ./modules/carousel.jade
+					
+					hr.separator
+					- var social_title = 'Partagez cette destination'
+					- social_class = ''
+					include ./modules/socials.jade
+
+		include ./partials/footer.jade

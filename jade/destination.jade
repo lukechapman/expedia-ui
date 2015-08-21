@@ -19,18 +19,49 @@ html.no-js
 				include ./partials/sidebar.jade
 				div.main-content
 					div.content-header
-						include ./modules/breadcrumbs.jade
+						- var social_class = 'float'
 						include ./modules/socials.jade
-					h2 Que faire à Berlin?
+						include ./modules/breadcrumbs.jade
+					h1 Que faire à Berlin?
 					include ./modules/destination-grid.jade
-					include ./modules/column-content.jade
 					
-					- var carousel = 'guides-content'
+					hr.separator
+					
+					div.entry-content.columns
+						h2 Berlin, la ville underground
+						p Concentré de culture, d’art et d’histoire, Berlin est une ville étonnante. Inscrite dans un passé tourmenté, elle a su le dépasser pour devenir une capitale résolument moderne et cosmopolite qui attire les curieux toujours plus nombreux. Perpétuellement en mouvement, elle n’a pas seulement une histoire à raconter, mais aussi une histoire à écrire.
+						p L’art bouillonne à Berlin : de ses grands musées à ses installations artistiques surprenantes, ses expositions réputées et ses bâtiments industriels reconvertis, les amateurs ont l’embarras du choix. Que vous soyez plutôt classique ou underground, vous allez en avoir plein les yeux! La capitale allemande rassemble aussi bien des trésors artistiques que des monuments historiques qui reflètent ses années sombres. De l’holocauste à la chute du mur, Berlin est au cœur de l’histoire européenne du XXème siècle.
+						p Elle s’est réappropriée ces évènements pour les intégrer dans le paysage urbain afin d’en faire des visites éducatives voir même interactives ou artistiques. Vous y découvrirez par exemple les restants du mur recouverts de fresques à East Side Gallery!
+						p Berlin est une ville éclectique qui séduit sans exception. Fidèle à sa réputation underground, elle unit les clubbers du monde entier venus découvrir les fameuses nuits berlinoises, ainsi que les membres de la communauté LGBT en quête d’un week-end inoubliable. Partez-vous dépayser et Schönes Wochenende!
+					
+					hr.separator
+					
+					- var carousel_type = 'standard'
+					- var carousel_class = 'in-content'
 					- var carousel_title = 'Guides récents'
 					- var carousel_items = carousel_guides
-					include ./modules/carousel.jade		
-		
-		- carousel = 'guides'
+					include ./modules/carousel.jade
+					
+					hr.separator
+					
+					- carousel_type = 'sell'
+					- carousel_class = 'in-content'
+					- carousel_title = 'Meilleures offres d\'hôtels'
+					- carousel_items = carousel_hotels
+					include ./modules/carousel.jade
+					
+					hr.separator
+					
+					- var gallery_title = 'Votre Berlin'
+					include ./modules/user-gallery.jade
+					
+					hr.separator
+					- var social_title = 'Partagez cette destination'
+					- social_class = ''
+					include ./modules/socials.jade
+
+		- carousel_type = 'standard'
+		- carousel_class = 'is-module'
 		- carousel_title = 'Guides récents a travers le monde'
 		- carousel_items = carousel_guides
 		include ./modules/carousel.jade

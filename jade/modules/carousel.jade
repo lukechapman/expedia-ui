@@ -1,16 +1,32 @@
 section.carousel-module
 	div.inner
 		h4.module-title #{carousel_title}
-		div.owl-carousel.owl-theme(class="carousel-#{carousel}")
+		div.owl-carousel.owl-theme(class="carousel-#{carousel_class} #{carousel_type}")
 			each carousel_item in carousel_items
 				a.carousel-item(href="#")
-					div.carousel-header(style="background-image:url(images/#{carousel_item.image})")
+					div.carousel-header
+						div.bg(style="background-image:url(images/#{carousel_item.image})")
 						div.overlay
-						h4
-							span.icon(class="icon-#{carousel_item.icon}")
-							span #{carousel_item.heading}
+						div.underlay
+						if carousel_type == 'standard'
+							h4
+								span.icon(class="icon-#{carousel_item.icon}")
+								span #{carousel_item.heading}
 					div.carousel-body
-						h3 #{carousel_item.title}
-						p #{carousel_item.content}
-						strong Read more
-				
+						if carousel_type == 'sell'
+							div.sell-header.group
+								h3 #{carousel_item.title}
+								div.sell-price
+									span.currency #{carousel_item.currency}
+									span.price #{carousel_item.price}
+							div.rating.group(class="rating-#{carousel_item.rating}")
+								span.star.star-1
+								span.star.star-2
+								span.star.star-3
+								span.star.star-4
+								span.star.star-5
+							p #{carousel_item.content}
+						else
+							h3 #{carousel_item.title}
+							p #{carousel_item.content}
+							strong Read more

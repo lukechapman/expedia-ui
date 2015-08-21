@@ -1,0 +1,11 @@
+section.user-gallery-module
+	div.inner
+		h4.module-title #{gallery_title}
+		div.entry-content
+			p Partagez vos photos sur nos pages avec <a href="#">#expediamyberlin</a>
+		div.group.gallery-items
+			each item in user_gallery
+				a.gallery-item(href="#")
+					div.item-inner
+						div.bg(style="background-image:url(images/#{item.image})")
+						div.underlay
