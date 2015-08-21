@@ -69,6 +69,17 @@ var site = {
 				$('.js-return-date').show();
 			}
 		});
+		
+		// toggle form advanced options
+		$('.js-options-toggle').on('click', function(e){
+			
+			$(this).toggleClass('active');
+			
+			$(this).next('.js-options').toggle();
+			
+			e.preventDefault();
+			return false;
+		});
 			
 	},
 	

@@ -139,4 +139,34 @@
 			}
 		}
 	}
+	
+	.advanced-options{
+		display: none;
+	}
+	
+	.advanced-options-btn{
+		color: $blue-medium;
+		padding-bottom: 20px;
+		display: inline-block;
+		font-size: 15px;
+		line-height: 15px;
+		.icon{
+			font-size: 12px;
+			line-height: 12px;
+			position: relative;
+			top: 1;
+			left: 5px;
+		}
+		.icon-angle-double-up{
+			display: none;
+		}
+		&.active{
+			.icon-angle-double-up{
+				display: inline;
+			}
+			.icon-angle-double-down{
+				display: none;
+			}
+		}
+	}
 }

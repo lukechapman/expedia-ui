@@ -701,7 +701,7 @@ body{
 		display: none;
 		@media screen and (min-width: $main-nav-min){
 			columns: 4;
-			column-gap: 40px;
+			column-gap: 20px;
 			display: block;
 		}
 		li{
@@ -1136,6 +1136,9 @@ figure{
 	hr{
 		@extend .separator;
 	}
+	figure{
+		margin-bottom: 24px;
+	}
 }
 
 .columns{
@@ -1500,3 +1503,36 @@ figure{
 	padding: 0px 0px 25px 0px;
 }
 
+
+.panel{
+	@extend %item-inner;
+	width: 100%;
+	padding: 0;
+	background: $white;
+	margin-bottom: 20px;
+	.panel-body{
+		padding: 15px;
+	}
+	.panel-footer{
+		border-top: 1px solid $grey-medium;
+		font-size: 14px;
+		line-height: 14px;
+		a{
+			padding: 10px 15px;
+			display: block;
+			&:hover{
+				.desktop &{
+					background: $blue-extra-light;
+				}
+			}
+		} 
+	}
+	.panel-header{
+		padding: 10px 15px;
+		h4{
+			font-size: 19px;
+			line-height: 19px;
+			color: $blue-grey;
+		}
+	}	
+}

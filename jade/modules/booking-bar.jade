@@ -80,6 +80,35 @@ nav.booking-bar
 								option 5
 								option 6
 								option 7+
+				
+				a(href='#').js-options-toggle.advanced-options-btn Options avancées
+					span.icon.icon-angle-double-down
+					span.icon.icon-angle-double-up
+				div.js-options.advanced-options
+					div.field-wrap
+						label.has-check
+							input(type='checkbox', name='flight-option')
+							span Direct
+						label.has-check.js-one-way
+							input(type='checkbox', name='flight-option')
+							span Vol remboursable
+					div.group
+						div.field-wrap.split
+							label Compagnie aérienne préférée
+							select
+								option No preference
+								option British Airways
+								option Ryan Air
+						div.group.split
+							div.field-wrap.split
+								label Classe souhaitée
+								select
+									option No preference
+									option Economy
+									option First Class
+							
+								
+				
 				div.field-wrap
 					button.btn.btn-primary(type='submit') Rechercher
 				

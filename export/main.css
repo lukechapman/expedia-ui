@@ -531,6 +531,32 @@ h4.module-title {
 .booking-form .form .focused .input-icon {
   color: #002847;
 }
+.form .advanced-options {
+  display: none;
+}
+.form .advanced-options-btn {
+  color: #0065b8;
+  padding-bottom: 20px;
+  display: inline-block;
+  font-size: 15px;
+  line-height: 15px;
+}
+.form .advanced-options-btn .icon {
+  font-size: 12px;
+  line-height: 12px;
+  position: relative;
+  top: 1;
+  left: 5px;
+}
+.form .advanced-options-btn .icon-angle-double-up {
+  display: none;
+}
+.form .advanced-options-btn.active .icon-angle-double-up {
+  display: inline;
+}
+.form .advanced-options-btn.active .icon-angle-double-down {
+  display: none;
+}
 
 @font-face {
   font-family: 'expedia';
@@ -856,7 +882,7 @@ body {
           transition: background .2s ease;
 }
 
-.grid .items .item .item-inner, .gallery-items .gallery-item .item-inner {
+.grid .items .item .item-inner, .gallery-items .gallery-item .item-inner, .panel {
   position: relative;
   border-radius: 4px;
   overflow: hidden;
@@ -1370,9 +1396,9 @@ body {
     -webkit-columns: 4;
        -moz-columns: 4;
             columns: 4;
-    -webkit-column-gap: 40px;
-       -moz-column-gap: 40px;
-            column-gap: 40px;
+    -webkit-column-gap: 20px;
+       -moz-column-gap: 20px;
+            column-gap: 20px;
     display: block;
   }
 }
@@ -2152,6 +2178,9 @@ html[xmlns] .flexslider .slides {
   line-height: 26px;
   margin-bottom: 24px;
 }
+.entry-content figure {
+  margin-bottom: 24px;
+}
 
 @media screen and (min-width: 840px) {
   .columns {
@@ -2535,4 +2564,34 @@ html[xmlns] .flexslider .slides {
 .content-header {
   position: relative;
   padding: 0px 0px 25px 0px;
+}
+
+.panel {
+  width: 100%;
+  padding: 0;
+  background: #ffffff;
+  margin-bottom: 20px;
+}
+.panel .panel-body {
+  padding: 15px;
+}
+.panel .panel-footer {
+  border-top: 1px solid #c7c7c7;
+  font-size: 14px;
+  line-height: 14px;
+}
+.panel .panel-footer a {
+  padding: 10px 15px;
+  display: block;
+}
+.desktop .panel .panel-footer a:hover {
+  background: aliceblue;
+}
+.panel .panel-header {
+  padding: 10px 15px;
+}
+.panel .panel-header h4 {
+  font-size: 19px;
+  line-height: 19px;
+  color: #58738a;
 }
