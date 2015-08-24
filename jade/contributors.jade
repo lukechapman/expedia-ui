@@ -1,0 +1,47 @@
+
+doctype
+html.no-js
+	head
+		include ./partials/head.jade
+	body.home
+		header.global-header#global-header
+			- //include ./external/header.html
+		include ./modules/header.jade
+		
+		- var page = 'contributors'
+		- var page_title = 'Contributeurs'
+		- var breadcrumbs = [{"title":"Guides de Voyage"}]
+		include ./modules/hero.jade
+		
+		include ./modules/booking-bar.jade
+		
+		section.page-content
+			div.inner.group
+				include ./partials/sidebar.jade
+				div.main-content.entry-content
+					div.content-header
+						- var social_class = 'float'
+						include ./modules/socials.jade
+						include ./modules/breadcrumbs.jade
+					
+					h1 Contributeurs
+					
+					div.group.contributors-grid
+						each item in contributors
+							div.item-wrap
+								a.box-item(href="#")
+									div.box-header
+										div.bg(style="background-image:url(images/#{item.image})")
+										div.overlay
+										div.underlay
+									div.box-body
+										h3 #{item.title}
+										p #{item.content}
+									if item.footer
+										div.box-footer
+											span #{item.footer}
+			
+					
+					
+
+		include ./partials/footer.jade

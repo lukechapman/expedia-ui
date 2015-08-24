@@ -119,6 +119,11 @@
 		{ "image":"test13.jpg", "title":"Pullman Berlin Schweizerhof", "content":"Vu par 22 autres en ce moment", "rating":"5", "price":"113", "currency":"€" },
 		{ "image":"test13.jpg", "title":"Andel’s Hotel Berlin", "content":"Vu par 43 autres en ce moment", "rating":"4 half", "price":"119", "currency":"€" }
 	],
+	"carousel_top5": [
+		{ "image":"test4.jpg", "title":"Beirgarten Berlin", "footer":"Par Clara et Constance" },
+		{ "image":"test4.jpg", "title":"Beirgarten Berlin", "footer":"Par Clara et Constance" },
+		{ "image":"test4.jpg", "title":"Beirgarten Berlin", "footer":"Par Clara et Constance" }
+	],
 	"inspiration": [
 		{ "title":"Découvres Illes Cyclades", "category":"destination", "image":"test6.jpg" },
 		{ "title":"Découvrez Les Promenades d’Aurelia a Paris!", "category":"guide", "image":"test7.jpg"},
@@ -130,5 +135,10 @@
 		{ "image":"test13.jpg" },
 		{ "image":"test13.jpg" },
 		{ "image":"test13.jpg" }
+	],
+	"contributors": [
+		{ "image":"author1.jpg", "title":"Elodie", "footer":"Ses Top 5" },
+		{ "image":"author2.jpg", "title":"Fanny", "footer":"Ses Top 5" },
+		{ "image":"author3.jpg", "title":"Clara et Constance", "footer":"Ses Top 5" }
 	]
 }

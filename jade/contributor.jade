@@ -1,0 +1,48 @@
+doctype
+html.no-js
+	head
+		include ./partials/head.jade
+	body.home
+		header.global-header#global-header
+			- //include ./external/header.html
+		include ./modules/header.jade
+		
+		- var page = 'author'
+		- var page_title = 'Clara et Constance'
+		- var breadcrumbs = [{"title":"Guides de Voyage"},{"title":"Contributeurs"}]
+		include ./modules/hero.jade
+		
+		include ./modules/booking-bar.jade
+		
+		section.page-content
+			div.inner.group
+				include ./partials/sidebar.jade
+				div.main-content.entry-content
+					div.content-header
+						- var social_class = 'float'
+						include ./modules/socials.jade
+						include ./modules/breadcrumbs.jade
+					
+					h1 Clara et Constance
+					div.author-intro.group
+						
+						div.author-image
+							figure.author-image-inner(style="background-image:url(images/author1.jpg)")
+						div.author-bio
+							p Berlin has an unusual history. The city torn by two world wars , the center of Nazi power and then divided for 30 years, now bears the marks with humility of his past. Prepare for an intense visit to emotions, places of memory of the Holocaust to the remains of the famous wall
+	
+					hr.separator
+					
+					- var carousel_type = 'standard'
+					- var carousel_class = 'in-content'
+					- var carousel_title = 'Les Tops 5 de Clara et Constance'
+					- var carousel_items = carousel_top5
+					include ./modules/carousel.jade
+					
+					hr.separator
+					
+					- var social_title = 'Partagez cette destination'
+					- social_class = ''
+					include ./modules/socials.jade
+
+		include ./partials/footer.jade

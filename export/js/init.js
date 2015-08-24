@@ -140,7 +140,7 @@ var site = {
 				this.sticky_position = sticky_position;
 				
 				// check if sidebar exists and will fit docked within the viewport
-				if( window_width > 760 && (biggest_child + parent_height) < window_height ){
+				if( window_width > 760 && (biggest_child + parent_height) < window_height && (biggest_child + parent_height) < content_wrap.outerHeight()){
 					this.ready = true;
 				}else{
 					this.ready = false;
