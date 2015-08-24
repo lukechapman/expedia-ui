@@ -38,7 +38,7 @@ body{
 .main-header{
 	background: $blue-extra-dark;
 	position: relative;
-	z-index: 10;
+	z-index: 100;
 	@media screen and (max-width: $main-nav-max){
 		text-align: center;	
 	}
@@ -550,6 +550,7 @@ body{
 	background: $blue-medium;
 	position: relative;
 	z-index: 50;
+	backface-visibility: hidden;
 	ul{
 		display: table;
 		width: 100%;
@@ -612,7 +613,6 @@ body{
 		top: 0;
 		left: 0;
 		width: 100%;
-		backface-visibility: hidden;
 	}
 	.booking-form-wrap{
 		background: $white;
@@ -622,6 +622,7 @@ body{
 		left: 0;
 		width: 100%;
 		box-shadow: 0px 0px 3px 0px rgba($blue-extra-extra-dark,0.4);
+		overflow: auto;
 		h3{
 			font-size: 19px;
 			line-height: 19px;
@@ -823,10 +824,24 @@ body{
 .box-item{
 	background: $white;
 	border-radius: 4px;
-	box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.3);
+	box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.5);
+	backface-visibility: hidden;
+	transform: rotate(0);
 	overflow: hidden;
 	margin-bottom: 10px;
 	display: block;
+	transition: background .2s ease;
+	.box-text-header{
+		padding: 20px 15px 10px 15px;
+		border-top-right-radius: 4px;
+		border-top-left-radius: 4px;
+		overflow: hidden;
+		h4{
+			font-size: 19px;
+			line-height: 19px;
+			color: $blue-grey;
+		}
+	}
 	.box-header{
 		width: 100%;
 		position: relative;
@@ -865,18 +880,37 @@ body{
 		color: $grey-medium-dark;
 		font-size: 13px;
 		line-height: 20px;
-		border-bottom-right-radius: 4px;
-		border-bottom-left-radius: 4px;
-		transition: background .2s ease;
-		h3{
-			color: $blue-medium;
-			font-size: 17px;
-			line-height: 20px;
-			margin-bottom: 10px;
-			font-weight: 600;
+		.box-image{
+			float: left;
+			width: 20%;
+			padding: 10px;
+			.box-circle{
+				border-radius: 50%;
+				padding-top: 100%;
+				background-repeat: no-repeat;
+				background-position: 50% 50%;
+				background-size: cover;
+				width: 100%;
+				padding-top: 100%;
+			}
 		}
-		strong{
-			color: $blue-medium;
+		.box-text{
+			float: left;
+			width: 80%;
+			padding-left: 20px;
+		}
+		&.no-footer{
+			border-bottom-right-radius: 4px;
+			border-bottom-left-radius: 4px;
+		}
+		&.no-header{
+			border-top-right-radius: 4px;
+			border-top-left-radius: 4px;
+		}
+		transition: background .2s ease;
+		&.large-type{
+			font-size: 16px;
+			line-height: 24px;
 		}
 		.sell-header{
 			margin-bottom: 10px;
@@ -962,19 +996,40 @@ body{
 				}
 			}
 		}
+		h3{
+			color: $blue-medium;
+			font-size: 17px;
+			line-height: 20px;
+			margin-bottom: 10px;
+			font-weight: 600;
+		}
+		p{
+			&:last-of-type{
+				margin-bottom: 0;
+			}
+		}
+		strong{
+			color: $blue-medium;
+		}
 	}
 	.box-footer{
 		border-top: 1px solid $grey-medium;
 		font-size: 14px;
 		line-height: 14px;
-		padding: 15px 20px;
+		padding: 12px 20px;
 		transition: background .2s ease;
-	}
-	&:hover{
-		.desktop &{
-			.box-body, .box-footer{
+		a{
+			display: block;
+		}
+		&:hover{
+			.desktop &{
 				background: $blue-extra-light;
 			}
+		}
+	}
+	&:hover:not(.no-hover){
+		.desktop &{
+			background: $blue-extra-light;
 			.box-header{
 				h4{
 					transform: translateY(-5px);
@@ -995,6 +1050,9 @@ body{
 		float: left;
 		width: 33.33%;
 		padding: 10px;
+		.box-item{
+			margin-bottom: 0;
+		}
 		.box-header{
 			padding-top: 100%;
 		}
@@ -1186,6 +1244,14 @@ figure{
 	figure{
 		margin-bottom: 24px;
 	}
+	.footnote{
+		font-style: italic;
+		background: lighten($grey-light,2%);
+		padding: 15px;
+		font-size: 15px;
+		line-height: 18px;
+		display: block;
+	}
 }
 
 .columns{
@@ -1194,6 +1260,31 @@ figure{
 		column-gap: 40px;
 		p{
 			display: inline-block;
+		}
+		h1, h2, h3, h4, h5{
+        	column-span: all; 
+		}
+		.footnote{
+			column-span: all;
+		}
+	}
+}
+
+.box-columns{
+	/*
+	margin: 0px -10px;
+	.box-item-wrap{
+		float: left;
+		width: 50%;
+		padding: 10px;
+	}
+	*/
+	@media screen and (min-width: $columns){
+		columns: 2;
+		column-gap: 20px;
+		.box-item-wrap{
+			display: inline-block;
+			width: 100%;
 		}
 	}
 }
@@ -1581,57 +1672,4 @@ figure{
 			transform: rotate(-45deg);
 		}
 	}
-}
-
-
-.panel{
-	@extend %item-inner;
-	width: 100%;
-	padding: 0;
-	background: $white;
-	margin-bottom: 20px;
-	.panel-body{
-		padding: 15px;
-		.panel-image{
-			float: left;
-			width: 20%;
-			padding: 10px;
-			.image-circle{
-				border-radius: 50%;
-				padding-top: 100%;
-				background-repeat: no-repeat;
-				background-position: 50% 50%;
-				background-size: cover;
-				width: 100%;
-				padding-top: 100%;
-			}
-		}
-		.panel-content{
-			float: left;
-			width: 80%;
-			padding-left: 20px;
-		}
-	}
-	.panel-footer{
-		border-top: 1px solid $grey-medium;
-		font-size: 14px;
-		line-height: 14px;
-		a{
-			padding: 10px 15px;
-			display: block;
-			&:hover{
-				.desktop &{
-					background: $blue-extra-light;
-				}
-			}
-		} 
-	}
-	.panel-header{
-		padding: 10px 15px;
-		h4{
-			font-size: 19px;
-			line-height: 19px;
-			color: $blue-grey;
-		}
-	}	
 }

@@ -10,7 +10,8 @@ section.carousel-module
 						div.underlay
 						if carousel_type == 'standard'
 							h4
-								span.icon(class="icon-#{carousel_item.icon}")
+								if carousel_item.icon
+									span.icon(class="icon-#{carousel_item.icon}")
 								span #{carousel_item.heading}
 					div.box-body
 						if carousel_type == 'sell'
@@ -19,16 +20,20 @@ section.carousel-module
 								div.sell-price
 									span.currency #{carousel_item.currency}
 									span.price #{carousel_item.price}
-							div.rating.group(class="rating-#{carousel_item.rating}")
-								span.star.star-1
-								span.star.star-2
-								span.star.star-3
-								span.star.star-4
-								span.star.star-5
-							p #{carousel_item.content}
+							if carousel_item.rating
+								div.rating.group(class="rating-#{carousel_item.rating}")
+									span.star.star-1
+									span.star.star-2
+									span.star.star-3
+									span.star.star-4
+									span.star.star-5
+							if carousel_item.content
+								p #{carousel_item.content}
 						else
-							h3 #{carousel_item.title}
-							p #{carousel_item.content}
+							if carousel_item.title
+								h3 #{carousel_item.title}
+							if carousel_item.content
+								p #{carousel_item.content}
 					if carousel_item.footer
 						div.box-footer
 							span #{carousel_item.footer}

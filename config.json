@@ -19,7 +19,7 @@
 	"items": [
 		{ "title":"Découvres Illes Cyclades", "category":"destination", "image":"test1.jpg", "size":"standard" },
 		{ "title":"Découvrez Les Promenades d’Aurelia a Paris!", "category":"guide", "image":"test2.jpg", "size":"standard" },
-		{ "title":"5 endroits où faire une belle photo à Stockholm", "category":"top 5", "image":"test3.jpg", "content":"This is some content right here. It is for SEO purposes only.", "size":"standard text" },
+		{ "title":"5 endroits où faire une belle photo à Stockholm", "category":"top 5", "image":"test3.jpg", "content":"This is some content right here. It is for SEO purposes only.", "size":"standard" },
 		{ "title":"Découvres Illes Cyclades", "category":"destination", "image":"test1.jpg", "size":"thin" },
 		{ "title":"Découvrez Les Promenades d’Aurelia a Paris!", "category":"guide", "image":"test2.jpg", "size":"wide" },
 		{ "title":"5 endroits où faire une belle photo à Stockholm", "category":"top 5", "image":"test3.jpg", "size":"thin" },
@@ -139,6 +139,13 @@
 	"contributors": [
 		{ "image":"author1.jpg", "title":"Elodie", "footer":"Ses Top 5" },
 		{ "image":"author2.jpg", "title":"Fanny", "footer":"Ses Top 5" },
-		{ "image":"author3.jpg", "title":"Clara et Constance", "footer":"Ses Top 5" }
+		{ "image":"author3.jpg", "title":"Clara et Constance", "footer":"Ses Top 5" },
+		{ "image":"author1.jpg", "title":"Elodie", "footer":"Ses Top 5" }
+	],
+	"recommendations": [
+		{ "image":"test8.jpg", "title":"Biergarten berlinois", "footer":"Par Phillipe" },
+		{ "image":"test2.jpg", "title":"Activités du dimanche à Berlin", "footer":"Par Phillipe" },
+		{ "image":"test5.jpg", "title":"Marchés aux puces berlinois", "footer":"Par Phillipe" },
+		{ "image":"test6.jpg", "title":"Elodie", "footer":"Par Phillipe" }
 	]
 }

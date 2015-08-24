@@ -232,11 +232,32 @@ var site = {
 	
 	dropdowns: function(){
 		
+		// custom select dropdowns using SelectOrDie: https://github.com/vestman/Select-or-Die
+		
 		$('select').selectOrDie();
 		
 	},
 	
 	carousels: function(){
+		
+		// carousels using Owl Carousel: https://github.com/OwlFonk/OwlCarousel
+		
+		// function to make all items in carousel equal height
+		function update_heights(parent){
+			
+			var biggest_box = 0;
+			$(parent).find('.box-item').each(function(){
+				
+				var box_height = $(this).outerHeight();
+				
+				if(box_height > biggest_box){
+					biggest_box = box_height;
+				}
+				
+				$(parent).find('.box-item').height(biggest_box);
+				
+			});
+		}
 		
 		if( $('.carousel-is-module').length ){
 			$('.carousel-is-module').owlCarousel({
@@ -258,6 +279,12 @@ var site = {
 					1020: {
 						items: 4
 					}
+				},
+				onInitialized:function(event){
+					update_heights(event.target);
+				},
+				onResized: function(event){
+					update_heights(event.target);
 				}
 			});
 		}
@@ -282,6 +309,12 @@ var site = {
 					1020: {
 						items: 3
 					}
+				},
+				onInitialized:function(event){
+					update_heights(event.target);
+				},
+				onResized: function(event){
+					update_heights(event.target);
 				}
 			});
 		}
@@ -289,6 +322,8 @@ var site = {
 	},
 	
 	accordion: function(){
+		
+		// toggle sub menu children
 		
 		$('.has-children > a').on('click', function(e){
 			
@@ -306,6 +341,8 @@ var site = {
 	},
 	
 	sliders: function(){
+		
+		// using flexslider: https://github.com/woothemes/FlexSlider
 		
 		$('.gallery-module').each(function(){
 			
@@ -354,7 +391,7 @@ var site = {
 			// carousels
 			site.carousels();
 			
-			//nav accordion
+			// nav accordion
 			site.accordion();
 			
 			// image sliders
@@ -382,6 +419,7 @@ var site = {
 			
 			// setup docking
 			site.bar_dock.setup();
+			
 			// timeout to allow for flexslider to load
 			setTimeout(function(){
 				site.side_nav_dock.setup();
@@ -390,7 +428,8 @@ var site = {
 		});
 		
 		$(window).on('resize', function(){
-	
+			
+			// check if docking is still available on resize
 			clearTimeout(delay);
 			delay = setTimeout(function(){
 				site.bar_dock.setup();
