@@ -1,0 +1,69 @@
+doctype
+html.no-js
+	head
+		include ./partials/head.jade
+	body.home
+		header.global-header#global-header
+			- //include ./external/header.html
+		include ./modules/header.jade
+		
+		- var page = 'top-5'
+		- var page_title = 'Top 5'
+		- var breadcrumbs = [{"title":"Guides de Voyage"},{"title":"France"}]
+		include ./modules/hero.jade
+		
+		include ./modules/booking-bar.jade
+		
+		section.page-content
+			div.inner.group
+				include ./partials/sidebar.jade
+				div.main-content.entry-content
+					div.content-header
+						- var social_class = 'float'
+						include ./modules/socials.jade
+						include ./modules/breadcrumbs.jade
+					
+					h1 5 escapades au vert sans quitter Paris
+					p Berlin has an unusual history. The city torn by two world wars , the center of Nazi power and then divided for 30 years, now bears the marks with humility of his past. Prepare for an intense visit to emotions, places of memory of the Holocaust to the remains of the famous wall
+					
+					div.panel
+						div.panel-body.group
+							div.panel-image
+								div.image-circle(style="background-image:url(images/author1.jpg)")
+							div.panel-content
+								h3 Clara et Constance
+								p Berlin has an unusual history. The city torn by two world wars , the center of Nazi power and then divided for 30 years, now bears the marks with humility of his past. Prepare for an intense visit to emotions, places of memory of the Holocaust to the remains of the famous wall
+						div.panel-footer
+							a(href="#") En saviour plus sur l'auteur
+	
+					hr.separator
+					
+					div.top-5-item.group
+						div.top-5-image
+							figure(style="background-image:url(images/test7.jpg)")
+								figcaption Photo par Jean-Pierre
+						div.top-5-content
+							h2 Trouver le calme au jardin
+							p Berlin has an unusual history. The city torn by two world wars , the center of Nazi power and then divided for 30 years, now bears the marks with humility of his past. Prepare for an intense visit to emotions, places of memory of the Holocaust to the remains of the famous wall
+							div.top-5-location.group
+								div.top-5-number
+									span 1
+								div.top-5-address
+									span 19 Avenue 75116 Paris
+									a(href="#") View on map
+					
+					hr.separator
+					
+					- var carousel_type = 'standard'
+					- var carousel_class = 'in-content'
+					- var carousel_title = 'Les Tops 5 de Clara et Constance'
+					- var carousel_items = carousel_top5
+					include ./modules/carousel.jade
+					
+					hr.separator
+					
+					- var social_title = 'Partagez cette destination'
+					- social_class = ''
+					include ./modules/socials.jade
+
+		include ./partials/footer.jade

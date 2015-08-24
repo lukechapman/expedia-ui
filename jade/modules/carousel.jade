@@ -3,8 +3,8 @@ section.carousel-module
 		h4.module-title #{carousel_title}
 		div.owl-carousel.owl-theme(class="carousel-#{carousel_class} #{carousel_type}")
 			each carousel_item in carousel_items
-				a.carousel-item(href="#")
-					div.carousel-header
+				a.box-item(href="#")
+					div.box-header
 						div.bg(style="background-image:url(images/#{carousel_item.image})")
 						div.overlay
 						div.underlay
@@ -12,7 +12,7 @@ section.carousel-module
 							h4
 								span.icon(class="icon-#{carousel_item.icon}")
 								span #{carousel_item.heading}
-					div.carousel-body
+					div.box-body
 						if carousel_type == 'sell'
 							div.sell-header.group
 								h3 #{carousel_item.title}
@@ -29,4 +29,6 @@ section.carousel-module
 						else
 							h3 #{carousel_item.title}
 							p #{carousel_item.content}
-							strong Read more
+					if carousel_item.footer
+						div.box-footer
+							span #{carousel_item.footer}
