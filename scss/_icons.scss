@@ -9,24 +9,96 @@
 	font-style: normal;
 }
 
-%icon-style{
-	font-family: 'expedia';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
 [class^="icon-"], [class*=" icon-"] {
 	@extend %icon-style;
 }
 
+.icon-payment:before {
+	content: "\e612";
+}
+.icon-bicycle:before {
+	content: "\e613";
+}
+.icon-family:before {
+	content: "\e614";
+}
+.icon-tram:before {
+	content: "\e615";
+}
+.icon-quotes:before {
+	content: "\e616";
+}
+.icon-passport:before {
+	content: "\e617";
+}
+.icon-ski:before {
+	content: "\e618";
+}
+.icon-history:before {
+	content: "\e619";
+}
+.icon-book:before {
+	content: "\e61a";
+}
+.icon-walk:before {
+	content: "\e61b";
+}
+.icon-film:before {
+	content: "\e60d";
+}
+.icon-music:before {
+	content: "\e60e";
+}
+.icon-ribbon:before {
+	content: "\e60f";
+}
+.icon-office:before {
+	content: "\e601";
+}
+.icon-eat:before {
+	content: "\e610";
+}
+.icon-airplane:before {
+	content: "\e602";
+}
+.icon-earth:before {
+	content: "\e603";
+}
+.icon-star-empty:before {
+	content: "\e608";
+}
+.icon-star-half:before {
+	content: "\e609";
+}
+.icon-star-full:before {
+	content: "\e60a";
+}
+.icon-share:before {
+	content: "\e607";
+}
+.icon-google-plus:before {
+	content: "\e604";
+}
+.icon-facebook:before {
+	content: "\e605";
+}
+.icon-twitter:before {
+	content: "\e606";
+}
 .icon-search:before {
 	content: "\f002";
+}
+.icon-heart:before {
+	content: "\f004";
+}
+.icon-flag:before {
+	content: "\f024";
+}
+.icon-comments:before {
+	content: "\f086";
+}
+.icon-paperclip:before {
+	content: "\f0c6";
 }
 .icon-angle-double-left:before {
 	content: "\f100";
@@ -52,8 +124,17 @@
 .icon-angle-down:before {
 	content: "\f107";
 }
+.icon-ticket:before {
+	content: "\f145";
+}
 .icon-automobile:before {
 	content: "\f1b9";
+}
+.icon-cab:before {
+	content: "\f1ba";
+}
+.icon-mars-double:before {
+	content: "\f227";
 }
 .icon-calendar:before {
 	content: "\e60b";
@@ -64,34 +145,6 @@
 .icon-suitcase:before {
 	content: "\e600";
 }
-.icon-office:before {
-	content: "\e601";
-}
-.icon-airplane:before {
-	content: "\e602";
-	transform: scaleX(-1);
-}
-.icon-earth:before {
-	content: "\e603";
-}
-.icon-share2:before {
-	content: "\e607";
-}
-.icon-google-plus:before {
-	content: "\e604";
-}
-.icon-facebook:before {
-	content: "\e605";
-}
-.icon-twitter:before {
-	content: "\e606";
-}
-.icon-star-empty:before {
-	content: "\e608";
-}
-.icon-star-half:before {
-	content: "\e609";
-}
-.icon-star-full:before {
-	content: "\e60a";
+.icon-instagram:before {
+	content: "\e611";
 }
