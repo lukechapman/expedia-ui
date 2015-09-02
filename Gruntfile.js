@@ -104,7 +104,7 @@ module.exports = function(grunt) {
 		    }
 		},
 		uglify: {
-		    release: {
+		    plugins: {
 		        src: 'export/js/plugins.js',
 		        dest: 'export/js/plugins.min.js'
 		    },
@@ -125,6 +125,20 @@ module.exports = function(grunt) {
     	'csscomb',
     	'jade',
     	'watch:all'
+    ]);
+    
+    grunt.registerTask( 'build', [
+    	'jshint',
+    	'concat:plugins',
+    	'concat:vendors',
+    	'sass:dev',
+    	'autoprefixer',
+    	'csscomb',
+    	'cssmin:release',
+    	'uglify:plugins',
+    	'uglify:init',
+    	'imagemin:all',
+    	'jade'
     ]);
 
 };
