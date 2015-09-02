@@ -1,0 +1,26 @@
+section.recommendation-module
+	div.inner
+		h4.module-title #{recommendation_title}
+		div.group
+			div.recommend-image
+				div.bg(style="background-image:url(images/#{recommendation_item.image})")
+			div.recommend-text
+				h3 #{recommendation_item.title}
+				if recommendation_item.reviews
+					span.review-count (#{recommendation_item.reviews} reviews)
+				if recommendation_item.rating
+					div.rating.group(class="rating-#{recommendation_item.rating}")
+						span.star.star-1
+						span.star.star-2
+						span.star.star-3
+						span.star.star-4
+						span.star.star-5
+				if recommendation_item.content
+					p #{recommendation_item.content}
+						
+				if recommendation_item.price
+					div.sell-price
+						span.currency #{recommendation_item.currency}
+						span.price #{recommendation_item.price}
+							
+							

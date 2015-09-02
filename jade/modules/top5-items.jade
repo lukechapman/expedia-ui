@@ -1,0 +1,15 @@
+section.top-5-grid
+	h2 #{section_title}
+	div.group.top-5-items
+		each item in section_items
+			div.item-wrap
+				a.box-item(href="#")
+					div.box-header
+						div.bg(style="background-image:url(images/#{item.image})")
+						div.overlay
+						div.underlay
+					div.box-body
+						h3 #{item.title}
+					if item.footer
+						div.box-footer
+							span #{item.footer}

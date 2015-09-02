@@ -6,7 +6,7 @@
     <title>Découvertes Expedia</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,700">
     <link rel="stylesheet" href="main.css">
     <script src="js/vendors.js"></script>
     <script>
@@ -18,6 +18,9 @@
       		desktop: !!is.desktop()
       	});
       })(window, Modernizr);
+      var globals = {
+      	site_url: ''	
+      };
     </script>
   </head>
   <body class="home">
@@ -68,7 +71,7 @@
         <li><a href="#" data-form="#flights-and-hotels" class="js-toggle-form"><span class="icon icon-suitcase"></span><span class="label">Vols + Hôtels</span></a></li>
         <li><a href="#" data-form="#cars" class="js-toggle-form"><span class="icon icon-automobile"></span><span class="label">Voiture</span></a></li>
       </ul>
-      <section class="booking-form-wrap">
+      <section data-scroll-scope class="booking-form-wrap">
         <div class="booking-form"><a href="#" class="js-close-booking close-btn">Close</a>
           <form id="flights" class="form">
             <h3>Find Flights</h3>
@@ -190,7 +193,7 @@
     <section class="grid home-grid">
       <div class="inner">
         <section class="socials-module">
-          <div class="group socials-list float"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-facebook"><span class="icon icon-facebook"></span></a><a href="https://twitter.com/intent/tweet?text=&amp;url=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-twitter"><span class="icon icon-twitter"></span></a><a href="https://plus.google.com/share?url=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-google"><span class="icon icon-google-plus"></span></a><a href="#" target="_blank" class="social js-social social-sharethis"><span class="icon icon-share2"></span></a></div>
+          <div class="group socials-list float"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-facebook"><span class="icon icon-facebook"></span></a><a href="https://twitter.com/intent/tweet?text=&amp;url=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-twitter"><span class="icon icon-twitter"></span></a><a href="https://plus.google.com/share?url=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-google"><span class="icon icon-google-plus"></span></a><a href="#" target="_blank" class="social js-social social-sharethis"><span class="icon icon-share"></span></a></div>
         </section>
         <nav class="tab-nav js-dropdown-parent">
           <div class="current-btn js-dropdown">A la Une</div>
@@ -216,7 +219,7 @@
               <div class="text-wrap"><strong>Découvrez Les Promenades d’Aurelia a Paris!</strong><span class="category category-guide">guide</span>
               </div>
             </div></a>
-          <div class="item text-only standard text">
+          <div class="item text-only standard">
             <div class="item-inner">
               <div style="background-image:url(images/test3.jpg)" class="bg"></div>
               <div class="underlay"></div>
@@ -233,28 +236,28 @@
               </div>
             </div></a><a href="#" class="item wide">
             <div class="item-inner">
-              <div style="background-image:url(images/test2.jpg)" class="bg"></div>
+              <div style="background-image:url(images/test4.jpg)" class="bg"></div>
               <div class="overlay"></div>
               <div class="underlay"></div>
               <div class="text-wrap"><strong>Découvrez Les Promenades d’Aurelia a Paris!</strong><span class="category category-guide">guide</span>
               </div>
             </div></a><a href="#" class="item thin">
             <div class="item-inner">
-              <div style="background-image:url(images/test3.jpg)" class="bg"></div>
+              <div style="background-image:url(images/test5.jpg)" class="bg"></div>
               <div class="overlay"></div>
               <div class="underlay"></div>
               <div class="text-wrap"><strong>5 endroits où faire une belle photo à Stockholm</strong><span class="category category-top-5">top 5</span>
               </div>
             </div></a><a href="#" class="item extra-wide">
             <div class="item-inner">
-              <div style="background-image:url(images/test1.jpg)" class="bg"></div>
+              <div style="background-image:url(images/test6.jpg)" class="bg"></div>
               <div class="overlay"></div>
               <div class="underlay"></div>
               <div class="text-wrap"><strong>Découvres Illes Cyclades</strong><span class="category category-destination">destination</span>
               </div>
             </div></a><a href="#" class="item extra-wide">
             <div class="item-inner">
-              <div style="background-image:url(images/test2.jpg)" class="bg"></div>
+              <div style="background-image:url(images/test7.jpg)" class="bg"></div>
               <div class="overlay"></div>
               <div class="underlay"></div>
               <div class="text-wrap"><strong>Découvrez Les Promenades d’Aurelia a Paris!</strong><span class="category category-guide">guide</span>
@@ -345,11 +348,6 @@
     </section>
     <footer id="global-footer" class="global-footer">
     </footer>
-    <script>
-      var globals = {
-      	site_url: ''	
-      };
-    </script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery-1.11.3.min.js"><\/script>')</script>
     <script src="js/plugins.js"></script>

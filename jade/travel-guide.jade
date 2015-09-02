@@ -9,6 +9,7 @@ html.no-js
 		
 		- var page = 'destination'
 		- var page_title = 'Berlin'
+		- var region = 'Berlin'
 		- var breadcrumbs = [{"title":"Guides de Voyage"},{"title":"Germany"}]
 		include ./modules/hero.jade
 		
@@ -30,71 +31,115 @@ html.no-js
 						p Berlin has an unusual history. The city torn by two world wars , the center of Nazi power and then divided for 30 years, now bears the marks with humility of his past. Prepare for an intense visit to emotions, places of memory of the Holocaust to the remains of the famous wall
 	
 					hr.separator
-					
-					div
+	
+					div.columns
 						h2 Day 1
 						h3 Berlin, a city with a past steeped
-					div.columns
 						p To start your weekend in Berlin, put yourself into the bath museum Story Of Berlin. His type of interactive exhibit allows young and old to discover the main periods in the history of the city. These are grouped chronologically and by theme. Playful performances even complete the visit.
 						p At midday feast on Asian dishes at Saigon and more. You will enjoy Vietnamese dishes for adding more than correct considering the amount of servings. Taste the soup Pho Bo (with rice noodles, beef and star anise) and let your senses travel...
 					
 					include ./modules/image-slider.jade
 					
-					div
+					div.columns
 						h2 Day 2
 						h3 Berlin, a city with a past steeped
-					div.columns
 						p To start your weekend in Berlin, put yourself into the bath museum Story Of Berlin. His type of interactive exhibit allows young and old to discover the main periods in the history of the city. These are grouped chronologically and by theme. Playful performances even complete the visit.
 						p At midday feast on Asian dishes at Saigon and more. You will enjoy Vietnamese dishes for adding more than correct considering the amount of servings. Taste the soup Pho Bo (with rice noodles, beef and star anise) and let your senses travel...
 					
 					figure
 						img(src="images/test2.jpg")
 						figcaption Testing
+						
+					
+					div.columns
+						h2 Day 2
+						h3 Berlin, a city with a past steeped
+						p To start your weekend in Berlin, put yourself into the bath museum Story Of Berlin. His type of interactive exhibit allows young and old to discover the main periods in the history of the city. These are grouped chronologically and by theme. Playful performances even complete the visit.
+						p At midday feast on Asian dishes at Saigon and more. You will enjoy Vietnamese dishes for adding more than correct considering the amount of servings. Taste the soup Pho Bo (with rice noodles, beef and star anise) and let your senses travel...
+						p.footnote The contemporary history interests you? Discover our guide on the <a href="#">remains of the American dream in New York!</a>
+						
+					hr.separator
+					
+					- var carousel_type = 'standard'
+					- var carousel_class = 'in-content'
+					- var carousel_title = 'Top 5 des recommandations'
+					- var carousel_items = recommendations
+					include ./modules/carousel.jade
+					
+					hr.separator
 					
 					div
 						h2 Berlin in brief
-					
-					div.columns
-					
-						div.panel
-							div.panel-header
-								h4
-									span.icon.icon-location-pin
-									span When to go?
-							div.panel-body.entry-content
-								p The historical exhibits and museums in Berlin are open all year!
-							div.panel-footer
-								a(href='#') Find flights
+						
+						div.group.box-columns
+							div.box-item-wrap
+								div.box-item.no-hover
+									div.box-text-header
+										h4
+											span.icon.icon-location-pin
+											span When to go
+									div.box-body.entry-content.large-type
+										p The historical exhibits and museums in Berlin are open all year!
+									div.box-footer
+										a(href='#') Find flights
+							div.box-item-wrap			
+								div.box-item.no-hover
+									div.box-text-header
+										h4
+											span.icon.icon-location-pin
+											span Where to stay
+									div.box-body.entry-content.large-type
+										p Opt for a hotel located in a historic area of the city as <a href="#">Kreuzberg</a>. Book a comfortable hotel by example on the street Stresemannstrasse or street Zimmerstrasse.
+									div.box-footer
+										a(href='#') Find flights
+							div.box-item-wrap			
+								div.box-item.no-hover
+									div.box-text-header
+										h4
+											span.icon.icon-location-pin
+											span Getting around
+									div.box-body.entry-content.large-type
+										p The subways and city trains (S-Bahn and U-Bahn) run from 04:00h to 01:00h and non-stop the nights of Friday and Saturday.
+										p At night, also circulate through many lines of bus or tram  to the east of the city.
+									div.box-footer
+										a(href='#') Rent a car
+							div.box-item-wrap			
+								div.box-item.no-hover
+									div.box-text-header
+										h4
+											span.icon.icon-location-pin
+											span Where to eat
+									div.box-body.entry-content.large-type
+										p Saigon and more: Geisbergstrasse 12
+										p Hof Zwei: Schöneberger Strasse 3
+										p Gasthaus Julchen Hoppe: Rathausstrasse 25
+									div.box-footer
+										a(href='#') Gastronomie
 								
-						div.panel
-							div.panel-header
-								h4
-									span.icon.icon-location-pin
-									span Where to stay?
-							div.panel-body.entry-content
-								p Opt for a hotel located in a historic area of the city as <a href="#">Kreuzberg</a>. Book a comfortable hotel by example on the street Stresemannstrasse or street Zimmerstrasse.
-							div.panel-footer
-								a(href='#') Find flights
-								
-						div.panel
-							div.panel-header
-								h4
-									span.icon.icon-location-pin
-									span When to go?
-							div.panel-body.entry-content
-								p The historical exhibits and museums in Berlin are open all year!
-							div.panel-footer
-								a(href='#') Find flights
-								
-						div.panel
-							div.panel-header
-								h4
-									span.icon.icon-location-pin
-									span Where to stay?
-							div.panel-body.entry-content
-								p Opt for a hotel located in a historic area of the city as <a href="#">Kreuzberg</a>. Book a comfortable hotel by example on the street Stresemannstrasse or street Zimmerstrasse.
-							div.panel-footer
-								a(href='#') Find flights
+					div
+						h3 Key events
+						
+						div.group.box-columns
+							div.box-item-wrap
+								div.box-item.no-hover
+									div.box-body.entry-content.large-type.no-footer
+										strong May
+										p Long Night of Museums
+							div.box-item-wrap
+								div.box-item.no-hover
+									div.box-body.entry-content.large-type.no-footer
+										strong November 9
+										p Commemorating Kristallnacht
+							div.box-item-wrap
+								div.box-item.no-hover
+									div.box-body.entry-content.large-type.no-footer
+										strong September
+										p Heritage Days
+							div.box-item-wrap
+								div.box-item.no-hover
+									div.box-body.entry-content.large-type.no-footer
+										strong October 3
+										p National Day, Day of German Unification
 							
 					
 					- var social_title = 'Partagez cette destination'

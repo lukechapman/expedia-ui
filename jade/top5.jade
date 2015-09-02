@@ -8,7 +8,8 @@ html.no-js
 		include ./modules/header.jade
 		
 		- var page = 'top-5'
-		- var page_title = 'Top 5'
+		- var page_title = 'Paris • Top 5'
+		- var region = 'Paris'
 		- var breadcrumbs = [{"title":"Guides de Voyage"},{"title":"France"}]
 		include ./modules/hero.jade
 		
@@ -23,17 +24,18 @@ html.no-js
 						include ./modules/socials.jade
 						include ./modules/breadcrumbs.jade
 					
-					h1 5 escapades au vert sans quitter Paris
-					p Berlin has an unusual history. The city torn by two world wars , the center of Nazi power and then divided for 30 years, now bears the marks with humility of his past. Prepare for an intense visit to emotions, places of memory of the Holocaust to the remains of the famous wall
+					div.intro-text
+						h1 5 escapades au vert sans quitter Paris
+						p Champs de Mars, Parc Monceau, Tuileries, Luxembourg… Les grands jardins parisiens sont un lieu classique de promenade dans une ville qui laisse peu de place aux espaces verts. Mais Paris abrite aussi quelques petites <strong>pépites de verdure</strong>! Ces lieux insolites sont une <strong>vraie bouffée d’air</strong> qui invitent au voyage.
 					
-					div.panel
-						div.panel-body.group
-							div.panel-image
-								div.image-circle(style="background-image:url(images/author1.jpg)")
-							div.panel-content
+					div.box-item.no-hover
+						div.box-body.group.large-text
+							div.box-image
+								div.box-circle(style="background-image:url(images/author1.jpg)")
+							div.box-text
 								h3 Clara et Constance
-								p Berlin has an unusual history. The city torn by two world wars , the center of Nazi power and then divided for 30 years, now bears the marks with humility of his past. Prepare for an intense visit to emotions, places of memory of the Holocaust to the remains of the famous wall
-						div.panel-footer
+								p Blogueuses et parisiennes, Clara et Constance vous donnent leurs bons plans pour faire le tour du monde sans sortir de Paris.
+						div.box-footer
 							a(href="#") En saviour plus sur l'auteur
 	
 					hr.separator
@@ -43,27 +45,53 @@ html.no-js
 							figure(style="background-image:url(images/test7.jpg)")
 								figcaption Photo par Jean-Pierre
 						div.top-5-content
-							h2 Trouver le calme au jardin
+							h3 Trouver le calme au jardin
 							p Berlin has an unusual history. The city torn by two world wars , the center of Nazi power and then divided for 30 years, now bears the marks with humility of his past. Prepare for an intense visit to emotions, places of memory of the Holocaust to the remains of the famous wall
 							div.top-5-location.group
 								div.top-5-number
-									span 1
+									span.pin-num 1
+									span.pin-obj
 								div.top-5-address
 									span 19 Avenue 75116 Paris
-									a(href="#") View on map
+									br
+									a(href="#", data-number="1").js-goto-map View on map
+					
+					hr.separator
+					
+					div.top-5-item.group
+						div.top-5-image
+							figure(style="background-image:url(images/test3.jpg)")
+								figcaption Photo par Jean-Pierre
+						div.top-5-content
+							h3 Trouver le calme au jardin
+							p Berlin has an unusual history. The city torn by two world wars , the center of Nazi power and then divided for 30 years, now bears the marks with humility of his past. Prepare for an intense visit to emotions, places of memory of the Holocaust to the remains of the famous wall
+							div.top-5-location.group
+								div.top-5-number
+									span.pin-num 2
+									span.pin-obj
+								div.top-5-address
+									span 19 Avenue 75116 Paris
+									br
+									a(href="#", data-number="2").js-goto-map View on map
+					
+					hr.separator
+					
+					include ./modules/map.jade
 					
 					hr.separator
 					
 					- var carousel_type = 'standard'
 					- var carousel_class = 'in-content'
-					- var carousel_title = 'Les Tops 5 de Clara et Constance'
-					- var carousel_items = carousel_top5
+					- var carousel_title = 'Plus Top 5 à Paris'
+					- var carousel_items = carousel_top5_paris
 					include ./modules/carousel.jade
 					
 					hr.separator
 					
-					- var social_title = 'Partagez cette destination'
-					- social_class = ''
-					include ./modules/socials.jade
+		- var carousel_type = 'standard contributors'
+		- var carousel_class = 'is-module'
+		- var carousel_title = 'Nos derniers Tops 5'
+		- var carousel_items = contributors
+		include ./modules/carousel.jade
 
 		include ./partials/footer.jade

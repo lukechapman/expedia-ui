@@ -6,7 +6,7 @@
     <title>Découvertes Expedia</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,700">
     <link rel="stylesheet" href="main.css">
     <script src="js/vendors.js"></script>
     <script>
@@ -18,6 +18,9 @@
       		desktop: !!is.desktop()
       	});
       })(window, Modernizr);
+      var globals = {
+      	site_url: ''	
+      };
     </script>
   </head>
   <body class="home">
@@ -62,7 +65,7 @@
         <li><a href="#" data-form="#flights-and-hotels" class="js-toggle-form"><span class="icon icon-suitcase"></span><span class="label">Vols + Hôtels</span></a></li>
         <li><a href="#" data-form="#cars" class="js-toggle-form"><span class="icon icon-automobile"></span><span class="label">Voiture</span></a></li>
       </ul>
-      <section class="booking-form-wrap">
+      <section data-scroll-scope class="booking-form-wrap">
         <div class="booking-form"><a href="#" class="js-close-booking close-btn">Close</a>
           <form id="flights" class="form">
             <h3>Find Flights</h3>
@@ -184,13 +187,13 @@
     <section class="grid country-grid">
       <div class="inner">
         <section class="socials-module">
-          <div class="group socials-list float"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-facebook"><span class="icon icon-facebook"></span></a><a href="https://twitter.com/intent/tweet?text=&amp;url=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-twitter"><span class="icon icon-twitter"></span></a><a href="https://plus.google.com/share?url=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-google"><span class="icon icon-google-plus"></span></a><a href="#" target="_blank" class="social js-social social-sharethis"><span class="icon icon-share2"></span></a></div>
+          <div class="group socials-list float"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-facebook"><span class="icon icon-facebook"></span></a><a href="https://twitter.com/intent/tweet?text=&amp;url=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-twitter"><span class="icon icon-twitter"></span></a><a href="https://plus.google.com/share?url=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-google"><span class="icon icon-google-plus"></span></a><a href="#" target="_blank" class="social js-social social-sharethis"><span class="icon icon-share"></span></a></div>
         </section>
         <nav class="tab-nav js-dropdown-parent">
           <div class="current-btn js-dropdown">Regions</div>
           <ul class="group">
             <li class="active tab"><a href="#"><span class="icon icon-book"></span><span class="label">Regions</span></a></li>
-            <li class="tab"><a href="#"><span class="icon icon-city"></span><span class="label">Skiing</span></a></li>
+            <li class="tab"><a href="#"><span class="icon icon-ski"></span><span class="label">Skiing</span></a></li>
           </ul>
         </nav>
         <div class="items group">
@@ -284,9 +287,10 @@
               <div style="background-image:url(images/test13.jpg)" class="bg"></div>
               <div class="overlay"></div>
               <div class="underlay"></div>
-              <h4><span class="icon icon-history"></span><span>History</span></h4>
+              <h4><span class="icon icon-history"></span><span>History</span>
+              </h4>
             </div>
-            <div class="box-body">
+            <div class="box-body no-footer">
               <h3>Autour de Notre-Dame et de l'Ile de la Cité</h3>
               <p>Deux parisiens vous présentent leur ville. Chaque mois, Aurélia et Brice vous emmènent découvrir en vidéo un Paris bucolique, caché &amp; discret.</p>
             </div></a><a href="#" class="box-item">
@@ -294,49 +298,54 @@
               <div style="background-image:url(images/test14.jpg)" class="bg"></div>
               <div class="overlay"></div>
               <div class="underlay"></div>
-              <h4><span class="icon icon-sport"></span><span>Sport et Nature</span></h4>
+              <h4><span class="icon icon-bicycle"></span><span>Sport et Nature</span>
+              </h4>
             </div>
-            <div class="box-body">
+            <div class="box-body no-footer">
               <h3>Les charmes de Lyon au printemps</h3>
               <p>Lyon dévoile ses trésors historiques toute l’année. Mais au printemps, les paysages urbains et naturels se conjuguent aux évènements cultur.</p>
             </div></a><a href="#" class="box-item">
             <div class="box-header">
-              <div style="background-image:url(images/test13.jpg)" class="bg"></div>
+              <div style="background-image:url(images/test15.jpg)" class="bg"></div>
               <div class="overlay"></div>
               <div class="underlay"></div>
-              <h4><span class="icon icon-history"></span><span>History</span></h4>
+              <h4><span class="icon icon-music"></span><span>Musique</span>
+              </h4>
             </div>
-            <div class="box-body">
+            <div class="box-body no-footer">
               <h3>Autour de Notre-Dame et de l'Ile de la Cité</h3>
               <p>Deux parisiens vous présentent leur ville. Chaque mois, Aurélia et Brice vous emmènent découvrir en vidéo un Paris bucolique, caché &amp; discret.</p>
             </div></a><a href="#" class="box-item">
             <div class="box-header">
-              <div style="background-image:url(images/test14.jpg)" class="bg"></div>
+              <div style="background-image:url(images/test12.jpg)" class="bg"></div>
               <div class="overlay"></div>
               <div class="underlay"></div>
-              <h4><span class="icon icon-sport"></span><span>Sport et Nature</span></h4>
+              <h4><span class="icon icon-eat"></span><span>Gastronomie</span>
+              </h4>
             </div>
-            <div class="box-body">
+            <div class="box-body no-footer">
               <h3>Les charmes de Lyon au printemps</h3>
               <p>Lyon dévoile ses trésors historiques toute l’année. Mais au printemps, les paysages urbains et naturels se conjuguent aux évènements cultur.</p>
             </div></a><a href="#" class="box-item">
             <div class="box-header">
-              <div style="background-image:url(images/test13.jpg)" class="bg"></div>
+              <div style="background-image:url(images/test11.jpg)" class="bg"></div>
               <div class="overlay"></div>
               <div class="underlay"></div>
-              <h4><span class="icon icon-history"></span><span>History</span></h4>
+              <h4><span class="icon icon-heart"></span><span>Romantique</span>
+              </h4>
             </div>
-            <div class="box-body">
+            <div class="box-body no-footer">
               <h3>Autour de Notre-Dame et de l'Ile de la Cité</h3>
               <p>Deux parisiens vous présentent leur ville. Chaque mois, Aurélia et Brice vous emmènent découvrir en vidéo un Paris bucolique, caché &amp; discret.</p>
             </div></a><a href="#" class="box-item">
             <div class="box-header">
-              <div style="background-image:url(images/test14.jpg)" class="bg"></div>
+              <div style="background-image:url(images/test10.jpg)" class="bg"></div>
               <div class="overlay"></div>
               <div class="underlay"></div>
-              <h4><span class="icon icon-sport"></span><span>Sport et Nature</span></h4>
+              <h4><span class="icon icon-family"></span><span>En Familie</span>
+              </h4>
             </div>
-            <div class="box-body">
+            <div class="box-body no-footer">
               <h3>Les charmes de Lyon au printemps</h3>
               <p>Lyon dévoile ses trésors historiques toute l’année. Mais au printemps, les paysages urbains et naturels se conjuguent aux évènements cultur.</p>
             </div></a>
@@ -425,11 +434,6 @@
     </section>
     <footer id="global-footer" class="global-footer">
     </footer>
-    <script>
-      var globals = {
-      	site_url: ''	
-      };
-    </script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery-1.11.3.min.js"><\/script>')</script>
     <script src="js/plugins.js"></script>

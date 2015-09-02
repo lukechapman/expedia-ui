@@ -6,7 +6,7 @@
     <title>Découvertes Expedia</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,700">
     <link rel="stylesheet" href="main.css">
     <script src="js/vendors.js"></script>
     <script>
@@ -18,6 +18,9 @@
       		desktop: !!is.desktop()
       	});
       })(window, Modernizr);
+      var globals = {
+      	site_url: ''	
+      };
     </script>
   </head>
   <body class="home">
@@ -63,7 +66,7 @@
         <li><a href="#" data-form="#flights-and-hotels" class="js-toggle-form"><span class="icon icon-suitcase"></span><span class="label">Vols + Hôtels</span></a></li>
         <li><a href="#" data-form="#cars" class="js-toggle-form"><span class="icon icon-automobile"></span><span class="label">Voiture</span></a></li>
       </ul>
-      <section class="booking-form-wrap">
+      <section data-scroll-scope class="booking-form-wrap">
         <div class="booking-form"><a href="#" class="js-close-booking close-btn">Close</a>
           <form id="flights" class="form">
             <h3>Find Flights</h3>
@@ -221,7 +224,7 @@
         <div class="main-content entry-content">
           <div class="content-header">
             <section class="socials-module">
-              <div class="group socials-list float"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-facebook"><span class="icon icon-facebook"></span></a><a href="https://twitter.com/intent/tweet?text=&amp;url=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-twitter"><span class="icon icon-twitter"></span></a><a href="https://plus.google.com/share?url=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-google"><span class="icon icon-google-plus"></span></a><a href="#" target="_blank" class="social js-social social-sharethis"><span class="icon icon-share2"></span></a></div>
+              <div class="group socials-list float"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-facebook"><span class="icon icon-facebook"></span></a><a href="https://twitter.com/intent/tweet?text=&amp;url=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-twitter"><span class="icon icon-twitter"></span></a><a href="https://plus.google.com/share?url=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-google"><span class="icon icon-google-plus"></span></a><a href="#" target="_blank" class="social js-social social-sharethis"><span class="icon icon-share"></span></a></div>
             </section>
             <ul class="breadcrumbs-secondary">
               <li><a href="#" class="breadcrumb">Guides de Voyage</a></li>
@@ -235,11 +238,9 @@
             <p>Berlin has an unusual history. The city torn by two world wars , the center of Nazi power and then divided for 30 years, now bears the marks with humility of his past. Prepare for an intense visit to emotions, places of memory of the Holocaust to the remains of the famous wall</p>
           </div>
           <hr class="separator">
-          <div>
+          <div class="columns">
             <h2>Day 1</h2>
             <h3>Berlin, a city with a past steeped</h3>
-          </div>
-          <div class="columns">
             <p>To start your weekend in Berlin, put yourself into the bath museum Story Of Berlin. His type of interactive exhibit allows young and old to discover the main periods in the history of the city. These are grouped chronologically and by theme. Playful performances even complete the visit.</p>
             <p>At midday feast on Asian dishes at Saigon and more. You will enjoy Vietnamese dishes for adding more than correct considering the amount of servings. Taste the soup Pho Bo (with rice noodles, beef and star anise) and let your senses travel...</p>
           </div>
@@ -277,61 +278,163 @@
               </ul>
             </div>
           </section>
-          <div>
+          <div class="columns">
             <h2>Day 2</h2>
             <h3>Berlin, a city with a past steeped</h3>
-          </div>
-          <div class="columns">
             <p>To start your weekend in Berlin, put yourself into the bath museum Story Of Berlin. His type of interactive exhibit allows young and old to discover the main periods in the history of the city. These are grouped chronologically and by theme. Playful performances even complete the visit.</p>
             <p>At midday feast on Asian dishes at Saigon and more. You will enjoy Vietnamese dishes for adding more than correct considering the amount of servings. Taste the soup Pho Bo (with rice noodles, beef and star anise) and let your senses travel...</p>
           </div>
           <figure><img src="images/test2.jpg">
             <figcaption>Testing</figcaption>
           </figure>
+          <div class="columns">
+            <h2>Day 2</h2>
+            <h3>Berlin, a city with a past steeped</h3>
+            <p>To start your weekend in Berlin, put yourself into the bath museum Story Of Berlin. His type of interactive exhibit allows young and old to discover the main periods in the history of the city. These are grouped chronologically and by theme. Playful performances even complete the visit.</p>
+            <p>At midday feast on Asian dishes at Saigon and more. You will enjoy Vietnamese dishes for adding more than correct considering the amount of servings. Taste the soup Pho Bo (with rice noodles, beef and star anise) and let your senses travel...</p>
+            <p class="footnote">The contemporary history interests you? Discover our guide on the <a href="#">remains of the American dream in New York!</a></p>
+          </div>
+          <hr class="separator">
+          <section class="carousel-module">
+            <div class="inner">
+              <h4 class="module-title">Top 5 des recommandations</h4>
+              <div class="owl-carousel owl-theme carousel-in-content standard"><a href="#" class="box-item">
+                  <div class="box-header">
+                    <div style="background-image:url(images/test8.jpg)" class="bg"></div>
+                    <div class="overlay"></div>
+                    <div class="underlay"></div>
+                    <h4><span></span>
+                    </h4>
+                  </div>
+                  <div class="box-body has-footer">
+                    <h3>Biergarten berlinois</h3>
+                  </div>
+                  <div class="box-footer"><span>Par Phillipe</span></div></a><a href="#" class="box-item">
+                  <div class="box-header">
+                    <div style="background-image:url(images/test2.jpg)" class="bg"></div>
+                    <div class="overlay"></div>
+                    <div class="underlay"></div>
+                    <h4><span></span>
+                    </h4>
+                  </div>
+                  <div class="box-body has-footer">
+                    <h3>Activités du dimanche à Berlin</h3>
+                  </div>
+                  <div class="box-footer"><span>Par Phillipe</span></div></a><a href="#" class="box-item">
+                  <div class="box-header">
+                    <div style="background-image:url(images/test5.jpg)" class="bg"></div>
+                    <div class="overlay"></div>
+                    <div class="underlay"></div>
+                    <h4><span></span>
+                    </h4>
+                  </div>
+                  <div class="box-body has-footer">
+                    <h3>Marchés aux puces berlinois</h3>
+                  </div>
+                  <div class="box-footer"><span>Par Phillipe</span></div></a><a href="#" class="box-item">
+                  <div class="box-header">
+                    <div style="background-image:url(images/test6.jpg)" class="bg"></div>
+                    <div class="overlay"></div>
+                    <div class="underlay"></div>
+                    <h4><span></span>
+                    </h4>
+                  </div>
+                  <div class="box-body has-footer">
+                    <h3>Elodie</h3>
+                  </div>
+                  <div class="box-footer"><span>Par Phillipe</span></div></a>
+              </div>
+            </div>
+          </section>
+          <hr class="separator">
           <div>
             <h2>Berlin in brief</h2>
+            <div class="group box-columns">
+              <div class="box-item-wrap">
+                <div class="box-item no-hover">
+                  <div class="box-text-header">
+                    <h4><span class="icon icon-location-pin"></span><span>When to go</span></h4>
+                  </div>
+                  <div class="box-body entry-content large-type">
+                    <p>The historical exhibits and museums in Berlin are open all year!</p>
+                  </div>
+                  <div class="box-footer"><a href="#">Find flights</a></div>
+                </div>
+              </div>
+              <div class="box-item-wrap">			
+                <div class="box-item no-hover">
+                  <div class="box-text-header">
+                    <h4><span class="icon icon-location-pin"></span><span>Where to stay</span></h4>
+                  </div>
+                  <div class="box-body entry-content large-type">
+                    <p>Opt for a hotel located in a historic area of the city as <a href="#">Kreuzberg</a>. Book a comfortable hotel by example on the street Stresemannstrasse or street Zimmerstrasse.</p>
+                  </div>
+                  <div class="box-footer"><a href="#">Find flights</a></div>
+                </div>
+              </div>
+              <div class="box-item-wrap">			
+                <div class="box-item no-hover">
+                  <div class="box-text-header">
+                    <h4><span class="icon icon-location-pin"></span><span>Getting around</span></h4>
+                  </div>
+                  <div class="box-body entry-content large-type">
+                    <p>The subways and city trains (S-Bahn and U-Bahn) run from 04:00h to 01:00h and non-stop the nights of Friday and Saturday.</p>
+                    <p>At night, also circulate through many lines of bus or tram  to the east of the city.</p>
+                  </div>
+                  <div class="box-footer"><a href="#">Rent a car</a></div>
+                </div>
+              </div>
+              <div class="box-item-wrap">			
+                <div class="box-item no-hover">
+                  <div class="box-text-header">
+                    <h4><span class="icon icon-location-pin"></span><span>Where to eat</span></h4>
+                  </div>
+                  <div class="box-body entry-content large-type">
+                    <p>Saigon and more: Geisbergstrasse 12</p>
+                    <p>Hof Zwei: Schöneberger Strasse 3</p>
+                    <p>Gasthaus Julchen Hoppe: Rathausstrasse 25</p>
+                  </div>
+                  <div class="box-footer"><a href="#">Gastronomie</a></div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="columns">
-            <div class="panel">
-              <div class="panel-header">
-                <h4><span class="icon icon-location-pin"></span><span>When to go?</span></h4>
+          <div>
+            <h3>Key events</h3>
+            <div class="group box-columns">
+              <div class="box-item-wrap">
+                <div class="box-item no-hover">
+                  <div class="box-body entry-content large-type no-footer"><strong>May</strong>
+                    <p>Long Night of Museums</p>
+                  </div>
+                </div>
               </div>
-              <div class="panel-body entry-content">
-                <p>The historical exhibits and museums in Berlin are open all year!</p>
+              <div class="box-item-wrap">
+                <div class="box-item no-hover">
+                  <div class="box-body entry-content large-type no-footer"><strong>November 9</strong>
+                    <p>Commemorating Kristallnacht</p>
+                  </div>
+                </div>
               </div>
-              <div class="panel-footer"><a href="#">Find flights</a></div>
-            </div>
-            <div class="panel">
-              <div class="panel-header">
-                <h4><span class="icon icon-location-pin"></span><span>Where to stay?</span></h4>
+              <div class="box-item-wrap">
+                <div class="box-item no-hover">
+                  <div class="box-body entry-content large-type no-footer"><strong>September</strong>
+                    <p>Heritage Days</p>
+                  </div>
+                </div>
               </div>
-              <div class="panel-body entry-content">
-                <p>Opt for a hotel located in a historic area of the city as <a href="#">Kreuzberg</a>. Book a comfortable hotel by example on the street Stresemannstrasse or street Zimmerstrasse.</p>
+              <div class="box-item-wrap">
+                <div class="box-item no-hover">
+                  <div class="box-body entry-content large-type no-footer"><strong>October 3</strong>
+                    <p>National Day, Day of German Unification</p>
+                  </div>
+                </div>
               </div>
-              <div class="panel-footer"><a href="#">Find flights</a></div>
-            </div>
-            <div class="panel">
-              <div class="panel-header">
-                <h4><span class="icon icon-location-pin"></span><span>When to go?</span></h4>
-              </div>
-              <div class="panel-body entry-content">
-                <p>The historical exhibits and museums in Berlin are open all year!</p>
-              </div>
-              <div class="panel-footer"><a href="#">Find flights</a></div>
-            </div>
-            <div class="panel">
-              <div class="panel-header">
-                <h4><span class="icon icon-location-pin"></span><span>Where to stay?</span></h4>
-              </div>
-              <div class="panel-body entry-content">
-                <p>Opt for a hotel located in a historic area of the city as <a href="#">Kreuzberg</a>. Book a comfortable hotel by example on the street Stresemannstrasse or street Zimmerstrasse.</p>
-              </div>
-              <div class="panel-footer"><a href="#">Find flights</a></div>
             </div>
           </div>
           <section class="socials-module">
             <h4 class="module-title">Partagez cette destination</h4>
-            <div class="group socials-list"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-facebook"><span class="icon icon-facebook"></span></a><a href="https://twitter.com/intent/tweet?text=&amp;url=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-twitter"><span class="icon icon-twitter"></span></a><a href="https://plus.google.com/share?url=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-google"><span class="icon icon-google-plus"></span></a><a href="#" target="_blank" class="social js-social social-sharethis"><span class="icon icon-share2"></span></a></div>
+            <div class="group socials-list"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-facebook"><span class="icon icon-facebook"></span></a><a href="https://twitter.com/intent/tweet?text=&amp;url=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-twitter"><span class="icon icon-twitter"></span></a><a href="https://plus.google.com/share?url=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-google"><span class="icon icon-google-plus"></span></a><a href="#" target="_blank" class="social js-social social-sharethis"><span class="icon icon-share"></span></a></div>
           </section>
           <hr class="separator">
           <section class="carousel-module">
@@ -342,9 +445,10 @@
                     <div style="background-image:url(images/test13.jpg)" class="bg"></div>
                     <div class="overlay"></div>
                     <div class="underlay"></div>
-                    <h4><span class="icon icon-history"></span><span>History</span></h4>
+                    <h4><span class="icon icon-history"></span><span>History</span>
+                    </h4>
                   </div>
-                  <div class="box-body">
+                  <div class="box-body no-footer">
                     <h3>Autour de Notre-Dame et de l'Ile de la Cité</h3>
                     <p>Deux parisiens vous présentent leur ville. Chaque mois, Aurélia et Brice vous emmènent découvrir en vidéo un Paris bucolique, caché &amp; discret.</p>
                   </div></a><a href="#" class="box-item">
@@ -352,49 +456,54 @@
                     <div style="background-image:url(images/test14.jpg)" class="bg"></div>
                     <div class="overlay"></div>
                     <div class="underlay"></div>
-                    <h4><span class="icon icon-sport"></span><span>Sport et Nature</span></h4>
+                    <h4><span class="icon icon-bicycle"></span><span>Sport et Nature</span>
+                    </h4>
                   </div>
-                  <div class="box-body">
+                  <div class="box-body no-footer">
                     <h3>Les charmes de Lyon au printemps</h3>
                     <p>Lyon dévoile ses trésors historiques toute l’année. Mais au printemps, les paysages urbains et naturels se conjuguent aux évènements cultur.</p>
                   </div></a><a href="#" class="box-item">
                   <div class="box-header">
-                    <div style="background-image:url(images/test13.jpg)" class="bg"></div>
+                    <div style="background-image:url(images/test15.jpg)" class="bg"></div>
                     <div class="overlay"></div>
                     <div class="underlay"></div>
-                    <h4><span class="icon icon-history"></span><span>History</span></h4>
+                    <h4><span class="icon icon-music"></span><span>Musique</span>
+                    </h4>
                   </div>
-                  <div class="box-body">
+                  <div class="box-body no-footer">
                     <h3>Autour de Notre-Dame et de l'Ile de la Cité</h3>
                     <p>Deux parisiens vous présentent leur ville. Chaque mois, Aurélia et Brice vous emmènent découvrir en vidéo un Paris bucolique, caché &amp; discret.</p>
                   </div></a><a href="#" class="box-item">
                   <div class="box-header">
-                    <div style="background-image:url(images/test14.jpg)" class="bg"></div>
+                    <div style="background-image:url(images/test12.jpg)" class="bg"></div>
                     <div class="overlay"></div>
                     <div class="underlay"></div>
-                    <h4><span class="icon icon-sport"></span><span>Sport et Nature</span></h4>
+                    <h4><span class="icon icon-eat"></span><span>Gastronomie</span>
+                    </h4>
                   </div>
-                  <div class="box-body">
+                  <div class="box-body no-footer">
                     <h3>Les charmes de Lyon au printemps</h3>
                     <p>Lyon dévoile ses trésors historiques toute l’année. Mais au printemps, les paysages urbains et naturels se conjuguent aux évènements cultur.</p>
                   </div></a><a href="#" class="box-item">
                   <div class="box-header">
-                    <div style="background-image:url(images/test13.jpg)" class="bg"></div>
+                    <div style="background-image:url(images/test11.jpg)" class="bg"></div>
                     <div class="overlay"></div>
                     <div class="underlay"></div>
-                    <h4><span class="icon icon-history"></span><span>History</span></h4>
+                    <h4><span class="icon icon-heart"></span><span>Romantique</span>
+                    </h4>
                   </div>
-                  <div class="box-body">
+                  <div class="box-body no-footer">
                     <h3>Autour de Notre-Dame et de l'Ile de la Cité</h3>
                     <p>Deux parisiens vous présentent leur ville. Chaque mois, Aurélia et Brice vous emmènent découvrir en vidéo un Paris bucolique, caché &amp; discret.</p>
                   </div></a><a href="#" class="box-item">
                   <div class="box-header">
-                    <div style="background-image:url(images/test14.jpg)" class="bg"></div>
+                    <div style="background-image:url(images/test10.jpg)" class="bg"></div>
                     <div class="overlay"></div>
                     <div class="underlay"></div>
-                    <h4><span class="icon icon-sport"></span><span>Sport et Nature</span></h4>
+                    <h4><span class="icon icon-family"></span><span>En Familie</span>
+                    </h4>
                   </div>
-                  <div class="box-body">
+                  <div class="box-body no-footer">
                     <h3>Les charmes de Lyon au printemps</h3>
                     <p>Lyon dévoile ses trésors historiques toute l’année. Mais au printemps, les paysages urbains et naturels se conjuguent aux évènements cultur.</p>
                   </div></a>
@@ -411,7 +520,7 @@
                     <div class="overlay"></div>
                     <div class="underlay"></div>
                   </div>
-                  <div class="box-body">
+                  <div class="box-body no-footer">
                     <div class="sell-header group">
                       <h3>Radisson Blu Hotel, Berlin</h3>
                       <div class="sell-price"><span class="currency">€</span><span class="price">139</span></div>
@@ -420,11 +529,11 @@
                     <p>Visualise par 16 autres personnes en ce moment</p>
                   </div></a><a href="#" class="box-item">
                   <div class="box-header">
-                    <div style="background-image:url(images/test13.jpg)" class="bg"></div>
+                    <div style="background-image:url(images/test14.jpg)" class="bg"></div>
                     <div class="overlay"></div>
                     <div class="underlay"></div>
                   </div>
-                  <div class="box-body">
+                  <div class="box-body no-footer">
                     <div class="sell-header group">
                       <h3>Pullman Berlin Schweizerhof</h3>
                       <div class="sell-price"><span class="currency">€</span><span class="price">113</span></div>
@@ -433,11 +542,11 @@
                     <p>Vu par 22 autres en ce moment</p>
                   </div></a><a href="#" class="box-item">
                   <div class="box-header">
-                    <div style="background-image:url(images/test13.jpg)" class="bg"></div>
+                    <div style="background-image:url(images/test15.jpg)" class="bg"></div>
                     <div class="overlay"></div>
                     <div class="underlay"></div>
                   </div>
-                  <div class="box-body">
+                  <div class="box-body no-footer">
                     <div class="sell-header group">
                       <h3>Andel’s Hotel Berlin</h3>
                       <div class="sell-price"><span class="currency">€</span><span class="price">119</span></div>
@@ -451,7 +560,7 @@
           <hr class="separator">
           <section class="socials-module">
             <h4 class="module-title">Partagez cette destination</h4>
-            <div class="group socials-list"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-facebook"><span class="icon icon-facebook"></span></a><a href="https://twitter.com/intent/tweet?text=&amp;url=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-twitter"><span class="icon icon-twitter"></span></a><a href="https://plus.google.com/share?url=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-google"><span class="icon icon-google-plus"></span></a><a href="#" target="_blank" class="social js-social social-sharethis"><span class="icon icon-share2"></span></a></div>
+            <div class="group socials-list"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-facebook"><span class="icon icon-facebook"></span></a><a href="https://twitter.com/intent/tweet?text=&amp;url=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-twitter"><span class="icon icon-twitter"></span></a><a href="https://plus.google.com/share?url=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-google"><span class="icon icon-google-plus"></span></a><a href="#" target="_blank" class="social js-social social-sharethis"><span class="icon icon-share"></span></a></div>
           </section>
         </div>
       </div>
@@ -538,11 +647,6 @@
     </section>
     <footer id="global-footer" class="global-footer">
     </footer>
-    <script>
-      var globals = {
-      	site_url: ''	
-      };
-    </script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery-1.11.3.min.js"><\/script>')</script>
     <script src="js/plugins.js"></script>

@@ -1,4 +1,4 @@
-/*globals FastClick, is */
+/*globals FastClick, is, google, globals, ScrollScope */
 
 'use strict';
 
@@ -7,6 +7,12 @@ var delay;
 var site = {
 	
 	setup: function(){
+		
+		// equal heights for boxes
+		site.helpers.update_heights('.js-equal-heights');
+		
+		// create a scroll scope instance
+		site.helpers.scroll_scope.init();
 		
 	},
 	
@@ -34,6 +40,7 @@ var site = {
 		// booking form toggle
 		$('.js-toggle-form').on('click', function(e){
 			
+			$('.booking-form-wrap').height( $(window).height() - $('.booking-bar > ul').outerHeight() );
 			
 			var form = $(this).attr('data-form');
 			
@@ -80,7 +87,130 @@ var site = {
 			e.preventDefault();
 			return false;
 		});
+		
+		// scroll to map and show overlay
+		$('.js-goto-map').on('click', function(e){
 			
+			var idx = $(this).attr('data-number');
+			
+			if($('.google-map').length){
+				$('html,body').stop().animate({ scrollTop: $('.google-map').offset().top - 100 }, 700, 'easeInOutExpo', function(){
+					$('.pin-overlay').removeClass('show-overlay');
+					$('.pin-'+idx).addClass('show-overlay');
+				});
+			}
+			
+			e.preventDefault();
+			return false;
+		});
+			
+	},
+	
+	google_map: function(){
+		
+		// using the google maps API v3: https://developers.google.com/maps/documentation/javascript/3.exp/reference with a custom OverayView class
+		
+		if(typeof globals.map_location !== 'undefined'){
+
+			var ExpediaMarker = function(latlng, args) {
+				this.latlng = new google.maps.LatLng(latlng.lat, latlng.lng);
+				this.idx = args.number;
+				this.image = args.image;
+				this.address = args.address;
+			};
+			
+			ExpediaMarker.prototype = new google.maps.OverlayView();
+			
+			ExpediaMarker.prototype.onAdd = function() {
+				
+				var self = this;
+			
+				var div = document.createElement('div');
+				div.className = 'map-marker';
+				
+				// Create the img element and attach it to the div.
+				var pin = document.createElement('span');
+				pin.className = 'pin-obj';
+				div.appendChild(pin);
+				
+				var num = document.createElement('span');
+				num.className = 'pin-num';
+				num.innerHTML = this.idx;
+				div.appendChild(num);
+				
+				var overlay = document.createElement('div');
+				overlay.className = 'pin-overlay pin-' + this.idx;
+				
+				var overlay_image = document.createElement('div');
+				overlay_image.className = 'overlay-image';
+				overlay_image.style.backgroundImage = 'url('+this.image+')';
+				overlay.appendChild(overlay_image);
+				
+				var overlay_text = document.createElement('div');
+				overlay_text.className = 'overlay-text';
+				overlay_text.innerHTML = this.address;
+				overlay.appendChild(overlay_text);
+				
+				div.appendChild(overlay);
+				
+				this.div_ = div;
+				
+				// Add the element to the "overlayLayer" pane.
+				var panes = this.getPanes();
+				panes.overlayMouseTarget.appendChild(div);
+				
+				google.maps.event.addDomListener(div, 'click', function(event) {
+					$('.map-marker .pin-overlay').removeClass('show-overlay');
+					$(event.target).siblings('.pin-overlay').addClass('show-overlay');
+					google.maps.event.trigger(self, 'click');
+				});
+				
+			};
+			
+			ExpediaMarker.prototype.draw = function() {
+				
+				var div = this.div_;
+				
+				var point = this.getProjection().fromLatLngToDivPixel(this.latlng);
+				if (point) {
+					div.style.left = (point.x - 20) + 'px';
+					div.style.top = (point.y - 40) + 'px';
+				}
+				
+			};
+		
+			var map = new google.maps.Map(document.getElementById('google-map'), {
+				center: globals.map_location,
+				zoom: 14,
+				scrollwheel: false,
+				streetViewControl: false,
+				mapTypeControl: false,
+				panControl: false
+			});
+			
+			var marker;
+			
+			if(typeof globals.map_markers !== 'undefined'){
+
+				for(var i=0;i<globals.map_markers.length;i++){
+					marker = new ExpediaMarker(globals.map_markers[i].location, {
+						number: globals.map_markers[i].number,
+						image: globals.map_markers[i].image,
+						address: globals.map_markers[i].address
+					});
+					marker.setMap(map);
+				}
+				
+			}else{
+				marker = new google.maps.Marker({
+					position: globals.map_location,
+					map: map,
+					title: ''
+				});
+				marker.setMap(map);
+			}
+		}
+
 	},
 	
 	side_nav_dock: {
@@ -220,9 +350,11 @@ var site = {
 				if(scroll_top >= this.offset_top){
 					$('body').addClass('dock-bar');
 					$('.js-buffer').show();
+					site.helpers.scroll_scope.activate();
 				}else{
 					$('body').removeClass('dock-bar');
 					$('.js-buffer').hide();
+					site.helpers.scroll_scope.deactivate();
 				}
 			
 			}
@@ -232,11 +364,15 @@ var site = {
 	
 	dropdowns: function(){
 		
+		// custom select dropdowns using SelectOrDie: https://github.com/vestman/Select-or-Die
+		
 		$('select').selectOrDie();
 		
 	},
 	
 	carousels: function(){
+		
+		// carousels using Owl Carousel: https://github.com/OwlFonk/OwlCarousel
 		
 		if( $('.carousel-is-module').length ){
 			$('.carousel-is-module').owlCarousel({
@@ -258,6 +394,12 @@ var site = {
 					1020: {
 						items: 4
 					}
+				},
+				onInitialized:function(event){
+					site.helpers.update_heights(event.target);
+				},
+				onResized: function(event){
+					site.helpers.update_heights(event.target);
 				}
 			});
 		}
@@ -282,6 +424,12 @@ var site = {
 					1020: {
 						items: 3
 					}
+				},
+				onInitialized:function(event){
+					site.helpers.update_heights(event.target);
+				},
+				onResized: function(event){
+					site.helpers.update_heights(event.target);
 				}
 			});
 		}
@@ -289,6 +437,8 @@ var site = {
 	},
 	
 	accordion: function(){
+		
+		// toggle sub menu children
 		
 		$('.has-children > a').on('click', function(e){
 			
@@ -306,6 +456,8 @@ var site = {
 	},
 	
 	sliders: function(){
+		
+		// using flexslider: https://github.com/woothemes/FlexSlider
 		
 		$('.gallery-module').each(function(){
 			
@@ -337,6 +489,40 @@ var site = {
 		
 	},
 	
+	helpers: {
+		// makes the heights of .box-items equal to the largest box for uniform sizing
+		update_heights: function(parent){
+			
+			var biggest_box = 0;
+			$(parent).find('.box-item').each(function(){
+				
+				var box_height = $(this).outerHeight();
+				
+				if(box_height > biggest_box){
+					biggest_box = box_height;
+				}
+				
+				$(parent).find('.box-item').height(biggest_box);
+				
+			});
+		},
+		
+		// using Scroll Scope: http://eiskis.net/scroll-scope/
+		scroll_scope: {
+			instance: null,
+			init: function(){
+				this.instance = new ScrollScope();
+			},
+			activate: function(){
+				this.instance.bind(document);
+			},
+			deactivate: function(){
+				this.instance.unbind();
+			}
+		}
+		
+	},
+	
 	init: function(){
 		
 		// jquery loaded
@@ -354,7 +540,7 @@ var site = {
 			// carousels
 			site.carousels();
 			
-			//nav accordion
+			// nav accordion toggle
 			site.accordion();
 			
 			// image sliders
@@ -382,15 +568,20 @@ var site = {
 			
 			// setup docking
 			site.bar_dock.setup();
+			
 			// timeout to allow for flexslider to load
 			setTimeout(function(){
 				site.side_nav_dock.setup();
 			},100);
+			
+			// load google map
+			site.google_map();
 		
 		});
 		
 		$(window).on('resize', function(){
-	
+			
+			// check if docking is still available on resize
 			clearTimeout(delay);
 			delay = setTimeout(function(){
 				site.bar_dock.setup();
