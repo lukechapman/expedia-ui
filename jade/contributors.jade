@@ -9,7 +9,7 @@ html.no-js
 		include ./modules/header.jade
 		
 		- var page = 'contributors'
-		- var page_title = 'Contributeurs'
+		- var page_title = 'Tous les Contributeurs'
 		- var breadcrumbs = [{"title":"Guides de Voyage"}]
 		include ./modules/hero.jade
 		
@@ -26,7 +26,7 @@ html.no-js
 					
 					h1 Contributeurs
 					
-					div.group.contributors-grid
+					div.group.contributors-grid.js-equal-heights
 						each item in contributors
 							div.item-wrap
 								a.box-item(href="#")

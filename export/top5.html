@@ -18,6 +18,9 @@
       		desktop: !!is.desktop()
       	});
       })(window, Modernizr);
+      var globals = {
+      	site_url: ''	
+      };
     </script>
   </head>
   <body class="home">
@@ -50,7 +53,7 @@
             <li><a href="#" class="breadcrumb">Guides de Voyage</a></li>
             <li><a href="#" class="breadcrumb">France</a></li>
           </ul>
-          <h1>Top 5</h1>
+          <h1>Paris • Top 5</h1>
         </div>
         <div class="image-caption"><span>Photo par Amphithoe sous licence CC BY-ND 2.0</span></div>
       </div>
@@ -186,7 +189,7 @@
       <div class="inner group">
         <aside class="sidebar">
           <nav class="side-nav"><span class="icon icon-earth"></span>
-            <h3>Top 5</h3>
+            <h3>Paris</h3>
             <ul>
               <li class="has-children"><a href="#">Thèmes</a>
                 <ul class="children">
@@ -221,24 +224,26 @@
         <div class="main-content entry-content">
           <div class="content-header">
             <section class="socials-module">
-              <div class="group socials-list float"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-facebook"><span class="icon icon-facebook"></span></a><a href="https://twitter.com/intent/tweet?text=&amp;url=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-twitter"><span class="icon icon-twitter"></span></a><a href="https://plus.google.com/share?url=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-google"><span class="icon icon-google-plus"></span></a><a href="#" target="_blank" class="social js-social social-sharethis"><span class="icon icon-share2"></span></a></div>
+              <div class="group socials-list float"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-facebook"><span class="icon icon-facebook"></span></a><a href="https://twitter.com/intent/tweet?text=&amp;url=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-twitter"><span class="icon icon-twitter"></span></a><a href="https://plus.google.com/share?url=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-google"><span class="icon icon-google-plus"></span></a><a href="#" target="_blank" class="social js-social social-sharethis"><span class="icon icon-share"></span></a></div>
             </section>
             <ul class="breadcrumbs-secondary">
               <li><a href="#" class="breadcrumb">Guides de Voyage</a></li>
               <li><a href="#" class="breadcrumb">France</a></li>
-              <li><a href="" class="breadcrumb">Top 5</a></li>
+              <li><a href="" class="breadcrumb">Paris • Top 5</a></li>
             </ul>
           </div>
-          <h1>5 escapades au vert sans quitter Paris</h1>
-          <p>Berlin has an unusual history. The city torn by two world wars , the center of Nazi power and then divided for 30 years, now bears the marks with humility of his past. Prepare for an intense visit to emotions, places of memory of the Holocaust to the remains of the famous wall</p>
+          <div class="intro-text">
+            <h1>5 escapades au vert sans quitter Paris</h1>
+            <p>Champs de Mars, Parc Monceau, Tuileries, Luxembourg… Les grands jardins parisiens sont un lieu classique de promenade dans une ville qui laisse peu de place aux espaces verts. Mais Paris abrite aussi quelques petites <strong>pépites de verdure</strong>! Ces lieux insolites sont une <strong>vraie bouffée d’air</strong> qui invitent au voyage.</p>
+          </div>
           <div class="box-item no-hover">
-            <div class="box-body group">
+            <div class="box-body group large-text">
               <div class="box-image">
                 <div style="background-image:url(images/author1.jpg)" class="box-circle"></div>
               </div>
               <div class="box-text">
                 <h3>Clara et Constance</h3>
-                <p>Berlin has an unusual history. The city torn by two world wars , the center of Nazi power and then divided for 30 years, now bears the marks with humility of his past. Prepare for an intense visit to emotions, places of memory of the Holocaust to the remains of the famous wall</p>
+                <p>Blogueuses et parisiennes, Clara et Constance vous donnent leurs bons plans pour faire le tour du monde sans sortir de Paris.</p>
               </div>
             </div>
             <div class="box-footer"><a href="#">En saviour plus sur l'auteur</a></div>
@@ -251,60 +256,148 @@
               </figure>
             </div>
             <div class="top-5-content">
-              <h2>Trouver le calme au jardin</h2>
+              <h3>Trouver le calme au jardin</h3>
               <p>Berlin has an unusual history. The city torn by two world wars , the center of Nazi power and then divided for 30 years, now bears the marks with humility of his past. Prepare for an intense visit to emotions, places of memory of the Holocaust to the remains of the famous wall</p>
               <div class="top-5-location group">
-                <div class="top-5-number"><span>1</span></div>
-                <div class="top-5-address"><span>19 Avenue 75116 Paris</span><a href="#">View on map</a></div>
+                <div class="top-5-number"><span class="pin-num">1</span><span class="pin-obj"></span></div>
+                <div class="top-5-address"><span>19 Avenue 75116 Paris</span><br><a href="#" data-number="1" class="js-goto-map">View on map</a></div>
               </div>
             </div>
           </div>
           <hr class="separator">
+          <div class="top-5-item group">
+            <div class="top-5-image">
+              <figure style="background-image:url(images/test3.jpg)">
+                <figcaption>Photo par Jean-Pierre</figcaption>
+              </figure>
+            </div>
+            <div class="top-5-content">
+              <h3>Trouver le calme au jardin</h3>
+              <p>Berlin has an unusual history. The city torn by two world wars , the center of Nazi power and then divided for 30 years, now bears the marks with humility of his past. Prepare for an intense visit to emotions, places of memory of the Holocaust to the remains of the famous wall</p>
+              <div class="top-5-location group">
+                <div class="top-5-number"><span class="pin-num">2</span><span class="pin-obj"></span></div>
+                <div class="top-5-address"><span>19 Avenue 75116 Paris</span><br><a href="#" data-number="2" class="js-goto-map">View on map</a></div>
+              </div>
+            </div>
+          </div>
+          <hr class="separator">
+          <div id="google-map" class="google-map"></div>
+          <script src="http://maps.google.com/maps/api/js?sensor=true&amp;callback=site.google_map" async defer></script>
+          <script>
+            globals.map_location = {
+            	lat: 51.501408,
+            	lng: -0.093083
+            };
+            globals.map_markers = [
+            	{
+            		number: 1,
+            		location: { lat: 51.505491, lng: -0.090739 },
+            		title: 'Borough Market',
+            		image: 'images/test1.jpg',
+            		address: 'Du 99 rue Olivier de Serres, 75015 Paris, jusqu\'à la, Place Balard'
+            	},
+            	{
+            		number: 2,
+            		location: { lat: 51.501475, lng: -0.092998 },
+            		title: 'Borough Station',
+            		image: 'images/test2.jpg',
+            		address: 'Du 99 rue Olivier de Serres, 75015 Paris, jusqu\'à la, Place Balard'
+            	},
+            	{
+            		number: 3,
+            		location: { lat: 51.501835, lng: -0.087976 },
+            		title: 'Guys Hospital',
+            		image: 'images/test3.jpg',
+            		address: 'Du 99 rue Olivier de Serres, 75015 Paris, jusqu\'à la, Place Balard'
+            	}
+            ];
+          </script>
+          <hr class="separator">
           <section class="carousel-module">
             <div class="inner">
-              <h4 class="module-title">Les Tops 5 de Clara et Constance</h4>
+              <h4 class="module-title">Plus Top 5 à Paris</h4>
               <div class="owl-carousel owl-theme carousel-in-content standard"><a href="#" class="box-item">
                   <div class="box-header">
-                    <div style="background-image:url(images/test4.jpg)" class="bg"></div>
+                    <div style="background-image:url(images/test6.jpg)" class="bg"></div>
                     <div class="overlay"></div>
                     <div class="underlay"></div>
                     <h4><span></span>
                     </h4>
                   </div>
-                  <div class="box-body">
-                    <h3>Beirgarten Berlin</h3>
-                  </div>
-                  <div class="box-footer"><span>Par Clara et Constance</span></div></a><a href="#" class="box-item">
+                  <div class="box-body no-footer">
+                    <h3>5 coffee shops pour retrouver l’ambiance de Brooklyn à Paris</h3>
+                  </div></a><a href="#" class="box-item">
                   <div class="box-header">
-                    <div style="background-image:url(images/test4.jpg)" class="bg"></div>
+                    <div style="background-image:url(images/test7.jpg)" class="bg"></div>
                     <div class="overlay"></div>
                     <div class="underlay"></div>
                     <h4><span></span>
                     </h4>
                   </div>
-                  <div class="box-body">
-                    <h3>Beirgarten Berlin</h3>
-                  </div>
-                  <div class="box-footer"><span>Par Clara et Constance</span></div></a><a href="#" class="box-item">
+                  <div class="box-body no-footer">
+                    <h3>5 instituts culturels étrangers à Paris</h3>
+                  </div></a><a href="#" class="box-item">
                   <div class="box-header">
-                    <div style="background-image:url(images/test4.jpg)" class="bg"></div>
+                    <div style="background-image:url(images/test8.jpg)" class="bg"></div>
                     <div class="overlay"></div>
                     <div class="underlay"></div>
                     <h4><span></span>
                     </h4>
                   </div>
-                  <div class="box-body">
-                    <h3>Beirgarten Berlin</h3>
-                  </div>
-                  <div class="box-footer"><span>Par Clara et Constance</span></div></a>
+                  <div class="box-body no-footer">
+                    <h3>5 soirées gay à ne pas manquer à Paris</h3>
+                  </div></a>
               </div>
             </div>
           </section>
           <hr class="separator">
-          <section class="socials-module">
-            <h4 class="module-title">Partagez cette destination</h4>
-            <div class="group socials-list"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-facebook"><span class="icon icon-facebook"></span></a><a href="https://twitter.com/intent/tweet?text=&amp;url=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-twitter"><span class="icon icon-twitter"></span></a><a href="https://plus.google.com/share?url=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-google"><span class="icon icon-google-plus"></span></a><a href="#" target="_blank" class="social js-social social-sharethis"><span class="icon icon-share2"></span></a></div>
-          </section>
+        </div>
+      </div>
+    </section>
+    <section class="carousel-module">
+      <div class="inner">
+        <h4 class="module-title">Nos derniers Tops 5</h4>
+        <div class="owl-carousel owl-theme carousel-is-module standard contributors"><a href="#" class="box-item">
+            <div class="box-header">
+              <div style="background-image:url(images/author1.jpg)" class="bg"></div>
+              <div class="overlay"></div>
+              <div class="underlay"></div>
+            </div>
+            <div class="box-body has-footer">
+              <h3>Elodie</h3>
+              <p>Elodie aime explorer les villes dans leurs moindres recoins, en particulier Berlin où elle habite depuis 2010. Elle partage ses bonnes adresses secrètes et insolites avec nous.</p>
+            </div>
+            <div class="box-footer"><span>Ses Top 5</span></div></a><a href="#" class="box-item">
+            <div class="box-header">
+              <div style="background-image:url(images/author2.jpg)" class="bg"></div>
+              <div class="overlay"></div>
+              <div class="underlay"></div>
+            </div>
+            <div class="box-body has-footer">
+              <h3>Fanny</h3>
+              <p>Passionnée de mode et de voyages, Fanny nous fait part de ses trouvailles à Lyon et à Dublin.</p>
+            </div>
+            <div class="box-footer"><span>Ses Top 5</span></div></a><a href="#" class="box-item">
+            <div class="box-header">
+              <div style="background-image:url(images/author3.jpg)" class="bg"></div>
+              <div class="overlay"></div>
+              <div class="underlay"></div>
+            </div>
+            <div class="box-body has-footer">
+              <h3>Clara et Constance</h3>
+              <p>Expatriée au Japon, Amélie-Marie parle de ses voyages et de l’actualité dans le monde entre Istanbul, Moscou et Tokyo. Elle partage avec nous ses meilleures adresses à Moscou!</p>
+            </div>
+            <div class="box-footer"><span>Ses Top 5</span></div></a><a href="#" class="box-item">
+            <div class="box-header">
+              <div style="background-image:url(images/author1.jpg)" class="bg"></div>
+              <div class="overlay"></div>
+              <div class="underlay"></div>
+            </div>
+            <div class="box-body has-footer">
+              <h3>Gay Bourlingueur</h3>
+              <p>Mon objectif est de donner des conseils et des adresses utiles pour les gays en voyage mais aussi des astuces et combines que j'ai pu expérimenter au cours de mes nombreux voyages.</p>
+            </div>
+            <div class="box-footer"><span>Ses Top 5</span></div></a>
         </div>
       </div>
     </section>
@@ -390,11 +483,6 @@
     </section>
     <footer id="global-footer" class="global-footer">
     </footer>
-    <script>
-      var globals = {
-      	site_url: ''	
-      };
-    </script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery-1.11.3.min.js"><\/script>')</script>
     <script src="js/plugins.js"></script>

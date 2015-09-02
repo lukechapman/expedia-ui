@@ -18,6 +18,9 @@
       		desktop: !!is.desktop()
       	});
       })(window, Modernizr);
+      var globals = {
+      	site_url: ''	
+      };
     </script>
   </head>
   <body class="home">
@@ -186,7 +189,7 @@
       <div class="inner group">
         <aside class="sidebar">
           <nav class="side-nav"><span class="icon icon-earth"></span>
-            <h3>Clara et Constance</h3>
+            <h3></h3>
             <ul>
               <li class="has-children"><a href="#">Thèmes</a>
                 <ul class="children">
@@ -221,7 +224,7 @@
         <div class="main-content entry-content">
           <div class="content-header">
             <section class="socials-module">
-              <div class="group socials-list float"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-facebook"><span class="icon icon-facebook"></span></a><a href="https://twitter.com/intent/tweet?text=&amp;url=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-twitter"><span class="icon icon-twitter"></span></a><a href="https://plus.google.com/share?url=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-google"><span class="icon icon-google-plus"></span></a><a href="#" target="_blank" class="social js-social social-sharethis"><span class="icon icon-share2"></span></a></div>
+              <div class="group socials-list float"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-facebook"><span class="icon icon-facebook"></span></a><a href="https://twitter.com/intent/tweet?text=&amp;url=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-twitter"><span class="icon icon-twitter"></span></a><a href="https://plus.google.com/share?url=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-google"><span class="icon icon-google-plus"></span></a><a href="#" target="_blank" class="social js-social social-sharethis"><span class="icon icon-share"></span></a></div>
             </section>
             <ul class="breadcrumbs-secondary">
               <li><a href="#" class="breadcrumb">Guides de Voyage</a></li>
@@ -244,35 +247,35 @@
               <h4 class="module-title">Les Tops 5 de Clara et Constance</h4>
               <div class="owl-carousel owl-theme carousel-in-content standard"><a href="#" class="box-item">
                   <div class="box-header">
-                    <div style="background-image:url(images/test4.jpg)" class="bg"></div>
+                    <div style="background-image:url(images/test12.jpg)" class="bg"></div>
                     <div class="overlay"></div>
                     <div class="underlay"></div>
                     <h4><span></span>
                     </h4>
                   </div>
-                  <div class="box-body">
+                  <div class="box-body has-footer">
                     <h3>Beirgarten Berlin</h3>
                   </div>
                   <div class="box-footer"><span>Par Clara et Constance</span></div></a><a href="#" class="box-item">
                   <div class="box-header">
-                    <div style="background-image:url(images/test4.jpg)" class="bg"></div>
+                    <div style="background-image:url(images/test11.jpg)" class="bg"></div>
                     <div class="overlay"></div>
                     <div class="underlay"></div>
                     <h4><span></span>
                     </h4>
                   </div>
-                  <div class="box-body">
+                  <div class="box-body has-footer">
                     <h3>Beirgarten Berlin</h3>
                   </div>
                   <div class="box-footer"><span>Par Clara et Constance</span></div></a><a href="#" class="box-item">
                   <div class="box-header">
-                    <div style="background-image:url(images/test4.jpg)" class="bg"></div>
+                    <div style="background-image:url(images/test10.jpg)" class="bg"></div>
                     <div class="overlay"></div>
                     <div class="underlay"></div>
                     <h4><span></span>
                     </h4>
                   </div>
-                  <div class="box-body">
+                  <div class="box-body has-footer">
                     <h3>Beirgarten Berlin</h3>
                   </div>
                   <div class="box-footer"><span>Par Clara et Constance</span></div></a>
@@ -280,9 +283,19 @@
             </div>
           </section>
           <hr class="separator">
+          <div class="columns">
+            <h2>Quatre questions à Clara et Constance</h2>
+            <h4>Quel est ton voyage préféré ?</h4>
+            <p><strong>Constance:</strong><br />La Crète au mois de septembre. J’ai adoré le contraste entre les falaises abruptes et arides de la cote sud, les vallées fertiles du centre, et les plages du Nord. Quand on s’enfonce dans les terres on découvre des petits villages tranquilles, hors du temps, où les habitants se retrouvent autour du figuier sur la place centrale. Visiter les sites minoens presque déserts est aussi une expérience unique. La vie semble passer au ralenti et nous laisser le temps de découvrir plein de merveilles.</p>
+            <p><strong>Clara:</strong><br />Lisbonne au mois d’avril. Un voyage plein de soleil, et de couleurs. Nous avons visité la ville en long, en large et en travers, et avons mangé d’excellents poissons grillés et de délicieuses pâtisseries. Mes coups de cœur : les belles rencontres que nous avons faites, les azulejos colorés qui recouvrent les immeubles, et les jardins botaniques luxuriants de Lisbonne et de Belém, qui sont de vraies invitations au voyage.</p>
+            <h4>Quel est ton meilleur souvenir de voyage ?</h4>
+            <p><strong>Constance:</strong><br />Un des paysages qui m’a le plus marquée est la vue que l’on découvre à la fin de la randonnée entre El Chalten et la Laguna de los Tres, dans les Andes en Argentine. Même épuisée et en ayant mal aux jambes, j’ai été happée par ce paysage de montagnes, de glaciers et de lacs, venu du fond des âges. On ne serait pas surpris de voir passer un troupeau de diplodocus dans vallée en contrebas !</p>
+            <p><strong>Clara:</strong><br />En septembre 2007, je suis partie en Suède avec mon sac à dos. Nous voyagions en stop et dormions au hasard des villages, dans de jolies maisons rouges. Le but du voyage : visiter la maison du peintre Carl Larrson, dans le petit village de Sundborn. Pour les derniers kilomètres, la dame qui nous a pris en stop était la petite fille du peintre !</p>
+          </div>
+          <hr class="separator">
           <section class="socials-module">
             <h4 class="module-title">Partagez cette destination</h4>
-            <div class="group socials-list"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-facebook"><span class="icon icon-facebook"></span></a><a href="https://twitter.com/intent/tweet?text=&amp;url=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-twitter"><span class="icon icon-twitter"></span></a><a href="https://plus.google.com/share?url=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-google"><span class="icon icon-google-plus"></span></a><a href="#" target="_blank" class="social js-social social-sharethis"><span class="icon icon-share2"></span></a></div>
+            <div class="group socials-list"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-facebook"><span class="icon icon-facebook"></span></a><a href="https://twitter.com/intent/tweet?text=&amp;url=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-twitter"><span class="icon icon-twitter"></span></a><a href="https://plus.google.com/share?url=http://localhost/expedia-ui/export" target="_blank" class="social js-social social-google"><span class="icon icon-google-plus"></span></a><a href="#" target="_blank" class="social js-social social-sharethis"><span class="icon icon-share"></span></a></div>
           </section>
         </div>
       </div>
@@ -369,11 +382,6 @@
     </section>
     <footer id="global-footer" class="global-footer">
     </footer>
-    <script>
-      var globals = {
-      	site_url: ''	
-      };
-    </script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery-1.11.3.min.js"><\/script>')</script>
     <script src="js/plugins.js"></script>

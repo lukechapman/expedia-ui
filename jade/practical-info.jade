@@ -1,0 +1,59 @@
+doctype
+html.no-js
+	head
+		include ./partials/head.jade
+	body.home
+		header.global-header#global-header
+			- //include ./external/header.html
+		include ./modules/header.jade
+		
+		- var page = 'top-5'
+		- var page_title = 'Paris • Infos pratiques'
+		- var region = 'Paris'
+		- var breadcrumbs = [{"title":"Guides de Voyage"},{"title":"France"}]
+		include ./modules/hero.jade
+		
+		include ./modules/booking-bar.jade
+		
+		section.page-content
+			div.inner.group
+				include ./partials/sidebar.jade
+				div.main-content.entry-content
+					div.content-header
+						- var social_class = 'float'
+						include ./modules/socials.jade
+						include ./modules/breadcrumbs.jade
+					
+					div.intro-text
+						h1 Guide pratique de Paris
+					
+					hr.separator
+
+					- var recommendation_title = 'Hotel Recommendation'
+					- var recommendation_item = hotel_recommendation
+					include ./modules/recommendation.jade
+					
+					hr.separator
+					
+					r.separator
+					
+					- var carousel_type = 'standard'
+					- var carousel_class = 'in-content'
+					- var carousel_title = 'Plus Top 5 à Paris'
+					- var carousel_items = carousel_top5_paris
+					include ./modules/carousel.jade
+					
+					hr.separator
+					
+					- carousel_type = 'sell'
+					- carousel_class = 'in-content'
+					- carousel_title = 'Meilleures offres d\'hôtels'
+					- carousel_items = carousel_hotels
+					include ./modules/carousel.jade
+					
+					hr.separator
+					- var social_title = 'Partagez cette destination'
+					- social_class = ''
+					include ./modules/socials.jade
+
+		include ./partials/footer.jade

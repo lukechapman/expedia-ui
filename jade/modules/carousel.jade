@@ -13,7 +13,9 @@ section.carousel-module
 								if carousel_item.icon
 									span.icon(class="icon-#{carousel_item.icon}")
 								span #{carousel_item.heading}
-					div.box-body
+					
+					- body_class = (carousel_item.footer) ? 'has-footer' : 'no-footer'
+					div.box-body(class="#{body_class}")
 						if carousel_type == 'sell'
 							div.sell-header.group
 								h3 #{carousel_item.title}

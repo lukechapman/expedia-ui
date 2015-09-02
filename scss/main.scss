@@ -707,21 +707,39 @@ body{
 			color: $white;
 			text-align: center;
 			position: relative;
+			transition: opacity .2s ease;
 			&:last-of-type{
 				margin-right: 0;
+			}
+			&:hover{
+				.desktop &{
+					color: $white;
+					opacity: 0.85;
+				}
 			}
 			.icon{
 				position: absolute;
 				top: 50%;
 				left: 50%;
 				transform: translate(-50%, -50%);
-				font-size: 20px;
+				font-size: 16px;
+			}
+			.icon-facebook{
+				transform: translate(-60%, -60%);
+				font-size: 18px;
 			}
 			@media screen and (min-width: $main-nav-min){
 				width: 25px;
 				height: 25px;
 				.icon{
 					font-size: 14px;	
+				}
+				.icon-facebook{
+					transform: translate(-60%, -60%);
+					font-size: 16px;
+				}
+				.icon-share{
+					font-size: 12px;
 				}	
 			}
 		}
@@ -794,6 +812,9 @@ body{
 		border-top-left-radius: 4px;
 		overflow: hidden;
 		transform: translateZ(0);
+		.contributors &{
+			padding-top: 100%;
+		}
 		.bg{
 			@extend %bg;
 			backface-visibility: hidden;
@@ -816,16 +837,22 @@ body{
 			backface-visibility: hidden;
 			transition: transform .2s ease;
 			font-weight: 600;
+			.icon{
+				font-size: 20px;
+				position: relative;
+				padding-right: 5px;
+				top: 2px;
+			}
 		}
 	}
 	.box-body{
-		padding: 20px;
+		padding: 20px 20px 60px 20px;
 		color: $grey-medium-dark;
 		font-size: 13px;
 		line-height: 20px;
 		.box-image{
 			float: left;
-			width: 20%;
+			width: 15%;
 			padding: 10px;
 			.box-circle{
 				border-radius: 50%;
@@ -839,10 +866,20 @@ body{
 		}
 		.box-text{
 			float: left;
-			width: 80%;
+			width: 85%;
 			padding-left: 20px;
 		}
+		&.large-text{
+			font-size: 16px;
+			line-height: 24px;
+			h3{
+				font-size: 19px;
+				line-height: 22px;
+				color: $blue-extra-extra-dark;
+			}
+		}
 		&.no-footer{
+			padding-bottom: 20px;
 			border-bottom-right-radius: 4px;
 			border-bottom-left-radius: 4px;
 		}
@@ -961,12 +998,22 @@ body{
 		line-height: 14px;
 		padding: 12px 20px;
 		transition: background .2s ease;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
 		a{
 			display: block;
+		}
+		span{
+			color: $blue-medium;
 		}
 		&:hover{
 			.desktop &{
 				background: $blue-extra-light;
+				a{
+					color: $blue-medium;
+				}
 			}
 		}
 	}
@@ -1012,6 +1059,7 @@ body{
 	.author-image{
 		width: 30%;
 		float: left;
+		padding: 10px;
 		.author-image-inner{
 			width: 100%;
 			padding-top: 100%;
@@ -1019,7 +1067,7 @@ body{
 			background-repeat: no-repeat;
 			background-size: cover;
 			margin-bottom: 0;
-			border-radius: 4px;
+			border-radius: 50%;
 			background-clip: padding-box;
 			overflow: hidden;
 		}
@@ -1031,28 +1079,81 @@ body{
 	}
 }
 
+.top-5-grid{
+	.item-wrap{
+		float: left;
+		width: 33.33%;
+		padding: 10px;
+		.box-item{
+			margin-bottom: 0;
+		}
+	}
+	h2{
+		.entry-content &{
+			margin-bottom: 10px;
+		}
+	}
+	.top-5-items{
+		padding-bottom: 30px;
+		margin: 0px -10px;
+	}
+}
+
 .inspiration-module{
 	padding: 40px 25px;
 }
 
-figure{
-	position: relative;
+.google-map{
 	width: 100%;
-	img{
-		display: block;
-		width: 100%;
-		height: auto;
-		max-width: 100%;
+	height: 440px;
+	.map-marker{
+		width: 40px;
+		height: 40px;
+		z-index: 20;
+		border: none;
+		position: absolute;
+		.overlay{
+			
+		}
 	}
-	figcaption{
-		@extend %caption;
-		z-index: 5;
-		backface-visibility: hidden;
+}
+
+.sort-bar{
+	background: $white;
+	position: relative;
+	border-radius: 4px;
+	box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.5);
+	background-clip: padding-box;
+	margin-bottom: 24px;
+	border-top: 3px solid $yellow;
+	ul{
+
 	}
-	&:before{
-		content:"";
-		@extend %overlay;
-		height: 30%;
+	li{
+		display: inline-block;
+		float: left;
+		margin-top: -3px;
+		position: relative;
+		z-index: 2;
+		a, span{
+			border-top: 3px solid $yellow;
+			display: block;
+			padding: 10px 20px;
+			transition: background .2s ease, color .2s ease, border .2s ease;
+			&.active{
+				border-top: 3px solid $blue-extra-dark;
+				color: $blue-extra-dark;
+			}
+		}
+		a:hover{
+			.desktop &{
+				background: $blue-extra-light;
+				border-top: 3px solid $blue-medium;
+			}
+		}
+		span{
+			color: $grey-dark;
+		}
 	}
 }
 
@@ -1157,24 +1258,33 @@ figure{
 	}
 	h1{
 		font-size: 24px;
-		line-height: 24px;
+		line-height: 26px;
 		margin-bottom: 24px;
 	}
 	h2{
 		font-size: 21px;
-		line-height: 21px;
+		line-height: 24px;
 		margin-bottom: 24px;
 	}
 	h3{
-		font-size: 18px;
-		line-height: 18px;
-		margin-bottom: 24px;
+		font-size: 19px;
+		line-height: 22px;
+		margin-bottom: 22px;
+	}
+	h4{
+		margin-bottom: 20px;
 	}
 	p{
 		margin-bottom: 24px;
 	}
 	a{
 		color: $blue-medium;
+		transition: color .2s ease;
+		.desktop &{
+			&:hover{
+				color: $blue-extra-dark;
+			}
+		}
 	}
 	blockquote{
 		font-size: 19px;
@@ -1387,6 +1497,12 @@ figure{
 					line-height: 24px;
 					font-weight: 600;
 				}
+				.icon{
+					font-size: 20px;
+					position: relative;
+					padding-right: 5px;
+					top: 1px;
+				}
 			}
 			
 			&.text-only{
@@ -1550,6 +1666,11 @@ figure{
 			font-weight: 600;
 			display: block;
 			transition: color .2s ease;
+			.icon{
+				position: relative;
+				padding-right: 5px;
+				top: 3px;
+			}
 		}
 		&.active{
 			a{
@@ -1608,11 +1729,98 @@ figure{
 		width: 50%;
 		padding-left: 20px;
 		.top-5-number{
-			background: $blue-dark;
-			width: 30px;
-			height: 30px;
-			border-radius: 50% 50% 50% 0%;
-			transform: rotate(-45deg);
+			display: block;
+			position: relative;
+			width: 40px;
+			float: left;
 		}
+		.top-5-address{
+			float: left;
+			width: calc(100% - 40px);
+			padding-left: 15px;
+		}
+	}
+}
+
+.pin-obj{
+	background: $blue-dark;
+	width: 40px;
+	height: 40px;
+	border-radius: 50% 50% 50% 0%;
+	transform: rotate(-45deg);
+	display: block;
+	z-index: 1;
+	position: relative;
+}
+.pin-num{
+	color: $white;
+	position: absolute;
+	top: 0px;
+	left: 0;
+	line-height: 40px;
+	width: 40px;
+	display: block;
+	text-align: center;
+	z-index: 2;
+	font-weight: 700;
+	font-size: 18px;
+}
+
+.pin-overlay{
+	padding: 10px;
+	background: $white;
+	position: absolute;
+	bottom: 150%;
+	left: 50%;
+	margin-left: -100px;
+	box-shadow: 0px 0px 3px 0px rgba($blue-extra-extra-dark, 0.5);
+	display: none;
+	margin-top: 0px;
+	&.show-overlay{
+		display: block;
+	}
+	&:after{
+		content: "";
+		border: 10px solid transparent;
+		border-top-color: $white;
+		position: absolute;
+		bottom: -20px;
+		left: 50%;
+		margin-left: -10px;
+	}
+	.overlay-image{
+		width: 180px;
+		height: 90px;
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+		background-color: $blue-dark;
+		background-size: cover;
+		margin-bottom: 10px;
+	}
+	.overlay-text{
+		font-size: 12px;
+		line-height: 14px;
+	}
+}
+
+figure{
+	position: relative;
+	width: 100%;
+	img{
+		display: block;
+		width: 100%;
+		height: auto;
+		max-width: 100%;
+	}
+	figcaption{
+		@extend %caption;
+		z-index: 5;
+		backface-visibility: hidden;
+	}
+	&:before{
+		content:"";
+		@extend %overlay;
+		height: 30%;
+		opacity: 0.7;
 	}
 }

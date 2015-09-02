@@ -1,0 +1,50 @@
+doctype
+html.no-js
+	head
+		include ./partials/head.jade
+	body.home
+		header.global-header#global-header
+			- //include ./external/header.html
+		include ./modules/header.jade
+		
+		- var page = 'top-5'
+		- var page_title = 'Tous les Tops 5'
+		- var region = 'Paris'
+		- var breadcrumbs = [{"title":"Guides de Voyage"},{"title":"France"}]
+		include ./modules/hero.jade
+		
+		include ./modules/booking-bar.jade
+		
+		section.page-content
+			div.inner.group
+				include ./partials/sidebar.jade
+				div.main-content.entry-content
+					div.content-header
+						- var social_class = 'float'
+						include ./modules/socials.jade
+						include ./modules/breadcrumbs.jade
+					
+					h1 Tous les Tops 5
+					
+					include ./modules/sortbar.jade
+					
+					- var section_title = 'Belgium'
+					- var section_items = belgium_top5
+					include ./modules/top5-items.jade
+					
+					- section_title = 'Germany'
+					- var section_items = germany_top5
+					include ./modules/top5-items.jade
+					
+					- section_title = 'United Kingdom'
+					- var section_items = uk_top5
+					include ./modules/top5-items.jade
+	
+					
+		- var carousel_type = 'standard contributors'
+		- var carousel_class = 'is-module'
+		- var carousel_title = 'Nos derniers Tops 5'
+		- var carousel_items = contributors
+		include ./modules/carousel.jade
+
+		include ./partials/footer.jade

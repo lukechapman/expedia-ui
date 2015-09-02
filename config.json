@@ -21,10 +21,10 @@
 		{ "title":"Découvrez Les Promenades d’Aurelia a Paris!", "category":"guide", "image":"test2.jpg", "size":"standard" },
 		{ "title":"5 endroits où faire une belle photo à Stockholm", "category":"top 5", "image":"test3.jpg", "content":"This is some content right here. It is for SEO purposes only.", "size":"standard" },
 		{ "title":"Découvres Illes Cyclades", "category":"destination", "image":"test1.jpg", "size":"thin" },
-		{ "title":"Découvrez Les Promenades d’Aurelia a Paris!", "category":"guide", "image":"test2.jpg", "size":"wide" },
-		{ "title":"5 endroits où faire une belle photo à Stockholm", "category":"top 5", "image":"test3.jpg", "size":"thin" },
-		{ "title":"Découvres Illes Cyclades", "category":"destination", "image":"test1.jpg", "size":"extra-wide" },
-		{ "title":"Découvrez Les Promenades d’Aurelia a Paris!", "category":"guide", "image":"test2.jpg", "size":"extra-wide" }
+		{ "title":"Découvrez Les Promenades d’Aurelia a Paris!", "category":"guide", "image":"test4.jpg", "size":"wide" },
+		{ "title":"5 endroits où faire une belle photo à Stockholm", "category":"top 5", "image":"test5.jpg", "size":"thin" },
+		{ "title":"Découvres Illes Cyclades", "category":"destination", "image":"test6.jpg", "size":"extra-wide" },
+		{ "title":"Découvrez Les Promenades d’Aurelia a Paris!", "category":"guide", "image":"test7.jpg", "size":"extra-wide" }
 	],
 	"themes_list": [
 		{ "title":"Musique" },
@@ -105,20 +105,25 @@
 	"carousel_guides": [
 		{ "heading":"History", "icon":"history", "image":"test13.jpg", "title":"Autour de Notre-Dame et de l'Ile de la Cité", "content":"Deux parisiens vous présentent leur ville. Chaque mois, Aurélia et Brice vous emmènent découvrir en vidéo un Paris bucolique, caché & discret." },
 		{ "heading":"Sport et Nature", "icon":"bicycle", "image":"test14.jpg", "title":"Les charmes de Lyon au printemps", "content":"Lyon dévoile ses trésors historiques toute l’année. Mais au printemps, les paysages urbains et naturels se conjuguent aux évènements cultur." },
-		{ "heading":"Musique", "icon":"music", "image":"test13.jpg", "title":"Autour de Notre-Dame et de l'Ile de la Cité", "content":"Deux parisiens vous présentent leur ville. Chaque mois, Aurélia et Brice vous emmènent découvrir en vidéo un Paris bucolique, caché & discret." },
-		{ "heading":"Gastronomie", "icon":"eat", "image":"test14.jpg", "title":"Les charmes de Lyon au printemps", "content":"Lyon dévoile ses trésors historiques toute l’année. Mais au printemps, les paysages urbains et naturels se conjuguent aux évènements cultur." },
-		{ "heading":"Romantique", "icon":"heart", "image":"test13.jpg", "title":"Autour de Notre-Dame et de l'Ile de la Cité", "content":"Deux parisiens vous présentent leur ville. Chaque mois, Aurélia et Brice vous emmènent découvrir en vidéo un Paris bucolique, caché & discret." },
-		{ "heading":"En Familie", "icon":"family", "image":"test14.jpg", "title":"Les charmes de Lyon au printemps", "content":"Lyon dévoile ses trésors historiques toute l’année. Mais au printemps, les paysages urbains et naturels se conjuguent aux évènements cultur." }
+		{ "heading":"Musique", "icon":"music", "image":"test15.jpg", "title":"Autour de Notre-Dame et de l'Ile de la Cité", "content":"Deux parisiens vous présentent leur ville. Chaque mois, Aurélia et Brice vous emmènent découvrir en vidéo un Paris bucolique, caché & discret." },
+		{ "heading":"Gastronomie", "icon":"eat", "image":"test12.jpg", "title":"Les charmes de Lyon au printemps", "content":"Lyon dévoile ses trésors historiques toute l’année. Mais au printemps, les paysages urbains et naturels se conjuguent aux évènements cultur." },
+		{ "heading":"Romantique", "icon":"heart", "image":"test11.jpg", "title":"Autour de Notre-Dame et de l'Ile de la Cité", "content":"Deux parisiens vous présentent leur ville. Chaque mois, Aurélia et Brice vous emmènent découvrir en vidéo un Paris bucolique, caché & discret." },
+		{ "heading":"En Familie", "icon":"family", "image":"test10.jpg", "title":"Les charmes de Lyon au printemps", "content":"Lyon dévoile ses trésors historiques toute l’année. Mais au printemps, les paysages urbains et naturels se conjuguent aux évènements cultur." }
 	],
 	"carousel_hotels": [
 		{ "image":"test13.jpg", "title":"Radisson Blu Hotel, Berlin", "content":"Visualise par 16 autres personnes en ce moment", "rating":"3", "price":"139", "currency":"€" },
-		{ "image":"test13.jpg", "title":"Pullman Berlin Schweizerhof", "content":"Vu par 22 autres en ce moment", "rating":"5", "price":"113", "currency":"€" },
-		{ "image":"test13.jpg", "title":"Andel’s Hotel Berlin", "content":"Vu par 43 autres en ce moment", "rating":"4 half", "price":"119", "currency":"€" }
+		{ "image":"test14.jpg", "title":"Pullman Berlin Schweizerhof", "content":"Vu par 22 autres en ce moment", "rating":"5", "price":"113", "currency":"€" },
+		{ "image":"test15.jpg", "title":"Andel’s Hotel Berlin", "content":"Vu par 43 autres en ce moment", "rating":"4 half", "price":"119", "currency":"€" }
 	],
 	"carousel_top5": [
-		{ "image":"test4.jpg", "title":"Beirgarten Berlin", "footer":"Par Clara et Constance" },
-		{ "image":"test4.jpg", "title":"Beirgarten Berlin", "footer":"Par Clara et Constance" },
-		{ "image":"test4.jpg", "title":"Beirgarten Berlin", "footer":"Par Clara et Constance" }
+		{ "image":"test12.jpg", "title":"Beirgarten Berlin", "footer":"Par Clara et Constance" },
+		{ "image":"test11.jpg", "title":"Beirgarten Berlin", "footer":"Par Clara et Constance" },
+		{ "image":"test10.jpg", "title":"Beirgarten Berlin", "footer":"Par Clara et Constance" }
+	],
+	"carousel_top5_paris": [
+		{ "image":"test6.jpg", "title":"5 coffee shops pour retrouver l’ambiance de Brooklyn à Paris" },
+		{ "image":"test7.jpg", "title":"5 instituts culturels étrangers à Paris" },
+		{ "image":"test8.jpg", "title":"5 soirées gay à ne pas manquer à Paris" }
 	],
 	"inspiration": [
 		{ "title":"Découvres Illes Cyclades", "category":"destination", "image":"test6.jpg" },
@@ -127,21 +132,45 @@
 	],
 	"user_gallery": [
 		{ "image":"test13.jpg" },
-		{ "image":"test13.jpg" },
-		{ "image":"test13.jpg" },
-		{ "image":"test13.jpg" },
-		{ "image":"test13.jpg" }
+		{ "image":"test1.jpg" },
+		{ "image":"test2.jpg" },
+		{ "image":"test3.jpg" },
+		{ "image":"test4.jpg" }
 	],
 	"contributors": [
-		{ "image":"author1.jpg", "title":"Elodie", "footer":"Ses Top 5" },
-		{ "image":"author2.jpg", "title":"Fanny", "footer":"Ses Top 5" },
-		{ "image":"author3.jpg", "title":"Clara et Constance", "footer":"Ses Top 5" },
-		{ "image":"author1.jpg", "title":"Elodie", "footer":"Ses Top 5" }
+		{ "image":"author1.jpg", "title":"Elodie", "footer":"Ses Top 5", "content":"Elodie aime explorer les villes dans leurs moindres recoins, en particulier Berlin où elle habite depuis 2010. Elle partage ses bonnes adresses secrètes et insolites avec nous." },
+		{ "image":"author2.jpg", "title":"Fanny", "footer":"Ses Top 5", "content":"Passionnée de mode et de voyages, Fanny nous fait part de ses trouvailles à Lyon et à Dublin." },
+		{ "image":"author3.jpg", "title":"Clara et Constance", "footer":"Ses Top 5", "content":"Ses Top 5", "content":"Expatriée au Japon, Amélie-Marie parle de ses voyages et de l’actualité dans le monde entre Istanbul, Moscou et Tokyo. Elle partage avec nous ses meilleures adresses à Moscou!" },
+		{ "image":"author1.jpg", "title":"Gay Bourlingueur", "footer":"Ses Top 5", "content":"Mon objectif est de donner des conseils et des adresses utiles pour les gays en voyage mais aussi des astuces et combines que j'ai pu expérimenter au cours de mes nombreux voyages." }
 	],
 	"recommendations": [
 		{ "image":"test8.jpg", "title":"Biergarten berlinois", "footer":"Par Phillipe" },
 		{ "image":"test2.jpg", "title":"Activités du dimanche à Berlin", "footer":"Par Phillipe" },
 		{ "image":"test5.jpg", "title":"Marchés aux puces berlinois", "footer":"Par Phillipe" },
 		{ "image":"test6.jpg", "title":"Elodie", "footer":"Par Phillipe" }
+	],
+	"hotel_recommendation": {
+		"title":"Pullman Paris Bercy Centre",
+		"content":"50% off the second night, breakfast included Completely renovated hotel, located 10 minutes from the heart of Paris with direct access to department stores: Galeries Lafayette & Printemps",
+		"rating":"3",
+		"price":"139",
+		"currency":"€",
+		"reviews":"322",
+		"image":"test8.jpg"
+	},
+	"belgium_top5": [
+		{ "image":"test12.jpg", "title":"Beirgarten Berlin", "footer":"Par Clara et Constance" },
+		{ "image":"test11.jpg", "title":"Beirgarten Berlin", "footer":"Par Clara et Constance" },
+		{ "image":"test10.jpg", "title":"Beirgarten Berlin", "footer":"Par Clara et Constance" }
+	],
+	"germany_top5": [
+		{ "image":"test12.jpg", "title":"Beirgarten Berlin", "footer":"Par Clara et Constance" },
+		{ "image":"test11.jpg", "title":"Beirgarten Berlin", "footer":"Par Clara et Constance" },
+		{ "image":"test10.jpg", "title":"Beirgarten Berlin", "footer":"Par Clara et Constance" }
+	],
+	"uk_top5": [
+		{ "image":"test12.jpg", "title":"Beirgarten Berlin", "footer":"Par Clara et Constance" },
+		{ "image":"test11.jpg", "title":"Beirgarten Berlin", "footer":"Par Clara et Constance" },
+		{ "image":"test10.jpg", "title":"Beirgarten Berlin", "footer":"Par Clara et Constance" }
 	]
 }
