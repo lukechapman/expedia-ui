@@ -6,7 +6,9 @@
 	font-size: 16px;
 	line-height: 24px;
 	font-family: $sans-stack;
-	display: block;
+	display: inline-block;
+	text-align: center;
+	padding: 10px 10px;
 	&.btn-primary{
 		background: linear-gradient(bottom, #ffbe00 0%, #ffcb00 100%);
 		border-color: #d4a900 #aa8700 #aa8700;

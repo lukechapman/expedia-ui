@@ -1,11 +1,15 @@
 section.recommendation-module
 	div.inner
 		h4.module-title #{recommendation_title}
-		div.group
-			div.recommend-image
-				div.bg(style="background-image:url(images/#{recommendation_item.image})")
+		a(href="#").link-floater Voir tous les hôtels à Paris
+		div.group.recommend-item
+			a(href="#").recommend-image
+				div.image-inner
+					div.bg(style="background-image:url(images/#{recommendation_item.image})")
+					div.underlay
 			div.recommend-text
-				h3 #{recommendation_item.title}
+				h3
+					a(href="#") #{recommendation_item.title}
 				if recommendation_item.reviews
 					span.review-count (#{recommendation_item.reviews} reviews)
 				if recommendation_item.rating
@@ -20,6 +24,7 @@ section.recommendation-module
 						
 				if recommendation_item.price
 					div.sell-price
+						span.small-text Total price* from
 						span.currency #{recommendation_item.currency}
 						span.price #{recommendation_item.price}
 							
