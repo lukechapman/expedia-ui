@@ -754,6 +754,9 @@ body{
 		}
 		.social-sharethis{
 			background: $sharethis;
+			.st_sharethis{
+				opacity: 0;
+			}
 		}
 	}
 }
@@ -783,6 +786,7 @@ body{
 }
 
 .box-item{
+	position: relative;
 	background: $white;
 	border-radius: 4px;
 	box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.5);
@@ -801,6 +805,7 @@ body{
 			font-size: 19px;
 			line-height: 19px;
 			color: $blue-grey;
+			margin-bottom: 0;
 		}
 	}
 	.box-header{
@@ -837,6 +842,7 @@ body{
 			backface-visibility: hidden;
 			transition: transform .2s ease;
 			font-weight: 600;
+			margin-bottom: 0;
 			.icon{
 				font-size: 20px;
 				position: relative;
@@ -901,80 +907,6 @@ body{
 				font-size: 15px;
 				line-height: 18px;
 			}
-			.sell-price{
-				float: right;
-				width: 30%;
-				font-size: 26px;
-				line-height: 26px;
-				text-align: right;
-				color: $blue-extra-extra-dark;
-				.currency{
-					font-size: 19px;
-					line-height: 19px;
-					position: relative;
-					top: -2px;
-					padding-right: 5px;
-				}
-			}
-		}
-		.rating{
-			.star:before{
-				display: none;
-				color: $blue-extra-extra-dark;
-				font-size: 12px;
-				line-height: 12px;
-				content: "\e60a";
-				@extend %icon-style;
-			}
-			&.rating-1{
-				.star-1:before{
-					display: inline-block;
-				}
-				&.half{
-					.star-2:before{
-						display: inline-block;
-						content: "\e609";
-					}
-				}
-			}
-			&.rating-2{
-				.star-1:before, .star-2:before{
-					display: inline-block;
-				}
-				&.half{
-					.star-3:before{
-						display: inline-block;
-						content: "\e609";
-					}
-				}
-			}
-			&.rating-3{
-				.star-1:before, .star-2:before, .star-3:before{
-					display: inline-block;
-				}
-				&.half{
-					.star-4:before{
-						display: inline-block;
-						content: "\e609";
-					}
-				}
-			}
-			&.rating-4{
-				.star-1:before, .star-2:before, .star-3:before, .star-4:before{
-					display: inline-block;
-				}
-				&.half{
-					.star-5:before{
-						display: inline-block;
-						content: "\e609";
-					}
-				}
-			}
-			&.rating-5{
-				.star-1:before, .star-2:before, .star-3:before, .star-4:before, .star-5:before{
-					display: inline-block;
-				}
-			}
 		}
 		h3{
 			color: $blue-medium;
@@ -988,8 +920,9 @@ body{
 				margin-bottom: 0;
 			}
 		}
-		strong{
+		h5{
 			color: $blue-medium;
+			font-weight: 600;
 		}
 	}
 	.box-footer{
@@ -1034,6 +967,112 @@ body{
 		}
 	}
 }
+
+.sale-box{
+	float: right;
+	display: block;
+	width: 30%;
+	padding-left: 20px;
+	border-left: 1px solid $grey-medium;
+	strong{
+		display: block;
+		margin-bottom: 10px;
+		color: $blue-extra-extra-dark;
+		font-weight: 400;
+	}
+}
+
+.with-sale-box{
+	float: left;
+	width: 70%;
+	padding-right: 20px;
+}
+
+.sell-price{
+	float: right;
+	width: 30%;
+	font-size: 26px;
+	line-height: 26px;
+	text-align: right;
+	color: $blue-extra-extra-dark;
+	.currency{
+		font-size: 19px;
+		line-height: 19px;
+		position: relative;
+		top: -2px;
+		padding-right: 5px;
+	}
+	.small-text{
+		font-size: 12px;
+		line-height: 14px;
+		color: $grey-medium-dark;
+		display: block;
+	}
+	.sale{
+		text-decoration: line-through;
+	}
+}
+
+.rating{
+	.star:before{
+		display: none;
+		color: $blue-extra-extra-dark;
+		font-size: 12px;
+		line-height: 12px;
+		content: "\e60a";
+		@extend %icon-style;
+	}
+	&.rating-1{
+		.star-1:before{
+			display: inline-block;
+		}
+		&.half{
+			.star-2:before{
+				display: inline-block;
+				content: "\e609";
+			}
+		}
+	}
+	&.rating-2{
+		.star-1:before, .star-2:before{
+			display: inline-block;
+		}
+		&.half{
+			.star-3:before{
+				display: inline-block;
+				content: "\e609";
+			}
+		}
+	}
+	&.rating-3{
+		.star-1:before, .star-2:before, .star-3:before{
+			display: inline-block;
+		}
+		&.half{
+			.star-4:before{
+				display: inline-block;
+				content: "\e609";
+			}
+		}
+	}
+	&.rating-4{
+		.star-1:before, .star-2:before, .star-3:before, .star-4:before{
+			display: inline-block;
+		}
+		&.half{
+			.star-5:before{
+				display: inline-block;
+				content: "\e609";
+			}
+		}
+	}
+	&.rating-5{
+		.star-1:before, .star-2:before, .star-3:before, .star-4:before, .star-5:before{
+			display: inline-block;
+		}
+	}
+}
+
 
 .contributors-grid{
 	.item-wrap{
@@ -1154,6 +1193,68 @@ body{
 		span{
 			color: $grey-dark;
 		}
+	}
+}
+
+.recommendation-module{
+	position: relative;
+	.recommend-item{
+		padding-bottom: 10px;
+		.recommend-image{
+			width: 35%;
+			float: left;
+			display: block;
+			border-radius: 4px;
+			overflow: hidden;
+			background-clip: padding-box;
+			transform: rotate(0);
+			.image-inner{
+				position: relative;
+				padding-top: 60%;
+				overflow: hidden;
+				width: 100%;
+			}
+			.bg{
+				@extend %bg;
+			}
+			.underlay{
+				@extend %underlay;
+			}
+			&:hover{
+				.desktop &{
+					.underlay{
+						background: rgba($blue-extra-extra-dark,0.4);
+					}
+					.bg{
+						transform: translateY(-5px);
+					}
+				}
+			}
+		}
+		.recommend-text{
+			width: 65%;
+			float: left;
+			position: relative;
+			padding-right: 180px;
+			padding-left: 20px;
+			h3{
+				color: $blue-medium;
+				margin-bottom: 5px;
+			}
+			.rating{
+				margin-bottom: 15px;
+			}
+			.sell-price{
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+		}
+	}
+	.link-floater{
+		position: absolute;
+		top: 0;
+		right: 0;
 	}
 }
 

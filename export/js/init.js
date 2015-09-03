@@ -103,6 +103,12 @@ var site = {
 			e.preventDefault();
 			return false;
 		});
+		
+		// sharethis button
+		$('.social-sharethis').on('click', function(e){
+			e.preventDefault();
+			return false;
+		});
 			
 	},
 	
