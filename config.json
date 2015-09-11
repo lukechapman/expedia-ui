@@ -12,12 +12,12 @@
 		{ "label":"Skiing", "icon":"ski" }
 	],
 	"destination_tabs": [
-		{ "label":"Themes", "icon":"book" },
-		{ "label":"Seasons", "icon":"seasons" },
-		{ "label":"Top 5", "icon":"top5" }
+		{ "label":"Themes", "icon":"book", "tab":"#tab1" },
+		{ "label":"Seasons", "icon":"seasons", "tab":"#tab2" },
+		{ "label":"Top 5", "icon":"top5", "tab":"#tab3" }
 	],
 	"items": [
-		{ "title":"Découvres Illes Cyclades", "category":"destination", "image":"test1.jpg", "size":"standard" },
+		{ "title":"Découvres Illes Cyclades", "category":"theme", "image":"test1.jpg", "size":"standard" },
 		{ "title":"Découvrez Les Promenades d’Aurelia a Paris!", "category":"guide", "image":"test2.jpg", "size":"standard" },
 		{ "title":"5 endroits où faire une belle photo à Stockholm", "category":"top 5", "image":"test3.jpg", "content":"This is some content right here. It is for SEO purposes only.", "size":"standard" },
 		{ "title":"Découvres Illes Cyclades", "category":"destination", "image":"test1.jpg", "size":"thin" },
@@ -92,15 +92,26 @@
 		{ "title":"Val de Loire", "image":"test11.jpg" },
 		{ "title":"Languedoc-Roussillon", "image":"test12.jpg" }
 	],
-	"destination_themes": [
-		{ "title":"En Famille", "image":"test4.jpg", "icon":"family" },
-		{ "title":"Gay-friendly", "image":"test5.jpg", "icon":"mercury" },
+	"destination_themes_1": [
 		{ "title":"Musique", "image":"test6.jpg", "icon":"music" },
 		{ "title":"Petit Budget", "image":"test7.jpg", "icon":"eat" },
 		{ "title":"Underground", "image":"test8.jpg", "icon":"eat" },
 		{ "title":"Art",  "image":"test9.jpg", "icon":"eat" },
 		{ "title":"Histoire", "image":"test10.jpg", "icon":"history" },
 		{ "title":"Gastronomie", "image":"test11.jpg", "icon":"eat" }
+	],
+	"destination_themes_2": [
+		{ "title":"En Famille", "image":"test4.jpg", "icon":"family" },
+		{ "title":"Gay-friendly", "image":"test5.jpg", "icon":"mercury" },
+		{ "title":"Histoire", "image":"test10.jpg", "icon":"history" },
+		{ "title":"Gastronomie", "image":"test11.jpg", "icon":"eat" }
+	],
+	"destination_themes_3": [
+		{ "title":"En Famille", "image":"test4.jpg", "icon":"family" },
+		{ "title":"Gay-friendly", "image":"test5.jpg", "icon":"mercury" },
+		{ "title":"Musique", "image":"test6.jpg", "icon":"music" },
+		{ "title":"Petit Budget", "image":"test7.jpg", "icon":"eat" },
+		{ "title":"Underground", "image":"test8.jpg", "icon":"eat" }
 	],
 	"carousel_guides": [
 		{ "heading":"History", "icon":"history", "image":"test13.jpg", "title":"Autour de Notre-Dame et de l'Ile de la Cité", "content":"Deux parisiens vous présentent leur ville. Chaque mois, Aurélia et Brice vous emmènent découvrir en vidéo un Paris bucolique, caché & discret." },

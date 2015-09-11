@@ -1459,6 +1459,12 @@ body{
 			margin: -1px 0px 0px 0px;
 			padding: 10px;
 		}
+		&.js-tab-content{
+			display: none;
+			&.active{
+				display: block;
+			}
+		}
 		.content-item{
 			width: 100%;
 			padding: 10px;
@@ -1484,6 +1490,7 @@ body{
 			padding: 5px;
 			position: relative;
 			transform: translateZ(0);
+			display: block;
 			@media screen and (min-width: 980px){
 				padding: 10px;
 			}
@@ -1501,9 +1508,15 @@ body{
 				@media screen and (min-width: 700px){
 					width: 50%;
 					float: left;
+					.item-inner{
+						padding-top: 56.25%;
+					}
 				}
 				@media screen and (min-width: 980px){
 					width: 33.333%;
+					.item-inner{
+						padding-top: 58.93%;
+					}
 				}
 				
 			}
@@ -1518,7 +1531,7 @@ body{
 				@media screen and (min-width: 980px){
 					width: 30%;
 					.item-inner{
-						padding-top: 67.5%;	
+						padding-top: 65.87%;	
 					}
 				}
 			}
@@ -1533,7 +1546,7 @@ body{
 				@media screen and (min-width: 980px){
 					width: 40%;
 					.item-inner{
-						padding-top: 50%;	
+						padding-top: 48.675%;
 					}
 				}
 			}
@@ -1548,7 +1561,7 @@ body{
 				@media screen and (min-width: 980px){
 					width: 50%;
 					.item-inner{
-						padding-top: 39.5%;	
+						padding-top: 38.597%;	
 					}
 				}
 			}
@@ -1588,6 +1601,9 @@ body{
 					}
 					&.category-guide{
 						background: $red;
+					}
+					&.category-theme{
+						background: $blue-light;
 					}
 					&.category-top-5{
 						background: $orange;
@@ -1656,7 +1672,10 @@ body{
 		}
 	}
 	&.home-grid{
-		padding: 30px 25px;
+		padding: 10px;
+		@media screen and (min-width: 700px){
+			padding: 30px 25px;
+		}
 	}
 	&.destination-grid{
 		padding: 30px 0px;

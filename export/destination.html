@@ -241,24 +241,12 @@
               <nav class="tab-nav js-dropdown-parent">
                 <div class="current-btn js-dropdown">Themes</div>
                 <ul class="group">
-                  <li class="active tab"><a href="#"><span class="icon icon-book"></span><span class="label">Themes</span></a></li>
-                  <li class="tab"><a href="#"><span class="icon icon-seasons"></span><span class="label">Seasons</span></a></li>
-                  <li class="tab"><a href="#"><span class="icon icon-top5"></span><span class="label">Top 5</span></a></li>
+                  <li class="active tab"><a href="#tab1" class="js-tab-toggle"><span class="icon icon-book"></span><span class="label">Themes</span></a></li>
+                  <li class="tab"><a href="#tab2" class="js-tab-toggle"><span class="icon icon-seasons"></span><span class="label">Seasons</span></a></li>
+                  <li class="tab"><a href="#tab3" class="js-tab-toggle"><span class="icon icon-top5"></span><span class="label">Top 5</span></a></li>
                 </ul>
               </nav>
-              <div class="items group"><a href="#" class="item standard split">
-                  <div class="item-inner">
-                    <div style="background-image:url(images/test4.jpg)" class="bg"></div>
-                    <div class="overlay"></div>
-                    <div class="underlay"></div>
-                    <div class="text-wrap"><span class="icon icon-family"></span><strong>En Famille</strong></div>
-                  </div></a><a href="#" class="item standard split">
-                  <div class="item-inner">
-                    <div style="background-image:url(images/test5.jpg)" class="bg"></div>
-                    <div class="overlay"></div>
-                    <div class="underlay"></div>
-                    <div class="text-wrap"><span class="icon icon-mercury"></span><strong>Gay-friendly</strong></div>
-                  </div></a><a href="#" class="item standard split">
+              <div id="tab1" class="items group js-tab-content active"><a href="#" class="item standard split">
                   <div class="item-inner">
                     <div style="background-image:url(images/test6.jpg)" class="bg"></div>
                     <div class="overlay"></div>
@@ -294,6 +282,64 @@
                     <div class="overlay"></div>
                     <div class="underlay"></div>
                     <div class="text-wrap"><span class="icon icon-eat"></span><strong>Gastronomie</strong></div>
+                  </div></a>
+              </div>
+              <div id="tab2" class="items group js-tab-content"><a href="#" class="item standard split">
+                  <div class="item-inner">
+                    <div style="background-image:url(images/test4.jpg)" class="bg"></div>
+                    <div class="overlay"></div>
+                    <div class="underlay"></div>
+                    <div class="text-wrap"><span class="icon icon-family"></span><strong>En Famille</strong></div>
+                  </div></a><a href="#" class="item standard split">
+                  <div class="item-inner">
+                    <div style="background-image:url(images/test5.jpg)" class="bg"></div>
+                    <div class="overlay"></div>
+                    <div class="underlay"></div>
+                    <div class="text-wrap"><span class="icon icon-mercury"></span><strong>Gay-friendly</strong></div>
+                  </div></a><a href="#" class="item standard split">
+                  <div class="item-inner">
+                    <div style="background-image:url(images/test10.jpg)" class="bg"></div>
+                    <div class="overlay"></div>
+                    <div class="underlay"></div>
+                    <div class="text-wrap"><span class="icon icon-history"></span><strong>Histoire</strong></div>
+                  </div></a><a href="#" class="item standard split">
+                  <div class="item-inner">
+                    <div style="background-image:url(images/test11.jpg)" class="bg"></div>
+                    <div class="overlay"></div>
+                    <div class="underlay"></div>
+                    <div class="text-wrap"><span class="icon icon-eat"></span><strong>Gastronomie</strong></div>
+                  </div></a>
+              </div>
+              <div id="tab3" class="items group js-tab-content"><a href="#" class="item standard split">
+                  <div class="item-inner">
+                    <div style="background-image:url(images/test4.jpg)" class="bg"></div>
+                    <div class="overlay"></div>
+                    <div class="underlay"></div>
+                    <div class="text-wrap"><span class="icon icon-family"></span><strong>En Famille</strong></div>
+                  </div></a><a href="#" class="item standard split">
+                  <div class="item-inner">
+                    <div style="background-image:url(images/test5.jpg)" class="bg"></div>
+                    <div class="overlay"></div>
+                    <div class="underlay"></div>
+                    <div class="text-wrap"><span class="icon icon-mercury"></span><strong>Gay-friendly</strong></div>
+                  </div></a><a href="#" class="item standard split">
+                  <div class="item-inner">
+                    <div style="background-image:url(images/test6.jpg)" class="bg"></div>
+                    <div class="overlay"></div>
+                    <div class="underlay"></div>
+                    <div class="text-wrap"><span class="icon icon-music"></span><strong>Musique</strong></div>
+                  </div></a><a href="#" class="item standard split">
+                  <div class="item-inner">
+                    <div style="background-image:url(images/test7.jpg)" class="bg"></div>
+                    <div class="overlay"></div>
+                    <div class="underlay"></div>
+                    <div class="text-wrap"><span class="icon icon-eat"></span><strong>Petit Budget</strong></div>
+                  </div></a><a href="#" class="item standard split">
+                  <div class="item-inner">
+                    <div style="background-image:url(images/test8.jpg)" class="bg"></div>
+                    <div class="overlay"></div>
+                    <div class="underlay"></div>
+                    <div class="text-wrap"><span class="icon icon-eat"></span><strong>Underground</strong></div>
                   </div></a>
               </div>
             </div>
@@ -649,10 +695,9 @@
     </section>
     <footer id="global-footer" class="global-footer">
     </footer>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery-1.11.3.min.js"><\/script>')</script>
     <script src="js/plugins.js"></script>
     <script src="js/init.js"></script>
-    <script src="//localhost:35729/livereload.js"></script>
   </body>
 </html>

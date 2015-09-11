@@ -2140,6 +2140,7 @@ body {
 .with-sale-box {
   float: left;
   width: 70%;
+  padding-right: 20px;
 }
 
 .sell-price {
@@ -2649,6 +2650,12 @@ html[xmlns] .flexslider .slides {
     padding: 10px;
   }
 }
+.grid .items.js-tab-content {
+  display: none;
+}
+.grid .items.js-tab-content.active {
+  display: block;
+}
 .grid .items .content-item {
   width: 100%;
   padding: 10px;
@@ -2680,6 +2687,7 @@ html[xmlns] .flexslider .slides {
   position: relative;
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
+  display: block;
 }
 @media screen and (min-width: 980px) {
   .grid .items .item {
@@ -2700,10 +2708,16 @@ html[xmlns] .flexslider .slides {
     width: 50%;
     float: left;
   }
+  .grid .items .item.standard .item-inner {
+    padding-top: 56.25%;
+  }
 }
 @media screen and (min-width: 980px) {
   .grid .items .item.standard {
     width: 33.333%;
+  }
+  .grid .items .item.standard .item-inner {
+    padding-top: 58.93%;
   }
 }
 @media screen and (min-width: 700px) {
@@ -2720,7 +2734,7 @@ html[xmlns] .flexslider .slides {
     width: 30%;
   }
   .grid .items .item.thin .item-inner {
-    padding-top: 67.5%;
+    padding-top: 65.87%;
   }
 }
 @media screen and (min-width: 700px) {
@@ -2737,7 +2751,7 @@ html[xmlns] .flexslider .slides {
     width: 40%;
   }
   .grid .items .item.wide .item-inner {
-    padding-top: 50%;
+    padding-top: 48.675%;
   }
 }
 @media screen and (min-width: 700px) {
@@ -2754,7 +2768,7 @@ html[xmlns] .flexslider .slides {
     width: 50%;
   }
   .grid .items .item.extra-wide .item-inner {
-    padding-top: 39.5%;
+    padding-top: 38.597%;
   }
 }
 .grid .items .item .bg {
@@ -2795,6 +2809,9 @@ html[xmlns] .flexslider .slides {
 }
 .grid .items .item .text-wrap .category.category-guide {
   background: #cf3f50;
+}
+.grid .items .item .text-wrap .category.category-theme {
+  background: #4c95bf;
 }
 .grid .items .item .text-wrap .category.category-top-5 {
   background: #ee7720;
@@ -2875,7 +2892,12 @@ html[xmlns] .flexslider .slides {
   }
 }
 .grid.home-grid {
-  padding: 30px 25px;
+  padding: 10px;
+}
+@media screen and (min-width: 700px) {
+  .grid.home-grid {
+    padding: 30px 25px;
+  }
 }
 .grid.destination-grid {
   padding: 30px 0px;
