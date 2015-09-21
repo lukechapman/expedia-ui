@@ -1,0 +1,39 @@
+doctype
+html.no-js
+	head
+		include ./partials/head.jade
+	body.home
+		header.global-header#global-header
+			include ./external/header.html
+		include ./modules/header.jade
+		
+		- var page = 'destination'
+		- var page_title = 'Berlin'
+		- var region = 'Berlin'
+		- var breadcrumbs = [{"title":"Guides de Voyage"},{"title":"Germany"}]
+		include ./modules/hero.jade
+		
+		include ./modules/booking-bar.jade
+		
+		section.page-content
+			div.inner.group
+				div.main-content.entry-content
+				
+					div.content-header
+						- var social_class = 'float'
+						include ./modules/socials.jade
+						include ./modules/breadcrumbs.jade
+						
+					h1 City Breaks
+				
+					include ./modules/mosaic-grid.jade
+					
+					div.intro-text
+						h1 Berlin et l'histoire du XXe siècle
+						blockquote En route to a historic trip in the Berlin of the twentieth century: Berlin horrified divided Berlin, and Berlin reunited!
+							
+						p Berlin has an unusual history. The city torn by two world wars , the center of Nazi power and then divided for 30 years, now bears the marks with humility of his past. Prepare for an intense visit to emotions, places of memory of the Holocaust to the remains of the famous wall
+	
+					hr.separator
+
+		include ./partials/footer.jade

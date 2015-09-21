@@ -4,7 +4,7 @@ html.no-js
 		include ./partials/head.jade
 	body.home
 		header.global-header#global-header
-			- //include ./external/header.html
+			include ./external/header.html
 		include ./modules/header.jade
 		
 		- var page = 'country'
@@ -14,7 +14,10 @@ html.no-js
 		
 		include ./modules/booking-bar.jade
 		
-		include ./modules/country-grid.jade
+		section.page-content
+			div.inner.group
+				div.main-content.entry-content
+					include ./modules/country-grid.jade
 		
 		- var carousel_type = 'standard'
 		- var carousel_class = 'is-module'

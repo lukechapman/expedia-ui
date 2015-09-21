@@ -109,6 +109,13 @@ var site = {
 			e.preventDefault();
 			return false;
 		});
+		
+		// global expedia nav toggle
+		$('#mobile-toggle-header-link').on('click', function(e){
+			$('body').toggleClass('show-global-nav');
+			e.preventDefault();
+			return false;
+		});
 			
 	},
 	
