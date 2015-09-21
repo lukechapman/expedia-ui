@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'expedia';
-	src:url('fonts/expedia.eot?-iv7jrv');
-	src:url('fonts/expedia.eot?#iefix-iv7jrv') format('embedded-opentype'),
-		url('fonts/expedia.ttf?-iv7jrv') format('truetype'),
-		url('fonts/expedia.woff?-iv7jrv') format('woff'),
-		url('fonts/expedia.svg?-iv7jrv#expedia') format('svg');
+	src:url('fonts/expedia.eot?e5j2td');
+	src:url('fonts/expedia.eot?#iefixe5j2td') format('embedded-opentype'),
+		url('fonts/expedia.ttf?e5j2td') format('truetype'),
+		url('fonts/expedia.woff?e5j2td') format('woff'),
+		url('fonts/expedia.svg?e5j2td#expedia') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -13,6 +13,24 @@
 	@extend %icon-style;
 }
 
+.icon-beach:before {
+	content: "\e61c";
+}
+.icon-building:before {
+	content: "\e61d";
+}
+.icon-tower:before {
+	content: "\e61e";
+}
+.icon-education:before {
+	content: "\e61f";
+}
+.icon-seasons:before {
+	content: "\e620";
+}
+.icon-top5:before {
+	content: "\e621";
+}
 .icon-payment:before {
 	content: "\e612";
 }
@@ -85,6 +103,12 @@
 .icon-twitter:before {
 	content: "\e606";
 }
+.icon-youtube:before {
+	content: "\e622";
+}
+.icon-youtube3:before {
+	content: "\e623";
+}
 .icon-search:before {
 	content: "\f002";
 }
@@ -147,4 +171,13 @@
 }
 .icon-instagram:before {
 	content: "\e611";
+}
+.icon-pinterest:before {
+	content: "\e624";
+}
+.icon-tumblr:before {
+	content: "\e625";
+}
+.icon-vimeo:before {
+	content: "\e626";
 }
