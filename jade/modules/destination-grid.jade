@@ -6,12 +6,36 @@ section.grid.destination-grid
 				each tab, index in destination_tabs
 					- var tab_class = (index === 0 ? "active tab" : "tab")
 					li(class=tab_class)
-						a(href='#')
+						a(href='#{tab.tab}').js-tab-toggle
 							span(class="icon icon-#{tab.icon}")
 							span.label #{tab.label}
-		div.items.group
+		div.items.group#tab1.js-tab-content.active
 				
-			each destination in destination_themes
+			each destination in destination_themes_1
+					a(href="#").item.standard.split
+						div.item-inner
+							div.bg(style="background-image:url(images/#{destination.image})")
+							div.overlay
+							div.underlay
+							div.text-wrap
+								span(class="icon icon-#{destination.icon}")
+								strong #{destination.title}
+		
+		div.items.group#tab2.js-tab-content
+				
+			each destination in destination_themes_2
+					a(href="#").item.standard.split
+						div.item-inner
+							div.bg(style="background-image:url(images/#{destination.image})")
+							div.overlay
+							div.underlay
+							div.text-wrap
+								span(class="icon icon-#{destination.icon}")
+								strong #{destination.title}
+								
+		div.items.group#tab3.js-tab-content
+				
+			each destination in destination_themes_3
 					a(href="#").item.standard.split
 						div.item-inner
 							div.bg(style="background-image:url(images/#{destination.image})")

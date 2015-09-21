@@ -1,0 +1,34 @@
+section.grid.mosaic-grid
+	if page == 'home'
+		- var social_class = 'float'
+		include socials.jade
+		
+	nav.tab-nav.js-dropdown-parent
+		div.current-btn.js-dropdown A la Une
+		ul.group
+			each tab, index in home_tabs
+				- var tab_class = (index === 0 ? "active tab" : "tab")
+				li(class=tab_class)
+					a(href='#')
+						span(class="icon icon-#{tab.icon}")
+						span.label #{tab.label}
+	div.items.group
+		each item in items
+			if item.content
+				div(class="item text-only #{item.size}")
+					div.item-inner
+						div.bg(style="background-image:url(images/#{item.image})")
+						div.underlay
+						div.text-wrap
+							p #{item.content}
+			else
+				a(href="#", class="item #{item.size}")
+					div.item-inner
+						div.bg(style="background-image:url(images/#{item.image})")
+						div.overlay
+						div.underlay
+						div.text-wrap
+							strong #{item.title}
+							- var cat = item.category.replace(' ','-')
+							span(class="category category-#{cat}") #{item.category}
+							

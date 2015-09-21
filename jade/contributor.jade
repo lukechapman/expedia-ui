@@ -4,7 +4,7 @@ html.no-js
 		include ./partials/head.jade
 	body.home
 		header.global-header#global-header
-			- //include ./external/header.html
+			include ./external/header.html
 		include ./modules/header.jade
 		
 		- var page = 'author'
@@ -17,7 +17,7 @@ html.no-js
 		section.page-content
 			div.inner.group
 				include ./partials/sidebar.jade
-				div.main-content.entry-content
+				div.main-content.entry-content.has-sidebar
 					div.content-header
 						- var social_class = 'float'
 						include ./modules/socials.jade
@@ -30,6 +30,39 @@ html.no-js
 							figure.author-image-inner(style="background-image:url(images/author1.jpg)")
 						div.author-bio
 							p Berlin has an unusual history. The city torn by two world wars , the center of Nazi power and then divided for 30 years, now bears the marks with humility of his past. Prepare for an intense visit to emotions, places of memory of the Holocaust to the remains of the famous wall
+							div.socials-module
+								strong Clara
+								div.group.socials-list
+									a.social.js-social.social-twitter(href="#", target="_blank")
+										span.icon.icon-twitter
+									a.social.js-social.social-google(href="#", target="_blank")
+										span.icon.icon-google-plus
+									a.social.js-social.social-facebook(href="#", target="_blank")
+										span.icon.icon-facebook
+									a.social.js-social.social-tumblr(href="#", target="_blank")
+										span.icon.icon-tumblr
+									a.social.js-social.social-pinterest(href="#", target="_blank")
+										span.icon.icon-pinterest
+									a.social.js-social.social-youtube(href="#", target="_blank")
+										span.icon.icon-youtube
+							
+							div.socials-module
+								strong Constance
+								div.group.socials-list
+									a.social.js-social.social-twitter(href="#", target="_blank")
+										span.icon.icon-twitter
+									a.social.js-social.social-google(href="#", target="_blank")
+										span.icon.icon-google-plus
+									a.social.js-social.social-facebook(href="#", target="_blank")
+										span.icon.icon-facebook
+									a.social.js-social.social-tumblr(href="#", target="_blank")
+										span.icon.icon-tumblr
+									a.social.js-social.social-pinterest(href="#", target="_blank")
+										span.icon.icon-pinterest
+									a.social.js-social.social-youtube(href="#", target="_blank")
+										span.icon.icon-youtube
+								
+								
 	
 					hr.separator
 					

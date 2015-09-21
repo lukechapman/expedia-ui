@@ -109,6 +109,13 @@ var site = {
 			e.preventDefault();
 			return false;
 		});
+		
+		// global expedia nav toggle
+		$('#mobile-toggle-header-link').on('click', function(e){
+			$('body').toggleClass('show-global-nav');
+			e.preventDefault();
+			return false;
+		});
 			
 	},
 	
@@ -529,6 +536,25 @@ var site = {
 		
 	},
 	
+	tabs: function(){
+		
+		$('.js-tab-toggle').on('click', function(e){
+			
+			$('.js-tab-toggle').parent().removeClass('active');
+			$(this).parent().addClass('active');
+			
+			var section = $(this).attr('href');
+			$('.js-tab-content').removeClass('active');
+			$(section).addClass('active');
+			
+			e.preventDefault();
+			return false;
+			
+		});
+		
+		
+	},
+	
 	init: function(){
 		
 		// jquery loaded
@@ -554,6 +580,9 @@ var site = {
 			
 			// custom select dropdowns
 			site.dropdowns();
+			
+			// tabs
+			site.tabs();
 			
 		});
 		

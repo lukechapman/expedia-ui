@@ -5,7 +5,7 @@ html.no-js
 		include ./partials/head.jade
 	body.home
 		header.global-header#global-header
-			- //include ./external/header.html
+			include ./external/header.html
 		include ./modules/header.jade
 		
 		- var page = 'contributors'
@@ -18,7 +18,7 @@ html.no-js
 		section.page-content
 			div.inner.group
 				include ./partials/sidebar.jade
-				div.main-content.entry-content
+				div.main-content.entry-content.has-sidebar
 					div.content-header
 						- var social_class = 'float'
 						include ./modules/socials.jade

@@ -60,7 +60,7 @@ body{
 			}
 			&.home-link{
 				@media screen and (max-width: $main-nav-max){
-					width: 65%;
+					width: 70%;
 					border-bottom: 1px solid transparent;
 					.show-main-nav &{
 						border-bottom: 1px solid darken($blue-medium, 10%);
@@ -92,7 +92,7 @@ body{
 			}
 			&.menu-link{
 				border-bottom: 1px solid transparent;
-				width: 35%;
+				width: 30%;
 				@media screen and (min-width: $main-nav-min){
 					display: none;
 				}
@@ -233,16 +233,21 @@ body{
 
 .main-content{
 	width: 100%;
-	padding: 0px;
+	padding: 10px;
 	@media screen and (min-width: $main-nav-min){
-		width: 70%;
-		float: left;
-		padding: 30px 25px 30px 0px;
+		padding: 30px;
+		&.has-sidebar{
+			width: 70%;
+			float: left;
+			padding: 30px 25px 30px 0px;
+		}
 	}
 	@media screen and (min-width: 980px){
-		width: 80%;
-		.intro-text{
-			max-width: 75%;
+		&.has-sidebar{
+			width: 80%;
+			.intro-text{
+				max-width: 75%;
+			}
 		}
 	}
 	h1{
@@ -650,10 +655,8 @@ body{
 		}
 		li{
 			display: block;
-			@media screen and (min-width: $main-nav-min){
-				display: inline-block;
-				width: 100%;
-			}
+			break-inside: avoid-column;
+			width: 100%;
 		}
 	}
 	.show{
@@ -751,6 +754,15 @@ body{
 		}
 		.social-google{
 			background: $google;
+		}
+		.social-tumblr{
+			background: $tumblr;
+		}
+		.social-youtube{
+			background: $youtube;
+		}
+		.social-pinterest{
+			background: $pinterest;
 		}
 		.social-sharethis{
 			background: $sharethis;
@@ -1413,7 +1425,8 @@ body{
 		columns: 2;
 		column-gap: 40px;
 		p{
-			display: inline-block;
+			display: block;
+			break-inside: avoid-column;
 		}
 		h1, h2, h3, h4, h5{
         	column-span: all; 
@@ -1425,20 +1438,14 @@ body{
 }
 
 .box-columns{
-	/*
-	margin: 0px -10px;
-	.box-item-wrap{
-		float: left;
-		width: 50%;
-		padding: 10px;
-	}
-	*/
 	@media screen and (min-width: $columns){
 		columns: 2;
 		column-gap: 20px;
 		.box-item-wrap{
-			display: inline-block;
-			width: 100%;
+			break-inside: avoid-column;
+			.box-item{
+				overflow: visible;
+			}
 		}
 	}
 }
@@ -1458,6 +1465,12 @@ body{
 			border-top: 1px solid $grey-medium;
 			margin: -1px 0px 0px 0px;
 			padding: 10px;
+		}
+		&.js-tab-content{
+			display: none;
+			&.active{
+				display: block;
+			}
 		}
 		.content-item{
 			width: 100%;
@@ -1484,6 +1497,7 @@ body{
 			padding: 5px;
 			position: relative;
 			transform: translateZ(0);
+			display: block;
 			@media screen and (min-width: 980px){
 				padding: 10px;
 			}
@@ -1501,9 +1515,15 @@ body{
 				@media screen and (min-width: 700px){
 					width: 50%;
 					float: left;
+					.item-inner{
+						padding-top: 56.25%;
+					}
 				}
 				@media screen and (min-width: 980px){
 					width: 33.333%;
+					.item-inner{
+						padding-top: 58.93%;
+					}
 				}
 				
 			}
@@ -1518,7 +1538,7 @@ body{
 				@media screen and (min-width: 980px){
 					width: 30%;
 					.item-inner{
-						padding-top: 67.5%;	
+						padding-top: 65.87%;	
 					}
 				}
 			}
@@ -1533,7 +1553,7 @@ body{
 				@media screen and (min-width: 980px){
 					width: 40%;
 					.item-inner{
-						padding-top: 50%;	
+						padding-top: 48.675%;
 					}
 				}
 			}
@@ -1548,7 +1568,7 @@ body{
 				@media screen and (min-width: 980px){
 					width: 50%;
 					.item-inner{
-						padding-top: 39.5%;	
+						padding-top: 38.597%;	
 					}
 				}
 			}
@@ -1588,6 +1608,9 @@ body{
 					}
 					&.category-guide{
 						background: $red;
+					}
+					&.category-theme{
+						background: $blue-light;
 					}
 					&.category-top-5{
 						background: $orange;
@@ -1634,7 +1657,6 @@ body{
 		}
 	}
 	&.country-grid{
-		padding: 30px 25px;
 		@media screen and (max-width: 699px){
 			.items{
 				display: flex;
@@ -1654,9 +1676,6 @@ body{
 				}
 			}
 		}
-	}
-	&.home-grid{
-		padding: 30px 25px;
 	}
 	&.destination-grid{
 		padding: 30px 0px;
