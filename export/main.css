@@ -2850,6 +2850,13 @@ html[xmlns] .flexslider .slides {
     padding: 10px;
   }
 }
+.grid .items .sectioned {
+  padding-top: 20px;
+}
+.grid .items .sectioned h2 {
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
 .grid .items.js-tab-content {
   display: none;
 }
