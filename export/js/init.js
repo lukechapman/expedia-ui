@@ -38,7 +38,7 @@ var site = {
 		});
 		
 		// booking form toggle
-		$('.js-toggle-form').on('click', function(e){
+		$('body').on('click', '.js-toggle-form', function(e){
 			
 			$('.booking-form-wrap').height( $(window).height() - $('.booking-bar > ul').outerHeight() );
 			
@@ -60,7 +60,7 @@ var site = {
 		});
 		
 		// close booking form
-		$('.js-close-booking').on('click', function(e){
+		$('body').on('click', '.js-close-booking', function(e){
 			$('.booking-form-wrap').removeClass('active');
 			$('.js-toggle-form').parent('li').removeClass('active');
 			e.preventDefault();
@@ -379,7 +379,9 @@ var site = {
 		
 		// custom select dropdowns using SelectOrDie: https://github.com/vestman/Select-or-Die
 		
-		$('select').selectOrDie();
+		$('select').selectOrDie({
+			size: 5
+		});
 		
 	},
 	
@@ -546,6 +548,11 @@ var site = {
 			var section = $(this).attr('href');
 			$('.js-tab-content').removeClass('active');
 			$(section).addClass('active');
+			
+			var title = $(this).find('.label').html();
+			$('.current-btn.js-dropdown').html(title);
+			
+			$(this).parents('.js-dropdown-parent').removeClass('show');
 			
 			e.preventDefault();
 			return false;

@@ -1,0 +1,13 @@
+nav.booking-bar
+	div#wizard-block-html
+
+	script(src="js/external/search_wizard_ajax.js")
+	script.
+		$(function(){
+			$("#wizard-block-content").ajax_wizard({
+				base_url: "js/external", 
+				modulePath: ""
+			});
+			
+			//site.dropdowns();
+		});

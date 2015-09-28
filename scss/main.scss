@@ -221,6 +221,7 @@ body{
 				position: fixed;
 				top: 78px;
 				left: 25px;
+				max-width: 175px;
 			}
 			@media screen and (min-width: $inner-width){
 				left: 50%;

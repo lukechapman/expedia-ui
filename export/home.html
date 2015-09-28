@@ -8,6 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,700">
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/jquery-ui.structure.css">
+    <link rel="stylesheet" href="css/jquery-ui.theme.expedia.min.css">
     <script src="js/vendors.js"></script>
     <script>
       (function (window, Modernizr) {
@@ -644,131 +647,18 @@ Mon Scratchpad          <span class="scratchpad-flare"></span>
       </div>
     </section>
     <nav class="booking-bar">
-      <ul>
-        <li class="title"> <span>Réservez un voyage:</span></li>
-        <li><a href="#" data-form="#hotels" class="js-toggle-form"><span class="icon icon-office"></span><span class="label">Hôtels</span></a></li>
-        <li><a href="#" data-form="#flights" class="js-toggle-form"><span class="icon icon-airplane"></span><span class="label">Vols</span></a></li>
-        <li><a href="#" data-form="#flights-and-hotels" class="js-toggle-form"><span class="icon icon-suitcase"></span><span class="label">Vols + Hôtels</span></a></li>
-        <li><a href="#" data-form="#cars" class="js-toggle-form"><span class="icon icon-automobile"></span><span class="label">Voiture</span></a></li>
-      </ul>
-      <section data-scroll-scope class="booking-form-wrap">
-        <div class="booking-form"><a href="#" class="js-close-booking close-btn">Close</a>
-          <form id="flights" class="form">
-            <h3>Find Flights</h3>
-            <div class="field-wrap">
-              <label class="has-check">
-                <input type="radio" name="destination" checked><span>Round trip</span>
-              </label>
-              <label class="has-check js-one-way">
-                <input type="radio" name="destination"><span>One way ticket</span>
-              </label>
-              <label class="has-check">
-                <input type="radio" name="destination"><span>Several destinations</span>
-              </label>
-            </div>
-            <div class="group">
-              <div class="field-wrap split">
-                <label>Vol au départ de</label>
-                <div class="input-group"><span class="icon-location-pin input-icon"></span>
-                  <input type="text" placeholder="e.g Londres">
-                </div>
-              </div>
-              <div class="field-wrap split">
-                <label>Vol à destination de</label>
-                <div class="input-group"><span class="icon-location-pin input-icon"></span>
-                  <input type="text" placeholder="e.g Berlin">
-                </div>
-              </div>
-            </div>
-            <div class="group">
-              <div class="group split">
-                <div class="field-wrap split">
-                  <label>Départ le</label>
-                  <div class="input-group"><span class="icon-calendar input-icon"></span>
-                    <input type="text" placeholder="JJ/MM/AAAA">
-                  </div>
-                </div>
-                <div class="field-wrap split js-return-date">
-                  <label>Retour le</label>
-                  <div class="input-group"><span class="icon-calendar input-icon"></span>
-                    <input type="text" placeholder="JJ/MM/AAAA">
-                  </div>
-                </div>
-              </div>
-              <div class="group split">
-                <div class="field-wrap split">
-                  <label>Adultes (18 and over)</label>
-                  <select>
-                    <option>0</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
-                    <option>7+	</option>
-                  </select>
-                </div>
-                <div class="field-wrap split">
-                  <label>Enfants (0-17 years)</label>
-                  <select>
-                    <option>0</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
-                    <option>7+</option>
-                  </select>
-                </div>
-              </div>
-            </div><a href="#" class="js-options-toggle advanced-options-btn">Options avancées<span class="icon icon-angle-double-down"></span><span class="icon icon-angle-double-up"></span></a>
-            <div class="js-options advanced-options">
-              <div class="field-wrap">
-                <label class="has-check">
-                  <input type="checkbox" name="flight-option"><span>Direct</span>
-                </label>
-                <label class="has-check js-one-way">
-                  <input type="checkbox" name="flight-option"><span>Vol remboursable</span>
-                </label>
-              </div>
-              <div class="group">
-                <div class="field-wrap split">
-                  <label>Compagnie aérienne préférée</label>
-                  <select>
-                    <option>No preference</option>
-                    <option>British Airways</option>
-                    <option>Ryan Air</option>
-                  </select>
-                </div>
-                <div class="group split">
-                  <div class="field-wrap split">
-                    <label>Classe souhaitée</label>
-                    <select>
-                      <option>No preference</option>
-                      <option>Economy</option>
-                      <option>First Class</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="field-wrap">
-              <button type="submit" class="btn btn-primary">Rechercher</button>
-            </div>
-          </form>
-          <form id="hotels" class="form">
-            <h3>Find Hotels</h3>
-          </form>
-          <form id="flights-and-hotels" class="form">
-            <h3>Find Flights + Hotels</h3>
-          </form>
-          <form id="cars" class="form">
-            <h3>Find Cars</h3>
-          </form>
-        </div>
-      </section>
+      <div id="wizard-block-html"></div>
+      <script src="js/external/search_wizard_ajax.js"></script>
+      <script>
+        $(function(){
+        	$("#wizard-block-content").ajax_wizard({
+        		base_url: "js/external", 
+        		modulePath: ""
+        	});
+        	
+        	//site.dropdowns();
+        });
+      </script>
     </nav>
     <section class="page-content">
       <div class="inner group">
