@@ -30,9 +30,9 @@ Images will be overwritten with the optimisations.
 
 To update the icons, the icon fonts will need to be re-generated using the [IcoMoon](https://icomoon.io/app) service.
 
-1. Create a new IcoMoon project and remove and pre-existing sets.
-2. Click the **Import Icons** button and locate the `selection.json` file to import.
+1. Create a new IcoMoon project and remove any pre-existing sets.
+2. Click the **Import Icons** button and locate the `selection.json` file in the fonts folder to import.
 3. Choose 'Yes' to import the settings saved.
 4. Add icons to library by clicking **Import Icons** again and selecting the icon SVG files.
 5. Generate font and download. Replace existing icon fonts with the the new ones, and update the `icon.css` file in the CSS folder.
-6. Replace the new `selection.json` with the current one.
+6. Replace the old `selection.json` with the newly downloaded version.
