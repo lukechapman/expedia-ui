@@ -22,7 +22,7 @@ module.exports = function(grunt) {
 					style : 'expanded'
 				},
 				files: {
-					'export/main.css':'scss/main.scss',
+					'export/css/main.css':'scss/main.scss',
 				}
 			}
 		},
@@ -54,8 +54,8 @@ module.exports = function(grunt) {
 				browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1', 'ie 9']
 			},
 			single_file: {
-				src: 'export/main.css',
-				dest: 'export/main.css'
+				src: 'export/css/main.css',
+				dest: 'export/css/main.css'
 			}
 		},
 		csscomb: {
@@ -63,14 +63,14 @@ module.exports = function(grunt) {
                 config: '.csscomb.json'
             },
             files: {
-                'export/main.css': ['export/main.css'],
+                'export/css/main.css': ['export/css/main.css'],
             }
 		},
 		cssmin: {
 			release:{
 				files: [{
-					src: ['export/main.css'],
-					dest: 'export/main.min.css'
+					src: ['export/css/main.css'],
+					dest: 'export/css/main.min.css'
 				}]
 			}
 	

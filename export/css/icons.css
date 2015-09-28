@@ -1,16 +1,24 @@
 @font-face {
 	font-family: 'expedia';
-	src:url('fonts/expedia.eot?e5j2td');
-	src:url('fonts/expedia.eot?#iefixe5j2td') format('embedded-opentype'),
-		url('fonts/expedia.ttf?e5j2td') format('truetype'),
-		url('fonts/expedia.woff?e5j2td') format('woff'),
-		url('fonts/expedia.svg?e5j2td#expedia') format('svg');
+	src:url('../fonts/expedia.eot?e5j2td');
+	src:url('../fonts/expedia.eot?#iefixe5j2td') format('embedded-opentype'),
+		url('../fonts/expedia.ttf?e5j2td') format('truetype'),
+		url('../fonts/expedia.woff?e5j2td') format('woff'),
+		url('../fonts/expedia.svg?e5j2td#expedia') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
 [class^="icon-"], [class*=" icon-"] {
-	@extend %icon-style;
+	font-family: 'expedia';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 .icon-beach:before {
